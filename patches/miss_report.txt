@@ -1,0 +1,705 @@
+# 词表里有、但没被自动包裹的字符串（需人工判断是界面文案还是逻辑值）
+# 共 703 条
+projects\evoplayer\core\src\screens\AudioTrackPickerScreen.cpp:66: BEST QUALITY
+projects\evoplayer\core\src\screens\AudioTrackPickerScreen.cpp:67: Mode
+projects\evoplayer\core\src\screens\AudioTrackPickerScreen.cpp:67: Automatic
+projects\evoplayer\core\src\screens\AudioTrackPickerScreen.cpp:67: Behaviour
+projects\evoplayer\core\src\screens\AudioTrackPickerScreen.cpp:67: EVO picks the best quality available
+projects\evoplayer\core\src\screens\AudioTrackPickerScreen.cpp:101: PLAYING
+projects\evoplayer\core\src\screens\AudioTrackPickerScreen.cpp:114: Resolution
+projects\evoplayer\core\src\screens\AudioTrackPickerScreen.cpp:115: Codec
+projects\evoplayer\core\src\screens\AudioTrackPickerScreen.cpp:120: Bitrate
+projects\evoplayer\core\src\screens\AudioTrackPickerScreen.cpp:126: Frame rate
+projects\evoplayer\core\src\screens\AudioTrackPickerScreen.cpp:169: STEREO
+projects\evoplayer\core\src\screens\AudioTrackPickerScreen.cpp:170: MONO
+projects\evoplayer\core\src\screens\AudioTrackPickerScreen.cpp:186: Mono
+projects\evoplayer\core\src\screens\AudioTrackPickerScreen.cpp:187: Stereo
+projects\evoplayer\core\src\screens\AudioTrackPickerScreen.cpp:195: +PLAYING
+projects\evoplayer\core\src\screens\AudioTrackPickerScreen.cpp:205: Language
+projects\evoplayer\core\src\screens\AudioTrackPickerScreen.cpp:206: Not set in the file
+projects\evoplayer\core\src\screens\AudioTrackPickerScreen.cpp:207: Track title
+projects\evoplayer\core\src\screens\AudioTrackPickerScreen.cpp:208: Codec
+projects\evoplayer\core\src\screens\AudioTrackPickerScreen.cpp:209: Channels
+projects\evoplayer\core\src\screens\AudioTrackPickerScreen.cpp:210: Sample rate
+projects\evoplayer\core\src\screens\AudioTrackPickerScreen.cpp:211: Status
+projects\evoplayer\core\src\screens\AudioTrackPickerScreen.cpp:211: Playing now
+projects\evoplayer\core\src\screens\AudioTrackPickerScreen.cpp:215:   -  PLAYING
+projects\evoplayer\core\src\screens\AudioTrackPickerScreen.cpp:269: AUDIO TRACK
+projects\evoplayer\core\src\screens\AudioTrackPickerScreen.cpp:269: QUALITY
+projects\evoplayer\core\src\screens\AudioTrackPickerScreen.cpp:269: SWITCH FAILED
+projects\evoplayer\core\src\screens\AudioTrackPickerScreen.cpp:329: AUTO
+projects\evoplayer\core\src\screens\AudioTrackPickerScreen.cpp:353: No audio tracks
+projects\evoplayer\core\src\screens\AudioTrackPickerScreen.cpp:354: This file has no decodable audio stream.
+projects\evoplayer\core\src\screens\AudioTrackPickerScreen.cpp:385: TRACK DETAILS
+projects\evoplayer\core\src\screens\AudioTrackPickerScreen.cpp:385: QUALITY DETAILS
+projects\evoplayer\core\src\screens\AudioTrackPickerScreen.cpp:392: Switching audio...
+projects\evoplayer\core\src\screens\AudioTrackPickerScreen.cpp:392: Switching quality...
+projects\evoplayer\core\src\screens\BrowserScreen.cpp:200: None
+projects\evoplayer\core\src\screens\BrowserScreen.cpp:277: Rename item...
+projects\evoplayer\core\src\screens\BrowserScreen.cpp:299: New folder name...
+projects\evoplayer\core\src\screens\BrowserScreen.cpp:299: New Folder
+projects\evoplayer\core\src\screens\BrowserScreen.cpp:320: Browsing
+projects\evoplayer\core\src\screens\BrowserScreen.cpp:322: Searching
+projects\evoplayer\core\src\screens\BrowserScreen.cpp:397: + Add FTP Server
+projects\evoplayer\core\src\screens\BrowserScreen.cpp:430: COULD NOT CONNECT
+projects\evoplayer\core\src\screens\BrowserScreen.cpp:443: DIR
+projects\evoplayer\core\src\screens\BrowserScreen.cpp:775: Search media...
+projects\evoplayer\core\src\screens\BrowserScreen.cpp:944: Enter FTP Host (e.g. 192.168.0.10:21)...
+projects\evoplayer\core\src\screens\BrowserScreen.cpp:1405: USB Drive
+projects\evoplayer\core\src\screens\BrowserScreen.cpp:1408: USB Drive
+projects\evoplayer\core\src\screens\BrowserScreen.cpp:1416: USB Drive
+projects\evoplayer\core\src\screens\BrowserScreen.cpp:1421: Internal Storage
+projects\evoplayer\core\src\screens\BrowserScreen.cpp:1423: Internal Storage
+projects\evoplayer\core\src\screens\BrowserScreen.cpp:1429: Internal Storage
+projects\evoplayer\core\src\screens\BrowserScreen.cpp:1433: Network Storage
+projects\evoplayer\core\src\screens\BrowserScreen.cpp:1438: Network / %s
+projects\evoplayer\core\src\screens\BrowserScreen.cpp:1440: Network / 
+projects\evoplayer\core\src\screens\BrowserScreen.cpp:1445: Favorites
+projects\evoplayer\core\src\screens\BrowserScreen.cpp:1447: Recent Media
+projects\evoplayer\core\src\screens\BrowserScreen.cpp:1478: ELEVATED PRIVILEGES NEEDED
+projects\evoplayer\core\src\screens\BrowserScreen.cpp:1479: Start the jailbreak payload (Lapy JB or etaHEN), 
+projects\evoplayer\core\src\screens\BrowserScreen.cpp:1485: NO FAVORITES YET
+projects\evoplayer\core\src\screens\BrowserScreen.cpp:1488: NO RECENT MEDIA
+projects\evoplayer\core\src\screens\BrowserScreen.cpp:1489: Media you play will appear here
+projects\evoplayer\core\src\screens\BrowserScreen.cpp:1491: NO MATCHES FOUND
+projects\evoplayer\core\src\screens\BrowserScreen.cpp:1492: Try a different search keyword
+projects\evoplayer\core\src\screens\BrowserScreen.cpp:1494: NO VIDEOS FOUND
+projects\evoplayer\core\src\screens\BrowserScreen.cpp:1495: Nothing playable in this source
+projects\evoplayer\core\src\screens\BrowserScreen.cpp:1497: NO MUSIC FOUND
+projects\evoplayer\core\src\screens\BrowserScreen.cpp:1498: Nothing playable in this source
+projects\evoplayer\core\src\screens\BrowserScreen.cpp:1500: NO PHOTOS FOUND
+projects\evoplayer\core\src\screens\BrowserScreen.cpp:1501: Nothing viewable in this source
+projects\evoplayer\core\src\screens\BrowserScreen.cpp:1503: FOLDER IS EMPTY
+projects\evoplayer\core\src\screens\BrowserScreen.cpp:1504: No supported media files found
+projects\evoplayer\core\src\screens\BrowserScreen.cpp:1522: All
+projects\evoplayer\core\src\screens\BrowserScreen.cpp:1525: Videos
+projects\evoplayer\core\src\screens\BrowserScreen.cpp:1526: Music
+projects\evoplayer\core\src\screens\BrowserScreen.cpp:1527: Photos
+projects\evoplayer\core\src\screens\BrowserScreen.cpp:1619: DIR
+projects\evoplayer\core\src\screens\BrowserScreen.cpp:1619: FILE
+projects\evoplayer\core\src\screens\BrowserScreen.cpp:1689: Directory
+projects\evoplayer\core\src\screens\BrowserScreen.cpp:1693: Current Directory
+projects\evoplayer\core\src\screens\BrowserScreen.cpp:1699: CLIPBOARD: %s (%s)
+projects\evoplayer\core\src\screens\BrowserScreen.cpp:1700: Move
+projects\evoplayer\core\src\screens\BrowserScreen.cpp:1700: Copy
+projects\evoplayer\core\src\screens\BrowserScreen.cpp:1712: COPYING TO STORAGE
+projects\evoplayer\core\src\screens\BrowserScreen.cpp:1714: MOVING FILE
+projects\evoplayer\core\src\screens\BrowserScreen.cpp:1716: DELETING FROM STORAGE
+projects\evoplayer\core\src\screens\BrowserScreen.cpp:1718: FILE OPERATION
+projects\evoplayer\core\src\screens\BrowserScreen.cpp:1749: Scanning filesystem...
+projects\evoplayer\core\src\screens\BrowserScreen.cpp:1757: ETA %dm %02ds
+projects\evoplayer\core\src\screens\BrowserScreen.cpp:1759: ETA %ds
+projects\evoplayer\core\src\screens\BrowserScreen.cpp:1762: Item %u of %u
+projects\evoplayer\core\src\screens\BrowserScreen.cpp:1764: In progress...
+projects\evoplayer\core\src\screens\BrowserScreen.cpp:1789: DELETE PERMANENTLY
+projects\evoplayer\core\src\screens\BrowserScreen.cpp:1792: Are you sure you want to permanently delete this %s?
+projects\evoplayer\core\src\screens\ChapterPickerScreen.cpp:45: PLAYING
+projects\evoplayer\core\src\screens\ChapterPickerScreen.cpp:121: No chapters
+projects\evoplayer\core\src\screens\ChapterPickerScreen.cpp:122: This file has no chapter marks.
+projects\evoplayer\core\src\screens\FavoritesScreen.cpp:127: NO FAVORITES YET
+projects\evoplayer\core\src\screens\FavoritesScreen.cpp:128: Press Triangle in the browser to add favorites
+projects\evoplayer\core\src\screens\LaunchScreen.cpp:46: BROWSE
+projects\evoplayer\core\src\screens\LaunchScreen.cpp:46: Videos and folders on USB storage
+projects\evoplayer\core\src\screens\LaunchScreen.cpp:47: RECENT
+projects\evoplayer\core\src\screens\LaunchScreen.cpp:47: Pick up where you left off
+projects\evoplayer\core\src\screens\LaunchScreen.cpp:48: FAVORITES
+projects\evoplayer\core\src\screens\LaunchScreen.cpp:48: Media you saved for later
+projects\evoplayer\core\src\screens\LaunchScreen.cpp:50: PROVIDERS
+projects\evoplayer\core\src\screens\LaunchScreen.cpp:50: Network sources: IPTV, Emby, Jellyfin
+projects\evoplayer\core\src\screens\LaunchScreen.cpp:52: SETTINGS
+projects\evoplayer\core\src\screens\LaunchScreen.cpp:52: Playback and display preferences
+projects\evoplayer\core\src\screens\LaunchScreen.cpp:53: ABOUT
+projects\evoplayer\core\src\screens\LaunchScreen.cpp:53: Credits and project info
+projects\evoplayer\core\src\screens\LaunchScreen.cpp:313: Provider media
+projects\evoplayer\core\src\screens\LaunchScreen.cpp:346: WELCOME
+projects\evoplayer\core\src\screens\LaunchScreen.cpp:347: Welcome to EVO Player
+projects\evoplayer\core\src\screens\LaunchScreen.cpp:348: Browse storage to select and play media files
+projects\evoplayer\core\src\screens\LaunchScreen.cpp:349: BROWSE USB
+projects\evoplayer\core\src\screens\LaunchScreen.cpp:362: Provider media
+projects\evoplayer\core\src\screens\LaunchScreen.cpp:362: Recent File
+projects\evoplayer\core\src\screens\MediaInfoScreen.cpp:96: BT.709 (SDR)
+projects\evoplayer\core\src\screens\MediaInfoScreen.cpp:97: Software (FFmpeg)
+projects\evoplayer\core\src\screens\MediaInfoScreen.cpp:123: BT.709 (SDR)
+projects\evoplayer\core\src\screens\MediaInfoScreen.cpp:145: BT.2020 / ST 2084 (HDR10)
+projects\evoplayer\core\src\screens\MediaInfoScreen.cpp:148: BT.2020 / ARIB (HLG)
+projects\evoplayer\core\src\screens\MediaInfoScreen.cpp:151: BT.2020 (10-bit)
+projects\evoplayer\core\src\screens\MediaInfoScreen.cpp:194: 5.1 Surround
+projects\evoplayer\core\src\screens\MediaInfoScreen.cpp:194: 7.1 Surround
+projects\evoplayer\core\src\screens\MediaInfoScreen.cpp:194: Stereo
+projects\evoplayer\core\src\screens\MediaInfoScreen.cpp:216: Bare-Metal AGC
+projects\evoplayer\core\src\screens\ModalDialogScreen.cpp:22: Inactive
+projects\evoplayer\core\src\screens\ModalDialogScreen.cpp:24: Confirmed
+projects\evoplayer\core\src\screens\ModalDialogScreen.cpp:25: Cancelled
+projects\evoplayer\core\src\screens\ModalDialogScreen.cpp:58: KEEP WATCHING
+projects\evoplayer\core\src\screens\ModalDialogScreen.cpp:62: STOP
+projects\evoplayer\core\src\screens\ModalDialogScreen.cpp:72: RESUME
+projects\evoplayer\core\src\screens\ModalDialogScreen.cpp:79: START OVER
+projects\evoplayer\core\src\screens\ModalDialogScreen.cpp:106: START OVER
+projects\evoplayer\core\src\screens\ModalDialogScreen.cpp:143: PLAYBACK
+projects\evoplayer\core\src\screens\ModalDialogScreen.cpp:158: RESUME
+projects\evoplayer\core\src\screens\ModalDialogScreen.cpp:167: STOPPED AT %02d:%02d:%02d OF %02d:%02d:%02d
+projects\evoplayer\core\src\screens\ModalDialogScreen.cpp:170: STOPPED AT %02d:%02d OF %02d:%02d
+projects\evoplayer\core\src\screens\ModalDialogScreen.cpp:173: STOPPED AT %02d:%02d
+projects\evoplayer\core\src\screens\PlayerScreen.cpp:98: Scrubbing
+projects\evoplayer\core\src\screens\PlayerScreen.cpp:282: Skipped intro
+projects\evoplayer\core\src\screens\PlayerScreen.cpp:282: Skipped credits
+projects\evoplayer\core\src\screens\PlayerScreen.cpp:290: FIT
+projects\evoplayer\core\src\screens\PlayerScreen.cpp:291: FILL
+projects\evoplayer\core\src\screens\PlayerScreen.cpp:291: STRETCH
+projects\evoplayer\core\src\screens\PlayerScreen.cpp:501: NONE
+projects\evoplayer\core\src\screens\PlayerScreen.cpp:501: NONE
+projects\evoplayer\core\src\screens\PlayerScreen.cpp:530: HARDWARE
+projects\evoplayer\core\src\screens\PlayerScreen.cpp:530: SOFTWARE
+projects\evoplayer\core\src\screens\PlayerScreen.cpp:532: VIDEO  %s  %dx%d  %.3f fps  %s  %s
+projects\evoplayer\core\src\screens\PlayerScreen.cpp:534: AUDIO  %s  %s  %dch  %d Hz  %s
+projects\evoplayer\core\src\screens\PlayerScreen.cpp:551: LOCAL FILE
+projects\evoplayer\core\src\screens\PlayerScreen.cpp:560: SOURCE  %s  /  %s
+projects\evoplayer\core\src\screens\PlayerScreen.cpp:561: SUBS  %s  /  %s%s
+projects\evoplayer\core\src\screens\PlayerScreen.cpp:567: RENDER %d fps  /  DECODE %d fps  /  DROPPED %llu
+projects\evoplayer\core\src\screens\PlayerScreen.cpp:570: UPSCALER %s  /  SMOOTH %s  /  %s
+projects\evoplayer\core\src\screens\PlayerScreen.cpp:573: QUEUES  video %d/96  audio %d/96  pcm %d
+projects\evoplayer\core\src\screens\PlayerScreen.cpp:577: CLOCKS  video %.2f  audio %.2f  delta %.3f
+projects\evoplayer\core\src\screens\PlayerScreen.cpp:689: WAITING FOR THE SERVER...
+projects\evoplayer\core\src\screens\PlayerScreen.cpp:691: BUFFERING...
+projects\evoplayer\core\src\screens\PlayerScreen.cpp:762: Stereo
+projects\evoplayer\core\src\screens\PlayerScreen.cpp:762: Mono
+projects\evoplayer\core\src\screens\PlayerScreen.cpp:773: External SRT
+projects\evoplayer\core\src\screens\PlayerScreen.cpp:825: STEREO
+projects\evoplayer\core\src\screens\PlayerScreen.cpp:826: Hardware
+projects\evoplayer\core\src\screens\PlayerScreen.cpp:826: Software
+projects\evoplayer\core\src\screens\PlayerScreen.cpp:828: Off
+projects\evoplayer\core\src\screens\PlayerScreen.cpp:832: Sharp
+projects\evoplayer\core\src\screens\PlayerScreen.cpp:832: SHARP UPSCALE
+projects\evoplayer\core\src\screens\PlayerScreen.cpp:833: AI (Standard)
+projects\evoplayer\core\src\screens\PlayerScreen.cpp:833: AI UPSCALE
+projects\evoplayer\core\src\screens\PlayerScreen.cpp:834: AI (Large)
+projects\evoplayer\core\src\screens\PlayerScreen.cpp:834: AI UPSCALE · LARGE
+projects\evoplayer\core\src\screens\PlayerScreen.cpp:835: AI (Maximum)
+projects\evoplayer\core\src\screens\PlayerScreen.cpp:835: AI UPSCALE · MAX
+projects\evoplayer\core\src\screens\PlayerScreen.cpp:836: Off (HDR source)
+projects\evoplayer\core\src\screens\PlayerScreen.cpp:836: UPSCALE OFF · 10-BIT
+projects\evoplayer\core\src\screens\PlayerScreen.cpp:837: UPSCALE OFF · NATIVE
+projects\evoplayer\core\src\screens\PlayerScreen.cpp:838: Off (unavailable)
+projects\evoplayer\core\src\screens\PlayerScreen.cpp:838: UPSCALE OFF
+projects\evoplayer\core\src\screens\PlayerScreen.cpp:851: Low
+projects\evoplayer\core\src\screens\PlayerScreen.cpp:851: SMOOTHING · LOW
+projects\evoplayer\core\src\screens\PlayerScreen.cpp:852: High
+projects\evoplayer\core\src\screens\PlayerScreen.cpp:852: SMOOTHING · HIGH
+projects\evoplayer\core\src\screens\PlayerScreen.cpp:853: SMOOTH OFF · HIGH FPS
+projects\evoplayer\core\src\screens\PlayerScreen.cpp:854: Off (10-bit/HDR)
+projects\evoplayer\core\src\screens\PlayerScreen.cpp:854: SMOOTH OFF · 10-BIT
+projects\evoplayer\core\src\screens\PlayerScreen.cpp:855: SMOOTH OFF · 4K
+projects\evoplayer\core\src\screens\PlayerScreen.cpp:856: Off (unavailable)
+projects\evoplayer\core\src\screens\PlayerScreen.cpp:856: SMOOTH OFF
+projects\evoplayer\core\src\screens\PlayerScreen.cpp:857: Off (scratch alloc failed)
+projects\evoplayer\core\src\screens\PlayerScreen.cpp:857: SMOOTH OFF
+projects\evoplayer\core\src\screens\PlayerScreen.cpp:858: Off (GPU over budget)
+projects\evoplayer\core\src\screens\PlayerScreen.cpp:858: SMOOTH OFF · CAPPED
+projects\evoplayer\core\src\screens\PlayerScreen.cpp:937: AUDIO
+projects\evoplayer\core\src\screens\ProviderHostScreen.cpp:224: Failed to start playback worker thread
+projects\evoplayer\core\src\screens\ProviderHostScreen.cpp:277: Mono
+projects\evoplayer\core\src\screens\ProviderHostScreen.cpp:278: Stereo
+projects\evoplayer\core\src\screens\ProviderHostScreen.cpp:525: Opening recent media...
+projects\evoplayer\core\src\screens\ProviderHostScreen.cpp:773: Opening...
+projects\evoplayer\core\src\screens\ProviderHostScreen.cpp:774: The page opens beside the menu. Close it to come back here.
+projects\evoplayer\core\src\screens\ProviderHostScreen.cpp:834: OPTIONS
+projects\evoplayer\core\src\screens\ProviderHostScreen.cpp:900: Open
+projects\evoplayer\core\src\screens\ProviderHostScreen.cpp:905: Address and port - now 
+projects\evoplayer\core\src\screens\ProviderHostScreen.cpp:906: Type http(s)://host:port
+projects\evoplayer\core\src\screens\ProviderHostScreen.cpp:909: Find server on network
+projects\evoplayer\core\src\screens\ProviderHostScreen.cpp:910: Look for 
+projects\evoplayer\core\src\screens\ProviderHostScreen.cpp:913: Add addon
+projects\evoplayer\core\src\screens\ProviderHostScreen.cpp:913: Type an addon's manifest URL (https://.../manifest.json)
+projects\evoplayer\core\src\screens\ProviderHostScreen.cpp:917: Remove addon
+projects\evoplayer\core\src\screens\ProviderHostScreen.cpp:922: Add addon
+projects\evoplayer\core\src\screens\ProviderHostScreen.cpp:922: Type an addon's manifest URL (https://.../manifest.json)
+projects\evoplayer\core\src\screens\ProviderHostScreen.cpp:927: Remove 
+projects\evoplayer\core\src\screens\ProviderHostScreen.cpp:931: Type a URL or pick an .m3u from USB
+projects\evoplayer\core\src\screens\ProviderHostScreen.cpp:939: Web version
+projects\evoplayer\core\src\screens\ProviderHostScreen.cpp:939: Open the server's own site in the browser
+projects\evoplayer\core\src\screens\ProviderHostScreen.cpp:942: Sign out
+projects\evoplayer\core\src\screens\ProviderHostScreen.cpp:942: Forget the saved session on this console
+projects\evoplayer\core\src\screens\ProviderHostScreen.cpp:946: Remove server
+projects\evoplayer\core\src\screens\ProviderHostScreen.cpp:946: Forget this server and its saved sign-in
+projects\evoplayer\core\src\screens\ProviderHostScreen.cpp:949: Remove playlist
+projects\evoplayer\core\src\screens\ProviderHostScreen.cpp:949: Forget this playlist on this console
+projects\evoplayer\core\src\screens\ProviderHostScreen.cpp:1030: Takes it off this Nuvio profile, in the web version too
+projects\evoplayer\core\src\screens\ProviderHostScreen.cpp:1042: Addon removed
+projects\evoplayer\core\src\screens\ProviderHostScreen.cpp:1042: Could not remove the addon
+projects\evoplayer\core\src\screens\ProviderHostScreen.cpp:1074: Remove 
+projects\evoplayer\core\src\screens\ProviderHostScreen.cpp:1075: Remove 
+projects\evoplayer\core\src\screens\ProviderHostScreen.cpp:1076: Your sign-in on this console is forgotten too.
+projects\evoplayer\core\src\screens\ProviderHostScreen.cpp:1078: Remove 
+projects\evoplayer\core\src\screens\ProviderHostScreen.cpp:1141: Opening %s...
+projects\evoplayer\core\src\screens\ProviderHostScreen.cpp:1256: Mono
+projects\evoplayer\core\src\screens\ProviderHostScreen.cpp:1275: SOURCE
+projects\evoplayer\core\src\screens\ProviderHostScreen.cpp:1275: LISTED
+projects\evoplayer\core\src\screens\ProviderHostScreen.cpp:1276: GUESS
+projects\evoplayer\core\src\screens\ProviderHostScreen.cpp:1304: Video
+projects\evoplayer\core\src\screens\ProviderHostScreen.cpp:1307: STREAM DETAILS
+projects\evoplayer\core\src\screens\ProviderHostScreen.cpp:1615: Add & manage addons
+projects\evoplayer\core\src\screens\ProviderHostScreen.cpp:1703: That does not look like an addon address
+projects\evoplayer\core\src\screens\ProviderHostScreen.cpp:1704: Could not save the addon
+projects\evoplayer\core\src\screens\ProviderHostScreen.cpp:1869: Reads the USB file again
+projects\evoplayer\core\src\screens\ProviderHostScreen.cpp:1870: Updated 
+projects\evoplayer\core\src\screens\ProviderHostScreen.cpp:1870: Download it again
+projects\evoplayer\core\src\screens\ProviderHostScreen.cpp:1873: LIVE TV
+projects\evoplayer\core\src\screens\ProviderHostScreen.cpp:1873: Options
+projects\evoplayer\core\src\screens\ProviderHostScreen.cpp:1873: SELECT
+projects\evoplayer\core\src\screens\ProviderHostScreen.cpp:1873: CLOSE
+projects\evoplayer\core\src\screens\ProviderHostScreen.cpp:1919: Options
+projects\evoplayer\core\src\screens\ProviderHostScreen.cpp:1919: SELECT
+projects\evoplayer\core\src\screens\ProviderHostScreen.cpp:1919: CLOSE
+projects\evoplayer\core\src\screens\ProviderHostScreen.cpp:1959: Web
+projects\evoplayer\core\src\screens\ProviderHostScreen.cpp:1981: CHANNEL GUIDE
+projects\evoplayer\core\src\screens\ProviderHostScreen.cpp:1981: Channel guide
+projects\evoplayer\core\src\screens\ProviderHostScreen.cpp:1981: For 
+projects\evoplayer\core\src\screens\ProviderHostScreen.cpp:1982: Guides are not part of a playlist.
+projects\evoplayer\core\src\screens\ProviderHostScreen.cpp:1983: Pick one once and EVO remembers it for this playlist. Put .xml guides on your 
+projects\evoplayer\core\src\screens\ProviderHostScreen.cpp:1984: USB stick and they show up here.
+projects\evoplayer\core\src\screens\ProviderHostScreen.cpp:1985: USE THIS GUIDE
+projects\evoplayer\core\src\screens\ProviderHostScreen.cpp:1985: BACK
+projects\evoplayer\core\src\screens\ProviderHostScreen.cpp:2070: Rating
+projects\evoplayer\core\src\screens\ProviderHostScreen.cpp:2071: Genres
+projects\evoplayer\core\src\screens\ProviderHostScreen.cpp:2072: Director
+projects\evoplayer\core\src\screens\ProviderHostScreen.cpp:2073: Studio
+projects\evoplayer\core\src\screens\ProviderHostScreen.cpp:2074: Tagline
+projects\evoplayer\core\src\screens\ProviderHostScreen.cpp:2088: BACK
+projects\evoplayer\core\src\screens\ProviderHostScreen.cpp:2168: OPTIONS
+projects\evoplayer\core\src\screens\ProviderHostScreen.cpp:2168: SELECT
+projects\evoplayer\core\src\screens\ProviderHostScreen.cpp:2168: CLOSE
+projects\evoplayer\core\src\screens\ProviderHostScreen.cpp:2179: Genre
+projects\evoplayer\core\src\screens\ProviderHostScreen.cpp:2194: Sort, filter & genre
+projects\evoplayer\core\src\screens\ProviderHostScreen.cpp:2200: Like 
+projects\evoplayer\core\src\screens\ProviderHostScreen.cpp:2249: Guide address (XMLTV, http(s)://...)
+projects\evoplayer\core\src\screens\ProviderHostScreen.cpp:2260: Guide: automatic
+projects\evoplayer\core\src\screens\ProviderHostScreen.cpp:2261: Guide turned off for this playlist
+projects\evoplayer\core\src\screens\ProviderHostScreen.cpp:2262: Guide: 
+projects\evoplayer\core\src\screens\ProviderHostScreen.cpp:2406: No .m3u or .m3u8 files found on USB drive (/mnt/usb0, /mnt/usb1). Insert a USB drive with an M3U playlist.
+projects\evoplayer\core\src\screens\ProviderHostScreen.cpp:2630: Connecting to backup (%s)...
+projects\evoplayer\core\src\screens\ProviderHostScreen.cpp:2778: ERROR
+projects\evoplayer\core\src\screens\ProviderHostScreen.cpp:2991: Password for %s (empty if none)
+projects\evoplayer\core\src\screens\RecentFilesScreen.cpp:115: NO RECENT FILES
+projects\evoplayer\core\src\screens\RecentFilesScreen.cpp:116: Files you play will appear here
+projects\evoplayer\core\src\screens\SettingsScreen.cpp:105: Sets how video fills the screen: fit keeps its shape, fill crops the edges, stretch fills the screen and distorts.
+projects\evoplayer\core\src\screens\SettingsScreen.cpp:106: Picks a film up where you stopped instead of from the start.
+projects\evoplayer\core\src\screens\SettingsScreen.cpp:108: Hardware decoding is smoother and cooler. Software is for odd formats.
+projects\evoplayer\core\src\screens\SettingsScreen.cpp:110: Soft video below your screen's resolution looks crisper. Higher modes cost more GPU.
+projects\evoplayer\core\src\screens\SettingsScreen.cpp:112: Dark scenes look deeper instead of washed out. Best on OLED and HDR screens.
+projects\evoplayer\core\src\screens\SettingsScreen.cpp:114: A bigger network gives a sharper picture but is heavier. Maximum is for PS5 Pro.
+projects\evoplayer\core\src\screens\SettingsScreen.cpp:116: Pans and sports look fluid. Films can look too smooth, and fast motion can show haloes.
+projects\evoplayer\core\src\screens\SettingsScreen.cpp:118: 24 fps film plays more evenly on a 120 Hz output. The TV goes black briefly on each switch.
+projects\evoplayer\core\src\screens\SettingsScreen.cpp:120: Outputs the video's own rate (24p or 50 Hz) so motion has no judder.
+projects\evoplayer\core\src\screens\SettingsScreen.cpp:122: Highlights like the sun and lamps get brighter without clipping. Needs an HDR10 TV.
+projects\evoplayer\core\src\screens\SettingsScreen.cpp:124: Makes quiet files louder. Very loud passages are cut off cleanly instead of wrapping into noise. Has no effect on Dolby/DTS passthrough.
+projects\evoplayer\core\src\screens\SettingsScreen.cpp:128: How far ahead network streams load. A bigger buffer rides out Wi-Fi drops but uses more memory, and very high bitrate files get less than you pick. Applies from the next file.
+projects\evoplayer\core\src\screens\SettingsScreen.cpp:130: Stereo mixes 5.1 and 7.1 down to two speakers or headphones.
+projects\evoplayer\core\src\screens\SettingsScreen.cpp:132: Sends Dolby and DTS untouched to your receiver over HDMI.
+projects\evoplayer\core\src\screens\SettingsScreen.cpp:134: Plays a tone through each speaker so you can check your layout.
+projects\evoplayer\core\src\screens\SettingsScreen.cpp:135: A soft click when you move and press buttons.
+projects\evoplayer\core\src\screens\SettingsScreen.cpp:136: Loads subtitles on its own when a file has them.
+projects\evoplayer\core\src\screens\SettingsScreen.cpp:137: Picks the typeface for on-screen subtitles.
+projects\evoplayer\core\src\screens\SettingsScreen.cpp:139: Where the second line of dialogue goes when two tracks are shown.
+projects\evoplayer\core\src\screens\SettingsScreen.cpp:140: A different colour keeps the two lines apart.
+projects\evoplayer\core\src\screens\SettingsScreen.cpp:141: Changes the colours of the whole app.
+projects\evoplayer\core\src\screens\SettingsScreen.cpp:142: The DualSense light follows the theme accent.
+projects\evoplayer\core\src\screens\SettingsScreen.cpp:143: Lists folders above files in the USB browser.
+projects\evoplayer\core\src\screens\SettingsScreen.cpp:145: The virtual keyboard is drawn by EVO. The native one is the PS5 system keyboard.
+projects\evoplayer\core\src\screens\SettingsScreen.cpp:147: Lets you choose the format and quality each time you open a live channel.
+projects\evoplayer\core\src\screens\SettingsScreen.cpp:149: Writes a codec report to USB0 that you can attach to a bug report.
+projects\evoplayer\core\src\screens\SettingsScreen.cpp:150: Shows live performance numbers on screen.
+projects\evoplayer\core\src\screens\SettingsScreen.cpp:151: System diagnostics and performance stats.
+projects\evoplayer\core\src\screens\SettingsScreen.cpp:153: The console EVO detected. Some features, like Maximum AI upscaling, need a PS5 Pro.
+projects\evoplayer\core\src\screens\SettingsScreen.cpp:155: How much GPU memory EVO was given. A PS5 Pro gives about 1.2 GiB more to the Pro memory package. Standard mode is the normal amount.
+projects\evoplayer\core\src\screens\SettingsScreen.cpp:158: Releases everything, then close EVO from the switcher.
+projects\evoplayer\core\src\screens\SettingsScreen.cpp:260: DEFAULT ASPECT RATIO
+projects\evoplayer\core\src\screens\SettingsScreen.cpp:260: HOW VIDEO FILLS THE SCREEN
+projects\evoplayer\core\src\screens\SettingsScreen.cpp:268: RESUME PLAYBACK
+projects\evoplayer\core\src\screens\SettingsScreen.cpp:268: REMEMBER PLAYBACK POSITION
+projects\evoplayer\core\src\screens\SettingsScreen.cpp:273: VIDEO DECODER
+projects\evoplayer\core\src\screens\SettingsScreen.cpp:273: WHICH BACKEND DECODES VIDEO
+projects\evoplayer\core\src\screens\SettingsScreen.cpp:281: UPSCALING
+projects\evoplayer\core\src\screens\SettingsScreen.cpp:281: SHARPEN VIDEO SMALLER THAN THE SCREEN
+projects\evoplayer\core\src\screens\SettingsScreen.cpp:288: DEEP BLACKS
+projects\evoplayer\core\src\screens\SettingsScreen.cpp:288: PULLS ELEVATED SHADOWS TO TRUE OLED BLACK
+projects\evoplayer\core\src\screens\SettingsScreen.cpp:295: AI NETWORK
+projects\evoplayer\core\src\screens\SettingsScreen.cpp:295: BIGGER IS SHARPER BUT HEAVIER - MAXIMUM IS FOR PS5 PRO
+projects\evoplayer\core\src\screens\SettingsScreen.cpp:307: MOTION SMOOTHING
+projects\evoplayer\core\src\screens\SettingsScreen.cpp:319: AI UPSCALING IS ON - THE TWO STACK, EXPECT HEAVY ARTEFACTS
+projects\evoplayer\core\src\screens\SettingsScreen.cpp:323: 120 HZ OUTPUT
+projects\evoplayer\core\src\screens\SettingsScreen.cpp:323: SMOOTHER 24 FPS - THE TV GOES BLACK BRIEFLY ON EACH SWITCH
+projects\evoplayer\core\src\screens\SettingsScreen.cpp:334: MATCH VIDEO FRAME RATE
+projects\evoplayer\core\src\screens\SettingsScreen.cpp:335: 24P / 50 HZ OUTPUT DURING PLAYBACK - FALLS BACK TO 120 HZ OR 60 HZ
+projects\evoplayer\core\src\screens\SettingsScreen.cpp:340: HDR OUTPUT
+projects\evoplayer\core\src\screens\SettingsScreen.cpp:340: HDR10 FOR HDR VIDEO - THE TV GOES BLACK BRIEFLY AT START & END
+projects\evoplayer\core\src\screens\SettingsScreen.cpp:348: NETWORK BUFFER
+projects\evoplayer\core\src\screens\SettingsScreen.cpp:348: HOW FAR AHEAD STREAMS LOAD. HIGH BITRATE FILES GET LESS
+projects\evoplayer\core\src\screens\SettingsScreen.cpp:356: VOLUME BOOST
+projects\evoplayer\core\src\screens\SettingsScreen.cpp:356: RAISE QUIET FILES. LOUD PASSAGES CLIP, NEVER WRAP
+projects\evoplayer\core\src\screens\SettingsScreen.cpp:384: OUTPUT CHANNELS
+projects\evoplayer\core\src\screens\SettingsScreen.cpp:384: STEREO DOWNMIXES 5.1 & 7.1 TO 2.0
+projects\evoplayer\core\src\screens\SettingsScreen.cpp:392: AUDIO PASSTHROUGH
+projects\evoplayer\core\src\screens\SettingsScreen.cpp:392: BITSTREAM DOLBY & DTS TO RECEIVER OVER HDMI
+projects\evoplayer\core\src\screens\SettingsScreen.cpp:397: SURROUND SOUND TEST
+projects\evoplayer\core\src\screens\SettingsScreen.cpp:397: 5.1 & 7.1 SPEAKER CHANNEL VERIFICATION
+projects\evoplayer\core\src\screens\SettingsScreen.cpp:398: OPEN
+projects\evoplayer\core\src\screens\SettingsScreen.cpp:402: NAVIGATION SOUNDS
+projects\evoplayer\core\src\screens\SettingsScreen.cpp:402: AUDIO FEEDBACK ON D-PAD & BUTTONS
+projects\evoplayer\core\src\screens\SettingsScreen.cpp:407: AUTO SUBTITLES
+projects\evoplayer\core\src\screens\SettingsScreen.cpp:407: AUTOMATICALLY LOAD SUBTITLES ON PLAYBACK
+projects\evoplayer\core\src\screens\SettingsScreen.cpp:412: STANDARD
+projects\evoplayer\core\src\screens\SettingsScreen.cpp:412: BOLD
+projects\evoplayer\core\src\screens\SettingsScreen.cpp:412: CONDENSED
+projects\evoplayer\core\src\screens\SettingsScreen.cpp:424: STACKED ABOVE
+projects\evoplayer\core\src\screens\SettingsScreen.cpp:424: TOP OF SCREEN
+projects\evoplayer\core\src\screens\SettingsScreen.cpp:434: YELLOW
+projects\evoplayer\core\src\screens\SettingsScreen.cpp:434: CYAN
+projects\evoplayer\core\src\screens\SettingsScreen.cpp:434: WHITE
+projects\evoplayer\core\src\screens\SettingsScreen.cpp:456: CONTROLLER LIGHTBAR
+projects\evoplayer\core\src\screens\SettingsScreen.cpp:456: DUALSENSE LIGHT FOLLOWS THE THEME ACCENT
+projects\evoplayer\core\src\screens\SettingsScreen.cpp:461: FOLDERS FIRST
+projects\evoplayer\core\src\screens\SettingsScreen.cpp:461: USB FILE BROWSER SORTING
+projects\evoplayer\core\src\screens\SettingsScreen.cpp:466: VIRTUAL KEYBOARD
+projects\evoplayer\core\src\screens\SettingsScreen.cpp:466: NATIVE PS5 IME
+projects\evoplayer\core\src\screens\SettingsScreen.cpp:474: ASK WHICH LIVE STREAM
+projects\evoplayer\core\src\screens\SettingsScreen.cpp:474: PICK THE FORMAT AND QUALITY WHEN YOU OPEN A CHANNEL
+projects\evoplayer\core\src\screens\SettingsScreen.cpp:479: COMPATIBILITY REPORT
+projects\evoplayer\core\src\screens\SettingsScreen.cpp:479: WRITES A CODEC REPORT TO USB0
+projects\evoplayer\core\src\screens\SettingsScreen.cpp:480: RUN
+projects\evoplayer\core\src\screens\SettingsScreen.cpp:484: DEBUG OVERLAY
+projects\evoplayer\core\src\screens\SettingsScreen.cpp:484: ON-SCREEN HARDWARE PERFORMANCE METRICS
+projects\evoplayer\core\src\screens\SettingsScreen.cpp:489: DEVELOPER TOOLS
+projects\evoplayer\core\src\screens\SettingsScreen.cpp:489: SYSTEM DIAGNOSTICS & PERFORMANCE STATS
+projects\evoplayer\core\src\screens\SettingsScreen.cpp:490: OPEN
+projects\evoplayer\core\src\screens\SettingsScreen.cpp:495: CONSOLE
+projects\evoplayer\core\src\screens\SettingsScreen.cpp:495: DETECTED HARDWARE MODEL
+projects\evoplayer\core\src\screens\SettingsScreen.cpp:497: NOT DETECTED
+projects\evoplayer\core\src\screens\SettingsScreen.cpp:546: CHECKING GITHUB...
+projects\evoplayer\core\src\screens\SettingsScreen.cpp:549: RUNNING %s - UP TO DATE. CROSS TO CHECK AGAIN
+projects\evoplayer\core\src\screens\SettingsScreen.cpp:552: %s AVAILABLE (%llu MB) - CROSS TO DOWNLOAD
+projects\evoplayer\core\src\screens\SettingsScreen.cpp:556: DOWNLOADING %s: %d%% - CROSS TO CANCEL
+projects\evoplayer\core\src\screens\SettingsScreen.cpp:560: %s VERIFIED - CROSS TO INSTALL AND CLOSE EVO
+projects\evoplayer\core\src\screens\SettingsScreen.cpp:563: INSTALLED - OPEN EVO AGAIN FROM THE GAMES ROW
+projects\evoplayer\core\src\screens\SettingsScreen.cpp:566: %s - CROSS TO TRY AGAIN
+projects\evoplayer\core\src\screens\SettingsScreen.cpp:579: QUIT EVO
+projects\evoplayer\core\src\screens\SettingsScreen.cpp:579: RELEASE EVERYTHING, THEN CLOSE FROM THE SWITCHER
+projects\evoplayer\core\src\screens\SettingsScreen.cpp:580: QUIT
+projects\evoplayer\core\src\screens\SettingsScreen.cpp:1174: AUDIO DELAY
+projects\evoplayer\core\src\screens\SettingsScreen.cpp:1182: AUDIO DELAY
+projects\evoplayer\core\src\screens\SettingsScreen.cpp:1264: -500..+500 (step 50)
+projects\evoplayer\core\src\screens\SubtitlePickerScreen.cpp:57: %d CUES
+projects\evoplayer\core\src\screens\SubtitlePickerScreen.cpp:236: SMALL
+projects\evoplayer\core\src\screens\SubtitlePickerScreen.cpp:236: MEDIUM
+projects\evoplayer\core\src\screens\SubtitlePickerScreen.cpp:236: LARGE
+projects\evoplayer\core\src\screens\SubtitlePickerScreen.cpp:305: SUBTITLE CONFIGURATION
+projects\evoplayer\core\src\screens\SubtitlePickerScreen.cpp:313: SMALL
+projects\evoplayer\core\src\screens\SubtitlePickerScreen.cpp:313: MEDIUM
+projects\evoplayer\core\src\screens\SubtitlePickerScreen.cpp:313: LARGE
+projects\evoplayer\core\src\screens\SubtitlePickerScreen.cpp:318: SYNC: 0 ms
+projects\evoplayer\core\src\screens\SubtitlePickerScreen.cpp:320: SYNC: %+d ms
+projects\evoplayer\core\src\screens\SubtitlePickerScreen.cpp:335: 2ND: 0 ms
+projects\evoplayer\core\src\screens\SubtitlePickerScreen.cpp:337: 2ND: %+d ms
+projects\evoplayer\core\src\screens\SubtitlePickerScreen.cpp:343: The quick brown fox jumps over the lazy dog
+projects\evoplayer\core\src\screens\SubtitlePickerScreen.cpp:359: PRIMARY
+projects\evoplayer\core\src\services\SettingsService.cpp:23: FIT
+projects\evoplayer\core\src\services\SettingsService.cpp:24: FILL
+projects\evoplayer\core\src\services\SettingsService.cpp:25: STRETCH
+projects\evoplayer\core\src\services\SettingsService.cpp:26: FIT
+projects\evoplayer\core\src\services\SettingsService.cpp:32: AUTO
+projects\evoplayer\core\src\services\SettingsService.cpp:35: AUTO
+projects\evoplayer\core\src\services\SettingsService.cpp:41: SHARP
+projects\evoplayer\core\src\services\SettingsService.cpp:44: OFF
+projects\evoplayer\core\src\services\SettingsService.cpp:50: STANDARD
+projects\evoplayer\core\src\services\SettingsService.cpp:51: LARGE
+projects\evoplayer\core\src\services\SettingsService.cpp:54: AUTO
+projects\evoplayer\core\src\services\SettingsService.cpp:60: LOW
+projects\evoplayer\core\src\services\SettingsService.cpp:61: HIGH
+projects\evoplayer\core\src\services\SettingsService.cpp:63: OFF
+projects\evoplayer\core\src\services\SettingsService.cpp:69: LOW
+projects\evoplayer\core\src\services\SettingsService.cpp:70: HIGH
+projects\evoplayer\core\src\services\SettingsService.cpp:72: OFF
+projects\evoplayer\core\src\services\SettingsService.cpp:80: AUTO (MATCH CONTENT)
+projects\evoplayer\core\src\services\SettingsService.cpp:88: AUTO
+projects\evoplayer\core\src\services\SettingsService.cpp:109: OFF
+projects\evoplayer\core\src\services\SettingsService.cpp:121: OFF
+projects\evoplayer\core\src\services\SettingsService.cpp:124: OFF
+projects\evoplayer\media\src\evo_langname.c:18: English
+projects\evoplayer\ui_kit\src\evo_hui_browser.cpp:54: USB Drive
+projects\evoplayer\ui_kit\src\evo_hui_browser.cpp:55: Internal Storage
+projects\evoplayer\ui_kit\src\evo_hui_browser.cpp:56: Network (FTP)
+projects\evoplayer\ui_kit\src\evo_hui_browser.cpp:57: Favorites
+projects\evoplayer\ui_kit\src\evo_hui_browser.cpp:58: Recent Media
+projects\evoplayer\ui_kit\src\evo_hui_browser.cpp:68: Copy
+projects\evoplayer\ui_kit\src\evo_hui_browser.cpp:68: Copy item to clipboard
+projects\evoplayer\ui_kit\src\evo_hui_browser.cpp:69: Cut (Move)
+projects\evoplayer\ui_kit\src\evo_hui_browser.cpp:69: Move item to clipboard for relocation
+projects\evoplayer\ui_kit\src\evo_hui_browser.cpp:70: Paste
+projects\evoplayer\ui_kit\src\evo_hui_browser.cpp:70: Paste clipboard item into this folder
+projects\evoplayer\ui_kit\src\evo_hui_browser.cpp:71: Rename
+projects\evoplayer\ui_kit\src\evo_hui_browser.cpp:71: Change file or folder name
+projects\evoplayer\ui_kit\src\evo_hui_browser.cpp:72: Delete
+projects\evoplayer\ui_kit\src\evo_hui_browser.cpp:72: Permanently remove this item
+projects\evoplayer\ui_kit\src\evo_hui_browser.cpp:73: New Folder
+projects\evoplayer\ui_kit\src\evo_hui_browser.cpp:73: Create directory in current location
+projects\evoplayer\ui_kit\src\evo_hui_browser.cpp:74: Close
+projects\evoplayer\ui_kit\src\evo_hui_browser.cpp:74: Dismiss menu and return to browser
+projects\evoplayer\ui_kit\src\evo_hui_browser.cpp:289: ITEM
+projects\evoplayer\ui_kit\src\evo_hui_browser.cpp:289: ITEMS
+projects\evoplayer\ui_kit\src\evo_hui_browser.cpp:450: Reading file...
+projects\evoplayer\ui_kit\src\evo_hui_browser.cpp:463: Open
+projects\evoplayer\ui_kit\src\evo_hui_browser.cpp:464: Options
+projects\evoplayer\ui_kit\src\evo_hui_browser.cpp:466: Back
+projects\evoplayer\ui_kit\src\evo_hui_extra.cpp:127: Back
+projects\evoplayer\ui_kit\src\evo_hui_extra.cpp:128: Scroll
+projects\evoplayer\ui_kit\src\evo_hui_extra.cpp:129: Page
+projects\evoplayer\ui_kit\src\evo_hui_extra.cpp:130: Page
+projects\evoplayer\ui_kit\src\evo_hui_extra.cpp:199: Back
+projects\evoplayer\ui_kit\src\evo_hui_extra.cpp:211: Back
+projects\evoplayer\ui_kit\src\evo_hui_extra.cpp:236: Space
+projects\evoplayer\ui_kit\src\evo_hui_extra.cpp:237: Shift
+projects\evoplayer\ui_kit\src\evo_hui_extra.cpp:238: Backspace
+projects\evoplayer\ui_kit\src\evo_hui_extra.cpp:239: Symbols
+projects\evoplayer\ui_kit\src\evo_hui_extra.cpp:240: Done
+projects\evoplayer\ui_kit\src\evo_hui_misc.cpp:342: DECODE
+projects\evoplayer\ui_kit\src\evo_hui_misc.cpp:342: Hardware
+projects\evoplayer\ui_kit\src\evo_hui_misc.cpp:343: RENDER
+projects\evoplayer\ui_kit\src\evo_hui_misc.cpp:344: MEDIA CORE
+projects\evoplayer\ui_kit\src\evo_hui_misc.cpp:345: TARGET
+projects\evoplayer\ui_kit\src\evo_hui_misc.cpp:345: Firmware below 13.60
+projects\evoplayer\ui_kit\src\evo_hui_misc.cpp:346: PROJECT
+projects\evoplayer\ui_kit\src\evo_hui_misc.cpp:347: THEMES
+projects\evoplayer\ui_kit\src\evo_hui_misc.cpp:379: View Changelog
+projects\evoplayer\ui_kit\src\evo_hui_misc.cpp:516: FIXED
+projects\evoplayer\ui_kit\src\evo_hui_misc.cpp:517: IMPROVED
+projects\evoplayer\ui_kit\src\evo_hui_misc.cpp:518: REMOVED
+projects\evoplayer\ui_kit\src\evo_hui_modals.cpp:61: SYNC: 
+projects\evoplayer\ui_kit\src\evo_hui_modals.cpp:61: 2ND: 
+projects\evoplayer\ui_kit\src\evo_hui_modals.cpp:67: SYNC: 
+projects\evoplayer\ui_kit\src\evo_hui_modals.cpp:68: 2ND: 
+projects\evoplayer\ui_kit\src\evo_hui_modals.cpp:147: SIZE
+projects\evoplayer\ui_kit\src\evo_hui_modals.cpp:148: SYNC
+projects\evoplayer\ui_kit\src\evo_hui_modals.cpp:149: SYNC 2
+projects\evoplayer\ui_kit\src\evo_hui_modals.cpp:184: Select
+projects\evoplayer\ui_kit\src\evo_hui_modals.cpp:185: Size
+projects\evoplayer\ui_kit\src\evo_hui_modals.cpp:186: Sync
+projects\evoplayer\ui_kit\src\evo_hui_modals.cpp:187: Back
+projects\evoplayer\ui_kit\src\evo_hui_modals.cpp:258: FORMAT
+projects\evoplayer\ui_kit\src\evo_hui_modals.cpp:259: Container
+projects\evoplayer\ui_kit\src\evo_hui_modals.cpp:259: File size
+projects\evoplayer\ui_kit\src\evo_hui_modals.cpp:260: Duration
+projects\evoplayer\ui_kit\src\evo_hui_modals.cpp:261: VIDEO
+projects\evoplayer\ui_kit\src\evo_hui_modals.cpp:262: Codec
+projects\evoplayer\ui_kit\src\evo_hui_modals.cpp:262: Resolution
+projects\evoplayer\ui_kit\src\evo_hui_modals.cpp:263: Colour / HDR
+projects\evoplayer\ui_kit\src\evo_hui_modals.cpp:264: AUDIO
+projects\evoplayer\ui_kit\src\evo_hui_modals.cpp:265: Codec
+projects\evoplayer\ui_kit\src\evo_hui_modals.cpp:265: Channels
+projects\evoplayer\ui_kit\src\evo_hui_modals.cpp:266: Sample rate
+projects\evoplayer\ui_kit\src\evo_hui_modals.cpp:267: PLAYBACK
+projects\evoplayer\ui_kit\src\evo_hui_modals.cpp:268: Subtitles
+projects\evoplayer\ui_kit\src\evo_hui_modals.cpp:268: Output
+projects\evoplayer\ui_kit\src\evo_hui_modals.cpp:269: Renderer
+projects\evoplayer\ui_kit\src\evo_hui_modals.cpp:269: Decoder
+projects\evoplayer\ui_kit\src\evo_hui_modals.cpp:270: Upscaler
+projects\evoplayer\ui_kit\src\evo_hui_modals.cpp:270: Motion smoothing
+projects\evoplayer\ui_kit\src\evo_hui_modals.cpp:327: Close
+projects\evoplayer\ui_kit\src\evo_hui_osd.cpp:351: Fit
+projects\evoplayer\ui_kit\src\evo_hui_osd.cpp:351: Fill
+projects\evoplayer\ui_kit\src\evo_hui_osd.cpp:351: Stretch
+projects\evoplayer\ui_kit\src\evo_hui_osd.cpp:352: Audio: 
+projects\evoplayer\ui_kit\src\evo_hui_osd.cpp:352: Default
+projects\evoplayer\ui_kit\src\evo_hui_osd.cpp:353: Subs: 
+projects\evoplayer\ui_kit\src\evo_hui_osd.cpp:353: Off
+projects\evoplayer\ui_kit\src\evo_hui_osd.cpp:358: Seek 10s
+projects\evoplayer\ui_kit\src\evo_hui_osd.cpp:361: Prev chapter
+projects\evoplayer\ui_kit\src\evo_hui_osd.cpp:362: Next chapter
+projects\evoplayer\ui_kit\src\evo_hui_osd.cpp:363: Chapter list
+projects\evoplayer\ui_kit\src\evo_hui_osd.cpp:366: Info
+projects\evoplayer\ui_kit\src\evo_hui_osd.cpp:368: Back
+projects\evoplayer\ui_kit\src\evo_hui_provider.cpp:88: CATEGORY
+projects\evoplayer\ui_kit\src\evo_hui_provider.cpp:88: GROUP
+projects\evoplayer\ui_kit\src\evo_hui_provider.cpp:454: WATCHED
+projects\evoplayer\ui_kit\src\evo_hui_provider.cpp:558: Now: 
+projects\evoplayer\ui_kit\src\evo_hui_provider.cpp:560:    Next: 
+projects\evoplayer\ui_kit\src\evo_hui_provider.cpp:565: Watched
+projects\evoplayer\ui_kit\src\evo_hui_provider.cpp:588: ENTER SERVER & CREDENTIALS
+projects\evoplayer\ui_kit\src\evo_hui_provider.cpp:589: SETUP ACCOUNT
+projects\evoplayer\ui_kit\src\evo_hui_provider.cpp:590: LOAD FROM USB
+projects\evoplayer\ui_kit\src\evo_hui_provider.cpp:590: Open an M3U exported from your Xtream account
+projects\evoplayer\ui_kit\src\evo_hui_provider.cpp:591: READ USB
+projects\evoplayer\ui_kit\src\evo_hui_provider.cpp:593: SIGN OUT
+projects\evoplayer\ui_kit\src\evo_hui_provider.cpp:593: Remove this account from EVO
+projects\evoplayer\ui_kit\src\evo_hui_provider.cpp:593: SIGN OUT
+projects\evoplayer\ui_kit\src\evo_hui_provider.cpp:597: ENTER URL MANUALLY
+projects\evoplayer\ui_kit\src\evo_hui_provider.cpp:598: Type an HTTP or HTTPS stream address using the on-screen keyboard
+projects\evoplayer\ui_kit\src\evo_hui_provider.cpp:598: ENTER ADDRESS
+projects\evoplayer\ui_kit\src\evo_hui_provider.cpp:599: BROWSE FROM USB
+projects\evoplayer\ui_kit\src\evo_hui_provider.cpp:600: Scan connected USB storage (/mnt/usb0, /mnt/usb1) for M3U playlists
+projects\evoplayer\ui_kit\src\evo_hui_provider.cpp:600: BROWSE USB
+projects\evoplayer\ui_kit\src\evo_hui_provider.cpp:888: Press Square to search again, or Circle to clear
+projects\evoplayer\ui_kit\src\evo_hui_provider.cpp:894: Press Circle to go back
+projects\evoplayer\ui_kit\src\evo_hui_provider.cpp:900: Press Circle to go back
+projects\evoplayer\ui_kit\src\evo_hui_provider.cpp:957:  ITEM
+projects\evoplayer\ui_kit\src\evo_hui_provider.cpp:957:  ITEMS
+projects\evoplayer\ui_kit\src\evo_hui_provider.cpp:971: Back
+projects\evoplayer\ui_kit\src\evo_hui_provider.cpp:973: Search
+projects\evoplayer\ui_kit\src\evo_hui_provider.cpp:975: Favorite
+projects\evoplayer\ui_kit\src\evo_hui_provider.cpp:977: Page
+projects\evoplayer\ui_kit\src\evo_hui_provider.cpp:978: Navigate
+projects\evoplayer\ui_kit\src\evo_hui_provider.cpp:985: Back
+projects\evoplayer\ui_kit\src\evo_hui_provider.cpp:986: Search
+projects\evoplayer\ui_kit\src\evo_hui_provider.cpp:988: More
+projects\evoplayer\ui_kit\src\evo_hui_provider.cpp:990: Favorite
+projects\evoplayer\ui_kit\src\evo_hui_provider.cpp:992: Page
+projects\evoplayer\ui_kit\src\evo_hui_screens.cpp:276: Home
+projects\evoplayer\ui_kit\src\evo_hui_screens.cpp:277: Browse
+projects\evoplayer\ui_kit\src\evo_hui_screens.cpp:279: Providers
+projects\evoplayer\ui_kit\src\evo_hui_screens.cpp:280: Settings
+projects\evoplayer\ui_kit\src\evo_hui_screens.cpp:281: About
+projects\evoplayer\ui_kit\src\evo_hui_screens.cpp:282: Quit EVO
+projects\evoplayer\ui_kit\src\evo_hui_screens.cpp:658: %d ITEMS
+projects\evoplayer\ui_kit\src\evo_hui_screens.cpp:743: Select
+projects\evoplayer\ui_kit\src\evo_hui_screens.cpp:743: Back
+projects\evoplayer\ui_kit\src\evo_hui_screens.cpp:786: SELECT
+projects\evoplayer\ui_kit\src\evo_hui_screens.cpp:786: Select
+projects\evoplayer\ui_kit\src\evo_hui_screens.cpp:960: ITEM
+projects\evoplayer\ui_kit\src\evo_hui_screens.cpp:960: ITEMS
+projects\evoplayer\ui_kit\src\evo_hui_settings.cpp:44: Video & Display
+projects\evoplayer\ui_kit\src\evo_hui_settings.cpp:45: Audio
+projects\evoplayer\ui_kit\src\evo_hui_settings.cpp:46: Subtitles
+projects\evoplayer\ui_kit\src\evo_hui_settings.cpp:47: Interface & Storage
+projects\evoplayer\ui_kit\src\evo_hui_settings.cpp:48: System & Diagnostics
+projects\evoplayer\ui_kit\src\evo_hui_settings.cpp:49: Experimental
+projects\evoplayer\ui_kit\src\evo_hui_settings.cpp:398: Select
+projects\evoplayer\ui_kit\src\evo_hui_settings.cpp:399: Back
+projects\evoplayer\ui_kit\src\evo_hui_settings.cpp:400: Navigate
+projects\evoplayer\ui_kit\src\evo_hui_settings_preview.cpp:161: OFF
+projects\evoplayer\ui_kit\src\evo_hui_settings_preview.cpp:161: ON
+projects\evoplayer\ui_kit\src\evo_hui_settings_preview.cpp:233: OFF
+projects\evoplayer\ui_kit\src\evo_hui_settings_preview.cpp:252: OFF
+projects\evoplayer\ui_kit\src\evo_hui_settings_preview.cpp:252: SHARP
+projects\evoplayer\ui_kit\src\evo_hui_settings_preview.cpp:257: SHARP
+projects\evoplayer\ui_kit\src\evo_hui_settings_preview.cpp:267: OFF
+projects\evoplayer\ui_kit\src\evo_hui_settings_preview.cpp:287: OFF
+projects\evoplayer\ui_kit\src\evo_hui_settings_preview.cpp:287: SHARP
+projects\evoplayer\ui_kit\src\evo_hui_settings_preview.cpp:345: OFF
+projects\evoplayer\ui_kit\src\evo_hui_settings_preview.cpp:365: OFF
+projects\evoplayer\ui_kit\src\evo_hui_settings_preview.cpp:366: OFF
+projects\evoplayer\ui_kit\src\evo_hui_settings_preview.cpp:367: AUTO
+projects\evoplayer\ui_kit\src\evo_hui_settings_preview.cpp:367: MATCH
+projects\evoplayer\ui_kit\src\evo_hui_settings_preview.cpp:368: AUTO
+projects\evoplayer\ui_kit\src\evo_hui_settings_preview.cpp:373: OFF
+projects\evoplayer\ui_kit\src\evo_hui_settings_preview.cpp:373: AUTO
+projects\evoplayer\ui_kit\src\evo_hui_settings_preview.cpp:607: Slight stutter in films
+projects\evoplayer\ui_kit\src\evo_hui_settings_preview.cpp:610: Even and smooth
+projects\evoplayer\ui_kit\src\evo_hui_settings_preview.cpp:650: TV matches the film
+projects\evoplayer\ui_kit\src\evo_hui_settings_preview.cpp:669: TV stays at 60 Hz
+projects\evoplayer\ui_kit\src\evo_hui_settings_preview.cpp:676: TV matches the film
+projects\evoplayer\ui_kit\src\evo_hui_settings_preview.cpp:681: TV stays at 60 Hz
+projects\evoplayer\ui_kit\src\evo_hui_settings_preview.cpp:798: FIT
+projects\evoplayer\ui_kit\src\evo_hui_settings_preview.cpp:800: FILL
+projects\evoplayer\ui_kit\src\evo_hui_settings_preview.cpp:802: STRETCH
+projects\evoplayer\ui_kit\src\evo_hui_settings_preview.cpp:1179: SUB
+projects\evoplayer\ui_kit\src\evo_hui_settings_preview.cpp:1182: RL
+projects\evoplayer\ui_kit\src\evo_hui_settings_preview.cpp:1183: RR
+projects\evoplayer\ui_kit\src\evo_hui_settings_preview.cpp:1254: STEREO
+projects\evoplayer\ui_kit\src\evo_hui_settings_preview.cpp:1450: Hardware when it can, software when it must
+projects\evoplayer\ui_kit\src\evo_hui_settings_preview.cpp:1451: Uses the video chip. Light on the CPU
+projects\evoplayer\ui_kit\src\evo_hui_settings_preview.cpp:1458: AUTO
+projects\evoplayer\ui_kit\src\evo_hui_settings_preview.cpp:1458: HARDWARE
+projects\evoplayer\ui_kit\src\evo_hui_settings_preview.cpp:1458: SOFTWARE
+projects\evoplayer\ui_kit\src\evo_hui_settings_preview.cpp:1562: Action Movies
+projects\evoplayer\ui_kit\src\evo_hui_settings_preview.cpp:1562: DIR
+projects\evoplayer\ui_kit\src\evo_hui_settings_preview.cpp:1563: Cartoons
+projects\evoplayer\ui_kit\src\evo_hui_settings_preview.cpp:1563: DIR
+projects\evoplayer\ui_kit\src\evo_hui_settings_preview.cpp:1564: Subtitles
+projects\evoplayer\ui_kit\src\evo_hui_settings_preview.cpp:1564: DIR
+projects\evoplayer\ui_kit\src\evo_hui_settings_preview.cpp:1572: Action Movies
+projects\evoplayer\ui_kit\src\evo_hui_settings_preview.cpp:1572: DIR
+projects\evoplayer\ui_kit\src\evo_hui_settings_preview.cpp:1573: Cartoons
+projects\evoplayer\ui_kit\src\evo_hui_settings_preview.cpp:1573: DIR
+projects\evoplayer\ui_kit\src\evo_hui_settings_preview.cpp:1576: Subtitles
+projects\evoplayer\ui_kit\src\evo_hui_settings_preview.cpp:1576: DIR
+projects\evoplayer\ui_kit\src\evo_hui_settings_preview.cpp:1700: VIRTUAL KEYBOARD
+projects\evoplayer\ui_kit\src\evo_hui_settings_preview.cpp:1700: NATIVE PS5 IME
+projects\evoplayer\ui_kit\src\evo_hui_settings_preview.cpp:1719: LIVE
+projects\evoplayer\ui_kit\src\evo_hui_settings_preview.cpp:1742: Choose quality
+projects\evoplayer\ui_kit\src\evo_hui_settings_preview.cpp:1749: Auto
+projects\evoplayer\ui_kit\src\evo_hui_settings_preview.cpp:1764: Plays right away
+projects\evoplayer\ui_kit\src\evo_hui_settings_preview.cpp:1806: BUFFER %.1f s
+projects\evoplayer\ui_kit\src\evo_hui_settings_preview.cpp:1807: MEMORY %d %%
+projects\evoplayer\ui_kit\src\evo_hui_surround.cpp:42: 3D SOUND FIELD
+projects\evoplayer\ui_kit\src\evo_hui_surround.cpp:42: AUTO CALIBRATION (MIC)
+projects\evoplayer\ui_kit\src\evo_hui_surround.cpp:42: SPATIAL ORB - FREE ROAM
+projects\evoplayer\ui_kit\src\evo_hui_surround.cpp:42: 360 ROTATION SWEEP
+projects\evoplayer\ui_kit\src\evo_hui_surround.cpp:43: AUTO TEST 5.1
+projects\evoplayer\ui_kit\src\evo_hui_surround.cpp:43: AUTO TEST 7.1
+projects\evoplayer\ui_kit\src\evo_hui_surround.cpp:43: SPEAKER LAYOUT
+projects\evoplayer\ui_kit\src\evo_hui_surround.cpp:43: SILENCE / STOP
+projects\evoplayer\ui_kit\src\evo_hui_surround.cpp:45: INTERACTIVE SPATIAL AUDIO TEST
+projects\evoplayer\ui_kit\src\evo_hui_surround.cpp:45: DUALSENSE MICROPHONE CALIBRATION
+projects\evoplayer\ui_kit\src\evo_hui_surround.cpp:45: POSITIONING TEST
+projects\evoplayer\ui_kit\src\evo_hui_surround.cpp:46: CIRCULAR SURROUND TEST
+projects\evoplayer\ui_kit\src\evo_hui_surround.cpp:46: 6-CHANNEL SEQUENCE
+projects\evoplayer\ui_kit\src\evo_hui_surround.cpp:46: 8-CHANNEL SEQUENCE
+projects\evoplayer\ui_kit\src\evo_hui_surround.cpp:47: STOP ALL AUDIO OUTPUT
+projects\evoplayer\ui_kit\src\evo_hui_surround.cpp:152: Next
+projects\evoplayer\ui_kit\src\evo_hui_surround.cpp:152: Start
+projects\evoplayer\ui_kit\src\evo_hui_surround.cpp:153: Repeat
+projects\evoplayer\ui_kit\src\evo_hui_surround.cpp:154: Apply
+projects\evoplayer\ui_kit\src\evo_hui_surround.cpp:155: Back
+projects\evoplayer\ui_kit\src\evo_hui_surround.cpp:160: Move source
+projects\evoplayer\ui_kit\src\evo_hui_surround.cpp:161: Height
+projects\evoplayer\ui_kit\src\evo_hui_surround.cpp:162: Change mode
+projects\evoplayer\ui_kit\src\evo_hui_surround.cpp:163: Reset position
+projects\evoplayer\ui_kit\src\evo_hui_surround.cpp:164: Back
+projects\evoplayer\ui_kit\src\evo_hui_surround.cpp:169: 2D navigate
+projects\evoplayer\ui_kit\src\evo_hui_surround.cpp:171: Silence
+projects\evoplayer\ui_kit\src\evo_hui_surround.cpp:172: Back
+projects\evoplayer\ui_kit\src\evo_hui_surround.cpp:203: CURRENT: 5.1 SURROUND
+projects\evoplayer\ui_kit\src\evo_hui_surround.cpp:203: CURRENT: 7.1 SURROUND
+projects\evoplayer\ui_kit\src\evo_hui_surround.cpp:217: SWEEPS: %d SPEAKERS + FRONT LEFT DRIFT CHECK
+projects\evoplayer\ui_kit\src\evo_hui_surround.cpp:218: READY
+projects\evoplayer\ui_kit\src\evo_hui_surround.cpp:218: MIC CHECK
+projects\evoplayer\ui_kit\src\evo_hui_surround.cpp:218: MEASURING
+projects\evoplayer\ui_kit\src\evo_hui_surround.cpp:218: ANALYZING
+projects\evoplayer\ui_kit\src\evo_hui_surround.cpp:218: COMPLETE
+projects\evoplayer\ui_kit\src\evo_hui_surround.cpp:218: FAILED
+projects\evoplayer\ui_kit\src\evo_hui_surround.cpp:225: MANUAL
+projects\evoplayer\ui_kit\src\evo_hui_surround.cpp:225: FLYBY
+projects\evoplayer\ui_kit\src\evo_hui_surround.cpp:227: FLIGHT MODE: %s
+projects\evoplayer\ui_kit\src\evo_hui_surround.cpp:249: D-PAD MOVES BETWEEN SPEAKERS BY ROOM POSITION
+projects\evoplayer\ui_kit\src\evo_hui_surround.cpp:257: LAYOUT: 5.1 (6 CHANNELS)
+projects\evoplayer\ui_kit\src\evo_hui_surround.cpp:257: LAYOUT: 7.1 (8 CHANNELS)
+projects\evoplayer\ui_kit\src\evo_hui_surround.cpp:259: D-PAD RIGHT: SELECT A SPEAKER ON THE STAGE
+projects\evoplayer\ui_kit\src\evo_hui_surround.cpp:359: MISSED
+projects\evoplayer\ui_kit\src\evo_hui_surround.cpp:422: DUALSENSE MIC
+projects\evoplayer\ui_kit\src\evo_hui_surround.cpp:447: CHANNEL LEVELS
+projects\evoplayer\ui_kit\src\evo_hui_surround.cpp:462: CONTROLS
+projects\evoplayer\ui_kit\src\evo_hui_surround.cpp:467: QUICK MODES
+projects\evoplayer\ui_kit\src\evo_hui_surround.cpp:468: MANUAL
+projects\evoplayer\ui_kit\src\evo_hui_surround.cpp:468: FLYBY
+projects\evoplayer\ui_kit\src\evo_hui_surround.cpp:479: OUTPUT
+projects\evoplayer\ui_kit\src\evo_hui_surround.cpp:507: PLACE
+projects\evoplayer\ui_kit\src\evo_hui_surround.cpp:507: MIC CHECK
+projects\evoplayer\ui_kit\src\evo_hui_surround.cpp:507: MEASURE
+projects\evoplayer\ui_kit\src\evo_hui_surround.cpp:507: ANALYZE
+projects\evoplayer\ui_kit\src\evo_hui_surround.cpp:507: DONE
+projects\evoplayer\ui_kit\src\evo_hui_surround.cpp:520: Place your DualSense controller on your seat at ear level, facing the screen. Unmute its 
+projects\evoplayer\ui_kit\src\evo_hui_surround.cpp:523: A short sweep plays from each speaker in turn. Stay still and keep the room quiet.
+projects\evoplayer\ui_kit\src\evo_hui_surround.cpp:543: CH
+projects\evoplayer\ui_kit\src\evo_hui_surround.cpp:543: LEVEL
+projects\evoplayer\ui_kit\src\evo_hui_surround.cpp:543: PATH
+projects\evoplayer\ui_kit\src\evo_hui_surround.cpp:543: DELAY
+projects\evoplayer\ui_kit\src\evo_hui_surround.cpp:556: NO TRIM
+projects\evoplayer\ui_kit\src\evo_hui_surround.cpp:562: NOT HEARD
+projects\evoplayer\ui_kit\src\evo_hui_surround.cpp:567: MEASURING
+projects\evoplayer\ui_kit\src\evo_hui_surround.cpp:594: AZIMUTH
+projects\evoplayer\ui_kit\src\evo_hui_surround.cpp:594: ELEVATION
+projects\evoplayer\ui_kit\src\evo_hui_surround.cpp:595: DISTANCE
+projects\evoplayer\ui_kit\src\evo_hui_surround.cpp:595: SOURCE
+projects\evoplayer\ui_kit\src\evo_hui_surround.cpp:597: LOUDEST
+projects\evoplayer\ui_kit\src\evo_hui_surround.cpp:615: CHECKING MICROPHONE + ROOM NOISE...
+projects\evoplayer\ui_kit\src\evo_hui_surround.cpp:619: VERIFYING: %s (CLOCK DRIFT CHECK)...
+projects\evoplayer\ui_kit\src\evo_hui_surround.cpp:620: MEASURING: %s (%d/%d)...
+projects\evoplayer\ui_kit\src\evo_hui_surround.cpp:625: CALCULATING LEVELS, DISTANCES AND DELAYS...

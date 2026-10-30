@@ -1,0 +1,2013 @@
+--- projects\evoplayer\core\src\Application.cpp
++++ projects\evoplayer\core\src\Application.cpp
+@@ -90,2 +90,3 @@
+ #include <unistd.h>
++#include "evo_i18n.h"
+ 
+@@ -727,3 +728,3 @@
+         g_web_src.url = url;
+-        g_web_src.title = title[0] ? title : "Web";
++        g_web_src.title = title[0] ? title : evo_tr("Web");
+         g_web_src.provider = "web";
+@@ -749,3 +750,3 @@
+         if (!g_web_ok) {
+-            toast("STREAM", "The web page's stream would not open");
++            toast(evo_tr("STREAM"), "The web page's stream would not open");
+             evo_webui_playback_ended(0);
+@@ -1314,3 +1315,3 @@
+ #endif
+-            toast("STORAGE", "READY");
++            toast(evo_tr("STORAGE"), evo_tr("READY"));
+             jb_repaint = 8;
+@@ -1900,3 +1901,3 @@
+                 if (up_capped >= 0)
+-                    toast("UPSCALING", up_capped == static_cast<int>(Upscaler::AI)
++                    toast(evo_tr("UPSCALING"), up_capped == static_cast<int>(Upscaler::AI)
+                                            ? "GPU over budget - using a smaller AI network"
+--- projects\evoplayer\core\src\screens\AudioTrackPickerScreen.cpp
++++ projects\evoplayer\core\src\screens\AudioTrackPickerScreen.cpp
+@@ -13,2 +13,3 @@
+ #include <utility>
++#include "evo_i18n.h"
+ 
+@@ -61,5 +62,5 @@
+         a.streamIndex = -1;
+-        a.label = "AUTO";
+-        a.detail = "EVO picks the best quality available";
+-        a.badge = pinned ? "" : "PLAYING";
++        a.label = evo_tr("AUTO");
++        a.detail = evo_tr("EVO picks the best quality available");
++        a.badge = pinned ? "" : evo_tr("PLAYING");
+         a.pills = pinned ? "BEST QUALITY" : "+PLAYING\tBEST QUALITY";
+@@ -151,3 +152,3 @@
+         } else if (langUnset) {
+-            e.label = "Unknown language - track " + std::to_string(audioOrdinal);
++            e.label = evo_tr("Unknown language - track ") + std::to_string(audioOrdinal);
+         } else {
+@@ -325,3 +326,3 @@
+         const bool audio = m_switchEntry.kind == KindAudio;
+-        const char* what = audio ? "AUDIO TRACK" : "QUALITY";
++        const char* what = audio ? evo_tr("AUDIO TRACK") : evo_tr("QUALITY");
+         if (st == 2) {
+@@ -329,3 +330,3 @@
+         } else {
+-            toast(what, "SWITCH FAILED");
++            toast(what, evo_tr("SWITCH FAILED"));
+         }
+@@ -339,5 +340,5 @@
+ 
+-    params.title = m_hasQuality ? "QUALITY & AUDIO" : "AUDIO TRACKS";
+-    params.subtitle = m_hasQuality ? "Pick the video quality and the audio track"
+-                                   : "Select the audio stream for this file";
++    params.title = m_hasQuality ? evo_tr("QUALITY & AUDIO") : evo_tr("AUDIO TRACKS");
++    params.subtitle = m_hasQuality ? evo_tr("Pick the video quality and the audio track")
++                                   : evo_tr("Select the audio stream for this file");
+     params.section = -1;          /* not a rail destination */
+@@ -395,5 +396,5 @@
+     params.hints[0].glyph_path = "../icons/btn_cross.png";
+-    params.hints[0].label = "SELECT";
++    params.hints[0].label = evo_tr("SELECT");
+     params.hints[1].glyph_path = "../icons/btn_circle.png";
+-    params.hints[1].label = "BACK";
++    params.hints[1].label = evo_tr("BACK");
+ 
+--- projects\evoplayer\core\src\screens\BrowserScreen.cpp
++++ projects\evoplayer\core\src\screens\BrowserScreen.cpp
+@@ -26,2 +26,3 @@
+ #include <libavformat/avformat.h>
++#include "evo_i18n.h"
+ }
+@@ -99,3 +100,3 @@
+     resetSelection();
+-    toast("FTP ADDED", share.name.c_str());
++    toast(evo_tr("FTP ADDED"), share.name.c_str());
+ }
+@@ -129,3 +130,3 @@
+         if (ok) {
+-            toast("RENAMED", trimmed.c_str());
++            toast(evo_tr("RENAMED"), trimmed.c_str());
+             evo_feedback(EVO_FB_CONFIRM);
+@@ -137,3 +138,3 @@
+         } else {
+-            toast("ERROR", "Rename failed");
++            toast(evo_tr("ERROR"), evo_tr("Rename failed"));
+             evo_feedback(EVO_FB_ERROR);
+@@ -157,3 +158,3 @@
+     if (currentPath.empty()) {
+-        toast("ERROR", "Invalid path");
++        toast(evo_tr("ERROR"), evo_tr("Invalid path"));
+         return;
+@@ -165,3 +166,3 @@
+         if (ok) {
+-            toast("FOLDER CREATED", trimmed.c_str());
++            toast(evo_tr("FOLDER CREATED"), trimmed.c_str());
+             evo_feedback(EVO_FB_CONFIRM);
+@@ -172,3 +173,3 @@
+         } else {
+-            toast("ERROR", "Could not create folder");
++            toast(evo_tr("ERROR"), evo_tr("Could not create folder"));
+             evo_feedback(EVO_FB_ERROR);
+@@ -223,3 +224,3 @@
+             if (!transferService || m_actionTargetPath.empty()) {
+-                toast("ERROR", "No file selected");
++                toast(evo_tr("ERROR"), evo_tr("No file selected"));
+                 evo_feedback(EVO_FB_BOUNDARY);
+@@ -229,3 +230,3 @@
+             m_actionMenuOpen = false;
+-            toast("CLIPBOARD", ("Copied: " + m_actionTargetName).c_str());
++            toast(evo_tr("CLIPBOARD"), (evo_tr("Copied: ") + m_actionTargetName).c_str());
+             evo_feedback(EVO_FB_CONFIRM);
+@@ -235,3 +236,3 @@
+             if (!transferService || m_actionTargetPath.empty()) {
+-                toast("ERROR", "No file selected");
++                toast(evo_tr("ERROR"), evo_tr("No file selected"));
+                 evo_feedback(EVO_FB_BOUNDARY);
+@@ -241,3 +242,3 @@
+             m_actionMenuOpen = false;
+-            toast("CLIPBOARD", ("Cut: " + m_actionTargetName).c_str());
++            toast(evo_tr("CLIPBOARD"), (evo_tr("Cut: ") + m_actionTargetName).c_str());
+             evo_feedback(EVO_FB_CONFIRM);
+@@ -247,3 +248,3 @@
+             if (!transferService || !transferService->hasClipboardItem()) {
+-                toast("PASTE", "Clipboard is empty");
++                toast(evo_tr("PASTE"), evo_tr("Clipboard is empty"));
+                 evo_feedback(EVO_FB_BOUNDARY);
+@@ -253,3 +254,3 @@
+             if (destDir.empty()) {
+-                toast("ERROR", "Cannot paste at root");
++                toast(evo_tr("ERROR"), evo_tr("Cannot paste at root"));
+                 evo_feedback(EVO_FB_BOUNDARY);
+@@ -263,3 +264,3 @@
+             } else {
+-                toast("ERROR", "Could not start paste");
++                toast(evo_tr("ERROR"), evo_tr("Could not start paste"));
+                 evo_feedback(EVO_FB_ERROR);
+@@ -270,3 +271,3 @@
+             if (!transferService || m_actionTargetPath.empty()) {
+-                toast("ERROR", "No item to rename");
++                toast(evo_tr("ERROR"), evo_tr("No item to rename"));
+                 evo_feedback(EVO_FB_BOUNDARY);
+@@ -280,3 +281,3 @@
+             if (!transferService || m_actionTargetPath.empty()) {
+-                toast("ERROR", "No item to delete");
++                toast(evo_tr("ERROR"), evo_tr("No item to delete"));
+                 evo_feedback(EVO_FB_BOUNDARY);
+@@ -292,3 +293,3 @@
+             if (currentPath.empty()) {
+-                toast("ERROR", "Cannot create folder here");
++                toast(evo_tr("ERROR"), evo_tr("Cannot create folder here"));
+                 evo_feedback(EVO_FB_BOUNDARY);
+@@ -366,3 +367,3 @@
+                     : "../icons/icon_folder.png";
+-                item.detail = "Folder";
++                item.detail = evo_tr("Folder");
+             } else {
+@@ -384,3 +385,3 @@
+                 } else {
+-                    item.detail = "Media File";
++                    item.detail = evo_tr("Media File");
+                 }
+@@ -414,8 +415,8 @@
+                 BrowserItem addItem;
+-                addItem.name = "+ Add FTP Server";
++                addItem.name = evo_tr("+ Add FTP Server");
+                 addItem.fullPath = "netshare://add";
+                 addItem.category = FileCategory::Folder;
+-                addItem.badge = "SETUP";
++                addItem.badge = evo_tr("SETUP");
+                 addItem.iconPath = "../icons/icon_settings.png";
+-                addItem.detail = "Connect to Network FTP";
++                addItem.detail = evo_tr("Connect to Network FTP");
+                 m_items.push_back(std::move(addItem));
+@@ -429,3 +430,3 @@
+                 m_networkEmptyTitle = "COULD NOT CONNECT";
+-                m_networkEmptyHint = error.empty() ? "FTP server not responding" : error;
++                m_networkEmptyHint = error.empty() ? evo_tr("FTP server not responding") : error;
+             } else {
+@@ -454,3 +455,3 @@
+                         item.iconPath = "../icons/icon_folder.png";
+-                        item.detail = "Folder";
++                        item.detail = evo_tr("Folder");
+                     } else {
+@@ -460,3 +461,3 @@
+                         else item.iconPath = "../icons/icon_about_support.png";
+-                        item.detail = "Network Media";
++                        item.detail = evo_tr("Network Media");
+                     }
+@@ -490,3 +491,3 @@
+             item.category = cat;
+-            item.badge = browser ? browser->getFileCategoryLabel(cat) : "FAVORITE";
++            item.badge = browser ? browser->getFileCategoryLabel(cat) : evo_tr("FAVORITE");
+             item.isFavorite = true;
+@@ -517,3 +518,3 @@
+             } else {
+-                item.detail = "Favorite";
++                item.detail = evo_tr("Favorite");
+             }
+@@ -545,3 +546,3 @@
+             item.category = cat;
+-            item.badge = browser ? browser->getFileCategoryLabel(cat) : "RECENT";
++            item.badge = browser ? browser->getFileCategoryLabel(cat) : evo_tr("RECENT");
+             item.isFavorite = favorites_is_favorite(rec.path);
+@@ -570,3 +571,3 @@
+             } else {
+-                item.detail = "Recent";
++                item.detail = evo_tr("Recent");
+             }
+@@ -691,3 +692,3 @@
+         }
+-        toast("SEARCH", msg);
++        toast(evo_tr("SEARCH"), msg);
+     } else {
+@@ -700,3 +701,3 @@
+         resetSelection();
+-        toast("SEARCH", "Cleared");
++        toast(evo_tr("SEARCH"), evo_tr("Cleared"));
+     }
+@@ -874,3 +875,3 @@
+                 resetSelection();
+-                if (focusGrid) toast("STORAGE", "USB Drive");
++                if (focusGrid) toast(evo_tr("STORAGE"), evo_tr("USB Drive"));
+             }
+@@ -887,3 +888,3 @@
+                 resetSelection();
+-                if (focusGrid) toast("STORAGE", "Internal Storage");
++                if (focusGrid) toast(evo_tr("STORAGE"), evo_tr("Internal Storage"));
+             }
+@@ -898,3 +899,3 @@
+                 resetSelection();
+-                if (focusGrid) toast("STORAGE", "Network (FTP)");
++                if (focusGrid) toast(evo_tr("STORAGE"), evo_tr("Network (FTP)"));
+             }
+@@ -907,3 +908,3 @@
+                 resetSelection();
+-                if (focusGrid) toast("SOURCES", "Favorites");
++                if (focusGrid) toast(evo_tr("SOURCES"), evo_tr("Favorites"));
+             }
+@@ -916,3 +917,3 @@
+                 resetSelection();
+-                if (focusGrid) toast("SOURCES", "Recent Media");
++                if (focusGrid) toast(evo_tr("SOURCES"), evo_tr("Recent Media"));
+             }
+@@ -1014,3 +1015,3 @@
+                 ts->cancelTransfer();
+-                toast("TRANSFER", "Cancelling...");
++                toast(evo_tr("TRANSFER"), evo_tr("Cancelling..."));
+             }
+@@ -1045,3 +1046,3 @@
+                     } else {
+-                        toast("ERROR", "Could not start delete");
++                        toast(evo_tr("ERROR"), evo_tr("Could not start delete"));
+                         evo_feedback(EVO_FB_ERROR);
+@@ -1222,3 +1223,3 @@
+             resetSelection();
+-            toast("SEARCH", "Cleared");
++            toast(evo_tr("SEARCH"), evo_tr("Cleared"));
+             return true;
+@@ -1281,3 +1282,3 @@
+                     item.isFavorite = false;
+-                    toast("FAVORITES", "Removed");
++                    toast(evo_tr("FAVORITES"), evo_tr("Removed"));
+                 } else {
+@@ -1286,3 +1287,3 @@
+                     item.isFavorite = true;
+-                    toast("FAVORITES", "Added");
++                    toast(evo_tr("FAVORITES"), "Added");
+                 }
+@@ -1312,3 +1313,3 @@
+             m_showTransferDialog = false;
+-            toast("COMPLETED", "File operation completed!");
++            toast(evo_tr("COMPLETED"), evo_tr("File operation completed!"));
+             evo_feedback(EVO_FB_CONFIRM);
+@@ -1322,3 +1323,3 @@
+             m_showTransferDialog = false;
+-            toast("TRANSFER FAILED", prog.errorMessage.empty() ? "Operation failed" : prog.errorMessage.c_str());
++            toast(evo_tr("TRANSFER FAILED"), prog.errorMessage.empty() ? evo_tr("Operation failed") : prog.errorMessage.c_str());
+             evo_feedback(EVO_FB_ERROR);
+@@ -1332,3 +1333,3 @@
+             m_showTransferDialog = false;
+-            toast("CANCELLED", "Operation was cancelled");
++            toast(evo_tr("CANCELLED"), evo_tr("Operation was cancelled"));
+             evo_feedback(EVO_FB_CANCEL);
+@@ -1373,3 +1374,3 @@
+ 
+-    params.title = "STORAGE";
++    params.title = evo_tr("STORAGE");
+ 
+@@ -1480,3 +1481,3 @@
+     } else if (m_activeSource == 2) {
+-        params.empty_title = m_networkEmptyTitle.empty() ? "NO SHARES CONFIGURED" : m_networkEmptyTitle.c_str();
++        params.empty_title = m_networkEmptyTitle.empty() ? evo_tr("NO SHARES CONFIGURED") : m_networkEmptyTitle.c_str();
+         params.empty_hint = m_networkEmptyHint.empty() ? "Press Cross on [+ Add FTP Server] to configure" : m_networkEmptyHint.c_str();
+@@ -1514,3 +1515,3 @@
+ 
+-    /* Chips: "All", then one per category the folder actually holds. Sending
++    /* Chips: evo_tr("All"), then one per category the folder actually holds. Sending
+      * none is how the row is hidden. */
+@@ -1689,3 +1690,3 @@
+     } else if (m_selectedIndex >= 0 && m_selectedIndex < totalCount) {
+-        std::snprintf(m_actionTargetSubBuf, sizeof(m_actionTargetSubBuf), "%s • %s", m_insExt, m_statusSize[0] ? m_statusSize : "File");
++        std::snprintf(m_actionTargetSubBuf, sizeof(m_actionTargetSubBuf), "%s • %s", m_insExt, m_statusSize[0] ? m_statusSize : evo_tr("File"));
+     } else {
+@@ -1719,3 +1720,3 @@
+         params.transfer_op_title = m_transferTitleBuf;
+-        params.transfer_item_name = prog.currentItemName.empty() ? "Processing..." : prog.currentItemName.c_str();
++        params.transfer_item_name = prog.currentItemName.empty() ? evo_tr("Processing...") : prog.currentItemName.c_str();
+ 
+@@ -1797,3 +1798,3 @@
+ 
+-        dlg.actions[0].label = "CANCEL";
++        dlg.actions[0].label = evo_tr("CANCEL");
+         dlg.actions[0].icon_path = "../icons/btn_circle.png";
+@@ -1801,3 +1802,3 @@
+ 
+-        dlg.actions[1].label = "DELETE";
++        dlg.actions[1].label = evo_tr("DELETE");
+         dlg.actions[1].icon_path = "../icons/btn_cross.png";
+--- projects\evoplayer\core\src\screens\ChapterPickerScreen.cpp
++++ projects\evoplayer\core\src\screens\ChapterPickerScreen.cpp
+@@ -9,2 +9,3 @@
+ #include <cstring>
++#include "evo_i18n.h"
+ 
+@@ -108,4 +109,4 @@
+ 
+-    params.title = "CHAPTERS";
+-    params.subtitle = "Jump to a chapter";
++    params.title = evo_tr("CHAPTERS");
++    params.subtitle = evo_tr("Jump to a chapter");
+     params.section = -1;
+@@ -139,5 +140,5 @@
+     params.hints[0].glyph_path = "../icons/btn_cross.png";
+-    params.hints[0].label = "JUMP";
++    params.hints[0].label = evo_tr("JUMP");
+     params.hints[1].glyph_path = "../icons/btn_circle.png";
+-    params.hints[1].label = "BACK";
++    params.hints[1].label = evo_tr("BACK");
+ 
+--- projects\evoplayer\core\src\screens\FavoritesScreen.cpp
++++ projects\evoplayer\core\src\screens\FavoritesScreen.cpp
+@@ -11,2 +11,3 @@
+ #include <cstring>
++#include "evo_i18n.h"
+ 
+@@ -87,3 +88,3 @@
+             favorites_save();
+-            toast("FAVORITES", "Removed");
++            toast(evo_tr("FAVORITES"), evo_tr("Removed"));
+             evo_feedback(EVO_FB_CANCEL);
+@@ -120,4 +121,4 @@
+ 
+-    params.title = "FAVORITES";
+-    params.subtitle = "MEDIA YOU SAVED FOR LATER";
++    params.title = evo_tr("FAVORITES");
++    params.subtitle = evo_tr("MEDIA YOU SAVED FOR LATER");
+     params.total_count = favorite_count;
+@@ -138,3 +139,3 @@
+         params.rows[i].icon_path = "../icons/icon_favorites.png";
+-        params.rows[i].badge = "FAVORITE";
++        params.rows[i].badge = evo_tr("FAVORITE");
+         params.rows[i].progress = -1;
+--- projects\evoplayer\core\src\screens\LaunchScreen.cpp
++++ projects\evoplayer\core\src\screens\LaunchScreen.cpp
+@@ -20,2 +20,3 @@
+ #include <algorithm>
++#include "evo_i18n.h"
+ 
+@@ -309,6 +310,6 @@
+         const auto& r = recent_files[0];
+-        params.hero_eyebrow = (r.last_pos > 1.0) ? "CONTINUE WATCHING" : "START WATCHING";
++        params.hero_eyebrow = (r.last_pos > 1.0) ? evo_tr("CONTINUE WATCHING") : evo_tr("START WATCHING");
+         params.hero_title = r.title[0] ? r.title : r.path;
+         params.hero_detail = (std::strncmp(r.path, "evo://", 6) == 0) ? "Provider media" : r.path;
+-        params.hero_action = (r.last_pos > 1.0) ? "RESUME" : "PLAY";
++        params.hero_action = (r.last_pos > 1.0) ? evo_tr("RESUME") : evo_tr("PLAY");
+         if (r.duration > 1.0) {
+--- projects\evoplayer\core\src\screens\MediaInfoScreen.cpp
++++ projects\evoplayer\core\src\screens\MediaInfoScreen.cpp
+@@ -26,2 +26,3 @@
+ #include <strings.h>
++#include "evo_i18n.h"
+ 
+@@ -151,3 +152,3 @@
+         } else {
+-            std::snprintf(colorHdr, sizeof(colorHdr), is_10bit ? "BT.709 (10-bit SDR)" : "BT.709 (SDR)");
++            std::snprintf(colorHdr, sizeof(colorHdr), is_10bit ? evo_tr("BT.709 (10-bit SDR)") : evo_tr("BT.709 (SDR)"));
+         }
+@@ -160,7 +161,7 @@
+             if (strcasecmp(cname, "hevc") == 0 || strcasecmp(cname, "h265") == 0) {
+-                std::snprintf(codecBadge, sizeof(codecBadge), is_10bit ? "HEVC 10-BIT" : "HEVC");
++                std::snprintf(codecBadge, sizeof(codecBadge), is_10bit ? evo_tr("HEVC 10-BIT") : "HEVC");
+             } else if (strcasecmp(cname, "h264") == 0 || strcasecmp(cname, "avc") == 0) {
+-                std::snprintf(codecBadge, sizeof(codecBadge), is_10bit ? "AVC 10-BIT" : "AVC / H.264");
++                std::snprintf(codecBadge, sizeof(codecBadge), is_10bit ? evo_tr("AVC 10-BIT") : "AVC / H.264");
+             } else if (strcasecmp(cname, "av1") == 0) {
+-                std::snprintf(codecBadge, sizeof(codecBadge), is_10bit ? "AV1 10-BIT" : "AV1");
++                std::snprintf(codecBadge, sizeof(codecBadge), is_10bit ? evo_tr("AV1 10-BIT") : "AV1");
+             } else if (strcasecmp(cname, "vp9") == 0) {
+@@ -174,3 +175,3 @@
+     if (codecBadge[0] == '\0') {
+-        std::snprintf(codecBadge, sizeof(codecBadge), "%s", meta.videoCodec.empty() ? "Video" : meta.videoCodec.c_str());
++        std::snprintf(codecBadge, sizeof(codecBadge), "%s", meta.videoCodec.empty() ? evo_tr("Video") : meta.videoCodec.c_str());
+     }
+@@ -187,3 +188,3 @@
+     std::snprintf(decoderBadge, sizeof(decoderBadge), "%s",
+-                  isNativeHw ? "Hardware (sceVideodec2)" : "Software (FFmpeg)");
++                  isNativeHw ? evo_tr("Hardware (sceVideodec2)") : evo_tr("Software (FFmpeg)"));
+ 
+@@ -206,3 +207,3 @@
+     params.sample_rate = rateStr;
+-    params.subtitles = prospero_subtitle_enabled ? "Active" : (meta.hasSubtitles ? "Available (Off)" : "None");
++    params.subtitles = prospero_subtitle_enabled ? evo_tr("Active") : (meta.hasSubtitles ? evo_tr("Available (Off)") : evo_tr("None"));
+     params.output = outputStr;
+@@ -220,3 +221,3 @@
+     std::snprintf(rendererStr, sizeof(rendererStr), "%s (%s)",
+-                  evo_agc_runtime_is_active() ? "Bare-Metal AGC" : "Software (CPU raster)",
++                  evo_agc_runtime_is_active() ? evo_tr("Bare-Metal AGC") : evo_tr("Software (CPU raster)"),
+                   evo_hw_model_name());
+--- projects\evoplayer\core\src\screens\ModalDialogScreen.cpp
++++ projects\evoplayer\core\src\screens\ModalDialogScreen.cpp
+@@ -7,2 +7,3 @@
+ #include <cstring>
++#include "evo_i18n.h"
+ 
+@@ -142,4 +143,4 @@
+         dialog.eyebrow = "PLAYBACK";
+-        dialog.title = "Stop playback?";
+-        dialog.detail = "Your current position will be saved automatically.";
++        dialog.title = evo_tr("Stop playback?");
++        dialog.detail = evo_tr("Your current position will be saved automatically.");
+         dialog.progress_pct = -1.0;
+@@ -148,3 +149,3 @@
+ 
+-        dialog.actions[0].label = "KEEP WATCHING";
++        dialog.actions[0].label = evo_tr("KEEP WATCHING");
+         dialog.actions[0].icon_path = "/assets/icons/btn_circle.png";
+@@ -152,3 +153,3 @@
+ 
+-        dialog.actions[1].label = "STOP";
++        dialog.actions[1].label = evo_tr("STOP");
+         dialog.actions[1].icon_path = "/assets/icons/btn_cross.png";
+@@ -157,3 +158,3 @@
+         dialog.eyebrow = "RESUME";
+-        dialog.title = "Continue from previous position?";
++        dialog.title = evo_tr("Continue from previous position?");
+ 
+@@ -184,3 +185,3 @@
+ 
+-        dialog.actions[0].label = "RESUME";
++        dialog.actions[0].label = evo_tr("RESUME");
+         dialog.actions[0].icon_path = "/assets/icons/btn_cross.png";
+@@ -188,3 +189,3 @@
+ 
+-        dialog.actions[1].label = "START OVER";
++        dialog.actions[1].label = evo_tr("START OVER");
+         dialog.actions[1].icon_path = "/assets/icons/btn_circle.png";
+--- projects\evoplayer\core\src\screens\PlayerScreen.cpp
++++ projects\evoplayer\core\src\screens\PlayerScreen.cpp
+@@ -52,2 +52,3 @@
+ #include <algorithm>
++#include "evo_i18n.h"
+ 
+@@ -222,3 +223,3 @@
+     g_seg.autoplayed = true;
+-    toast("UP NEXT", g_seg.nextTitle.c_str());
++    toast(evo_tr("UP NEXT"), g_seg.nextTitle.c_str());
+     std::string path = "evo://" + src.provider + "/" + g_seg.nextId;
+@@ -248,3 +249,3 @@
+             playback->togglePause();
+-            toast("PLAYBACK", playback->isPaused() ? "PAUSED" : "RESUMED");
++            toast(evo_tr("PLAYBACK"), playback->isPaused() ? evo_tr("PAUSED") : evo_tr("RESUMED"));
+         }
+@@ -261,3 +262,3 @@
+         toggleStatsForNerds();
+-        toast("STATS", m_showStatsForNerds ? "ON" : "OFF");
++        toast(evo_tr("STATS"), m_showStatsForNerds ? evo_tr("ON") : evo_tr("OFF"));
+         return true;
+@@ -280,3 +281,3 @@
+                 playback->seekTo(sg.end_sec);
+-                toast("PLAYBACK", sg.kind == EVO_SEGMENT_INTRO ? "Skipped intro" : "Skipped credits");
++                toast(evo_tr("PLAYBACK"), sg.kind == EVO_SEGMENT_INTRO ? "Skipped intro" : "Skipped credits");
+             } else {
+@@ -288,3 +289,3 @@
+         playback->cycleViewMode();
+-        toast("VIEW MODE", playback->getViewMode() == ViewMode::Fit ? "FIT" :
++        toast(evo_tr("VIEW MODE"), playback->getViewMode() == ViewMode::Fit ? "FIT" :
+                            playback->getViewMode() == ViewMode::Fill ? "FILL" : "STRETCH");
+@@ -330,3 +331,3 @@
+             prospero_subtitle_toggle();
+-            toast("SUBTITLES", prospero_subtitle_enabled ? "ON" : "OFF");
++            toast(evo_tr("SUBTITLES"), prospero_subtitle_enabled ? evo_tr("ON") : evo_tr("OFF"));
+         }
+@@ -413,4 +414,4 @@
+                 const bool outro = g_seg.segs[seg].kind == EVO_SEGMENT_OUTRO;
+-                toast("TRIANGLE", outro ? (g_seg.nextId.empty() ? "Skip credits" : "Next episode")
+-                                        : "Skip intro");
++                toast(evo_tr("TRIANGLE"), outro ? (g_seg.nextId.empty() ? evo_tr("Skip credits") : evo_tr("Next episode"))
++                                        : evo_tr("Skip intro"));
+             }
+@@ -457,6 +458,6 @@
+         m_stallToastShown = true;
+-        toast("CONNECTION LOST", "Can't get data from the server - retrying...");
++        toast(evo_tr("CONNECTION LOST"), evo_tr("Can't get data from the server - retrying..."));
+     } else if (!stalled && m_stallToastShown && !pb_prebuffer_hold) {
+         m_stallToastShown = false;
+-        toast("CONNECTION", "Reconnected - the stream is back");
++        toast(evo_tr("CONNECTION"), evo_tr("Reconnected - the stream is back"));
+     }
+@@ -533,3 +534,3 @@
+     std::snprintf(l_audio, sizeof(l_audio), "AUDIO  %s  %s  %dch  %d Hz  %s",
+-                  acodec, alang, ach, arate, evo_pt_is_active() ? "BITSTREAM" : "PCM");
++                  acodec, alang, ach, arate, evo_pt_is_active() ? evo_tr("BITSTREAM") : "PCM");
+ 
+@@ -560,7 +561,7 @@
+     std::snprintf(l_subs, sizeof(l_subs), "SUBS  %s  /  %s%s",
+-                  prospero_subtitle_enabled ? "ON" : "OFF",
+-                  prospero_subtitle_use_external ? "EXTERNAL"
+-                      : (prospero_embedded_subtitle_stream_index >= 0 ? "EMBEDDED" : "NONE"),
++                  prospero_subtitle_enabled ? evo_tr("ON") : evo_tr("OFF"),
++                  prospero_subtitle_use_external ? evo_tr("EXTERNAL")
++                      : (prospero_embedded_subtitle_stream_index >= 0 ? evo_tr("EMBEDDED") : evo_tr("NONE")),
+                   (prospero_subtitle_enabled && prospero_secondary_subtitle_active())
+-                      ? "  +  2ND TRACK" : "");
++                      ? evo_tr("  +  2ND TRACK") : "");
+     std::snprintf(l_perf, sizeof(l_perf), "RENDER %d fps  /  DECODE %d fps  /  DROPPED %llu",
+@@ -676,3 +677,3 @@
+         } else if (playback->isLiveSource()) {
+-            metaStr = (!video_frame_loaded) ? "BUFFERING..." : "LIVE";
++            metaStr = (!video_frame_loaded) ? evo_tr("BUFFERING...") : evo_tr("LIVE");
+         }
+@@ -693,3 +694,3 @@
+         std::memset(&p, 0, sizeof(p));
+-        p.title = titleStr.empty() ? "Video Playback" : titleStr.c_str();
++        p.title = titleStr.empty() ? evo_tr("Video Playback") : titleStr.c_str();
+         p.metadata = metaStr.c_str();
+@@ -779,3 +780,3 @@
+                 std::snprintf(subTrackBuf, sizeof(subTrackBuf), "%s",
+-                              (lang && lang->value && lang->value[0]) ? lang->value : "On");
++                              (lang && lang->value && lang->value[0]) ? lang->value : evo_tr("On"));
+             }
+@@ -813,3 +814,3 @@
+                                   used ? "  -  %dp%s" : "%dp%s", v.height,
+-                                  playback->isVideoQualityPinned() ? "" : " AUTO");
++                                  playback->isVideoQualityPinned() ? "" : evo_tr(" AUTO"));
+                     break;
+@@ -989,3 +990,3 @@
+         std::memset(&p, 0, sizeof(p));
+-        p.title = "Video Playback";
++        p.title = evo_tr("Video Playback");
+         p.subtitle_text = activeSubText;
+--- projects\evoplayer\core\src\screens\ProviderHostScreen.cpp
++++ projects\evoplayer\core\src\screens\ProviderHostScreen.cpp
+@@ -37,2 +37,3 @@
+ #include <pthread.h>
++#include "evo_i18n.h"
+ 
+@@ -332,6 +333,6 @@
+         const bool have = evo_failure_reason(why, sizeof why) != 0;
+-        toast("STREAM", have ? why : "Failed to resolve channel stream");
++        toast(evo_tr("STREAM"), have ? why : evo_tr("Failed to resolve channel stream"));
+         evo_rmlui_provider_set_tuning(0);
+         evo_rmlui_provider_set_loading(0, "");
+-        evo_rmlui_provider_set_status(have ? why : "Failed to resolve stream for channel", 1);
++        evo_rmlui_provider_set_status(have ? why : evo_tr("Failed to resolve stream for channel"), 1);
+         return;
+@@ -404,3 +405,3 @@
+     if (!slash || slash == begin || !slash[1]) {
+-        toast("RECENT", "Invalid saved provider item");
++        toast(evo_tr("RECENT"), evo_tr("Invalid saved provider item"));
+         return true;
+@@ -413,3 +414,3 @@
+     if (!p || !(p->caps & EVO_PROVIDER_CAP_RESOLVE)) {
+-        toast("RECENT", "Saved provider is unavailable");
++        toast(evo_tr("RECENT"), evo_tr("Saved provider is unavailable"));
+         return true;
+@@ -419,3 +420,3 @@
+         item.size() >= EVO_PROVIDER_MAX_ITEM_ID) {
+-        toast("RECENT", "Saved provider identifier is too long");
++        toast(evo_tr("RECENT"), evo_tr("Saved provider identifier is too long"));
+         return true;
+@@ -424,3 +425,3 @@
+     if (g_start_running || g_recentProviderRequest.active) {
+-        toast("RECENT", "Playback is already starting");
++        toast(evo_tr("RECENT"), evo_tr("Playback is already starting"));
+         return true;
+@@ -592,3 +593,3 @@
+         evo_bt("provider: could not open host for '%s'", m_providerId.c_str());
+-        toast("PROVIDERS", "That provider is not available");
++        toast(evo_tr("PROVIDERS"), evo_tr("That provider is not available"));
+         if (auto sm = Application::getInstance().getScreenManager())
+@@ -668,6 +669,6 @@
+             detail = (p->caps & EVO_PROVIDER_CAP_WEBUI)
+-                   ? "Not set up - press X to enter the server address"
+-                   : p->needs_sign_in ? "Not signed in - press X to sign in"
+-                   : p->ui_embedded ? "No addons yet - press X to add one"
+-                   : "Not set up - press X to add a playlist";
++                   ? evo_tr("Not set up - press X to enter the server address")
++                   : p->needs_sign_in ? evo_tr("Not signed in - press X to sign in")
++                   : p->ui_embedded ? evo_tr("No addons yet - press X to add one")
++                   : evo_tr("Not set up - press X to add a playlist");
+         } else if (isNativeWeb(p)) {
+@@ -680,5 +681,5 @@
+             const char* src = p->get_source ? p->get_source() : "";
+-            detail = std::string("Web UI - ") + (src ? src : "");
++            detail = std::string(evo_tr("Web UI - ")) + (src ? src : "");
+         } else {
+-            detail = "Ready";
++            detail = evo_tr("Ready");
+         }
+@@ -693,3 +694,3 @@
+          * build with every provider compiled out is in. */
+-        toast("PROVIDERS", "No provider is set up yet");
++        toast(evo_tr("PROVIDERS"), evo_tr("No provider is set up yet"));
+         if (auto sm = Application::getInstance().getScreenManager())
+@@ -723,3 +724,3 @@
+         if (!(p->caps & EVO_PROVIDER_CAP_CONFIG)) {
+-            toast(p->name, "Nothing to set up here");
++            toast(p->name, evo_tr("Nothing to set up here"));
+             return;
+@@ -768,4 +769,4 @@
+         const evo_provider_t* p = evo_provider_find(m_providerId.c_str());
+-        params.title = p ? p->name : "PROVIDER";
+-        params.subtitle = "Opening the web UI";
++        params.title = p ? p->name : evo_tr("PROVIDER");
++        params.subtitle = evo_tr("Opening the web UI");
+         params.is_empty = 1;
+@@ -779,4 +780,4 @@
+ 
+-    params.title = "PROVIDERS";
+-    params.subtitle = "Choose where to watch from";
++    params.title = evo_tr("PROVIDERS");
++    params.subtitle = evo_tr("Choose where to watch from");
+     int total = (int)m_pickIds.size();
+@@ -799,4 +800,4 @@
+         params.rows[i].icon_path = p ? provider_icon(p) : "../icons/icon_folder.png";
+-        params.rows[i].badge = web ? "WEB" : server ? "SERVER"
+-                             : (p && (p->caps & EVO_PROVIDER_CAP_LIVE)) ? "LIVE" : "";
++        params.rows[i].badge = web ? evo_tr("WEB") : server ? evo_tr("SERVER")
++                             : (p && (p->caps & EVO_PROVIDER_CAP_LIVE)) ? evo_tr("LIVE") : "";
+         params.rows[i].progress = -1;
+@@ -811,18 +812,18 @@
+         params.hints[params.hint_count].glyph_path = "../icons/btn_cross.png";
+-        params.hints[params.hint_count++].label = "SELECT";
++        params.hints[params.hint_count++].label = evo_tr("SELECT");
+         params.hints[params.hint_count].glyph_path = "../icons/btn_options.png";
+-        params.hints[params.hint_count++].label = "OPTION";
++        params.hints[params.hint_count++].label = evo_tr("OPTION");
+         params.hints[params.hint_count].glyph_path = "../icons/btn_circle.png";
+-        params.hints[params.hint_count++].label = "CLOSE";
++        params.hints[params.hint_count++].label = evo_tr("CLOSE");
+     } else {
+         params.hints[params.hint_count].glyph_path = "../icons/btn_cross.png";
+-        params.hints[params.hint_count++].label = "OPEN";
++        params.hints[params.hint_count++].label = evo_tr("OPEN");
+         params.hints[params.hint_count].glyph_path = "../icons/btn_options.png";
+-        params.hints[params.hint_count++].label = "OPTION";
++        params.hints[params.hint_count++].label = evo_tr("OPTION");
+         if (fp && isNativeWeb(fp) && fp->is_configured && fp->is_configured()) {
+             params.hints[params.hint_count].glyph_path = "../icons/btn_triangle.png";
+-            params.hints[params.hint_count++].label = "WEB VERSION";
++            params.hints[params.hint_count++].label = evo_tr("WEB VERSION");
+         }
+         params.hints[params.hint_count].glyph_path = "../icons/btn_circle.png";
+-        params.hints[params.hint_count++].label = "CLOSE";
++        params.hints[params.hint_count++].label = evo_tr("CLOSE");
+     }
+@@ -852,3 +853,3 @@
+         bool isPlaylist = p && !(p->caps & EVO_PROVIDER_CAP_WEBUI) && !isNativeWeb(p);
+-        dlg.eyebrow = isPlaylist ? "REMOVE PLAYLIST" : "REMOVE SERVER";
++        dlg.eyebrow = isPlaylist ? evo_tr("REMOVE PLAYLIST") : evo_tr("REMOVE SERVER");
+         dlg.title = m_removeConfirmTitle.c_str();
+@@ -859,3 +860,3 @@
+ 
+-        dlg.actions[0].label = "CANCEL";
++        dlg.actions[0].label = evo_tr("CANCEL");
+         dlg.actions[0].icon_path = "../icons/btn_circle.png";
+@@ -863,3 +864,3 @@
+ 
+-        dlg.actions[1].label = "REMOVE";
++        dlg.actions[1].label = evo_tr("REMOVE");
+         dlg.actions[1].icon_path = "../icons/btn_cross.png";
+@@ -898,3 +899,3 @@
+     if (configured)
+-        add("open", "Open", server ? "Browse this server's libraries" : "Open this provider",
++        add("open", "Open", server ? evo_tr("Browse this server's libraries") : evo_tr("Open this provider"),
+             "../icons/icon_resume.png", false);
+@@ -902,3 +903,3 @@
+         if (web) {
+-            add("address", configured ? "Edit server" : "Set server address",
++            add("address", configured ? evo_tr("Edit server") : evo_tr("Set server address"),
+                 (src && src[0]) ? std::string("Address and port - now ") + src
+@@ -928,3 +929,3 @@
+         } else {
+-            add("address", configured ? "Edit playlist" : "Add playlist",
++            add("address", configured ? evo_tr("Edit playlist") : evo_tr("Add playlist"),
+                 "Type a URL or pick an .m3u from USB", "../icons/icon_tv.png", false);
+@@ -933,4 +934,4 @@
+     if (configured && p->sign_in)
+-        add("signin", signedIn ? "Sign in as another user" : "Sign in",
+-            signedIn ? "Switch account on this server" : "User name and password, or Quick Connect",
++        add("signin", signedIn ? evo_tr("Sign in as another user") : evo_tr("Sign in"),
++            signedIn ? evo_tr("Switch account on this server") : evo_tr("User name and password, or Quick Connect"),
+             "../icons/icon_type.png", false);
+@@ -1027,3 +1028,3 @@
+             m.id = "rmnuvio:" + std::to_string(i);
+-            m.label = std::string("Remove ") + evo_nuvio_addon_name(i);
++            m.label = std::string(evo_tr("Remove ")) + evo_nuvio_addon_name(i);
+             m.desc = "Takes it off this Nuvio profile, in the web version too";
+@@ -1047,3 +1048,3 @@
+         evo_feedback(EVO_FB_CONFIRM);
+-        toast(p->name, "Addon removed");
++        toast(p->name, evo_tr("Addon removed"));
+         int keep = m_pickIndex;
+@@ -1055,3 +1056,3 @@
+         evo_bt("prov_screen: signed out of '%s'", p->id);
+-        toast(p->name, "Signed out");
++        toast(p->name, evo_tr("Signed out"));
+         int keep = m_pickIndex;
+@@ -1077,3 +1078,3 @@
+             m_removeConfirmTitle = "Remove " + std::string(p->name) + " playlist?";
+-            m_removeConfirmDetail = (src && src[0]) ? src : "The saved playlist on this console is forgotten.";
++            m_removeConfirmDetail = (src && src[0]) ? src : evo_tr("The saved playlist on this console is forgotten.");
+         }
+@@ -1098,3 +1099,3 @@
+     char msg[96];
+-    std::snprintf(msg, sizeof msg, "Looking for %s on your network...", p->name);
++    std::snprintf(msg, sizeof msg, evo_tr("Looking for %s on your network..."), p->name);
+     toast(p->name, msg);
+@@ -1143,3 +1144,3 @@
+     const bool live = g_pending.is_live || (tp && (tp->caps & EVO_PROVIDER_CAP_LIVE));
+-    toast(live ? "LIVE TV" : (tp ? tp->name : "PROVIDER"), msg);
++    toast(live ? evo_tr("LIVE TV") : (tp ? tp->name : evo_tr("PROVIDER")), msg);
+     evo_rmlui_provider_set_tuning(1);
+@@ -1162,3 +1163,3 @@
+     params.rail_focused = 0;
+-    params.title = "CHOOSE A STREAM";
++    params.title = evo_tr("CHOOSE A STREAM");
+ 
+@@ -1192,3 +1193,3 @@
+             else
+-                std::snprintf(detail[i], sizeof detail[i], "Source %d of %d%s", i + 1, total,
++                std::snprintf(detail[i], sizeof detail[i], evo_tr("Source %d of %d%s"), i + 1, total,
+                               choice_is_hls(c) ? "  -  HLS" : "");
+@@ -1196,7 +1197,7 @@
+             std::snprintf(detail[i], sizeof detail[i], "%s",
+-                          choice_is_hls(c) ? "As the playlist lists it - EVO picks the quality"
+-                                           : "As the playlist lists it");
++                          choice_is_hls(c) ? evo_tr("As the playlist lists it - EVO picks the quality")
++                                           : evo_tr("As the playlist lists it"));
+         } else if (kind == KindGuess) {
+             std::snprintf(detail[i], sizeof detail[i], "%s",
+-                          "The same address with a different extension - a guess");
++                          evo_tr("The same address with a different extension - a guess"));
+         } else {
+@@ -1225,6 +1226,6 @@
+             }
+-            std::snprintf(detail[i], sizeof detail[i], "%s", d.empty() ? "Quality variant" : d.c_str());
+-        }
+-
+-        params.rows[i].title = c.label[0] ? c.label : "Stream";
++            std::snprintf(detail[i], sizeof detail[i], "%s", d.empty() ? evo_tr("Quality variant") : d.c_str());
++        }
++
++        params.rows[i].title = c.label[0] ? c.label : evo_tr("Stream");
+         params.rows[i].detail = detail[i];
+@@ -1304,3 +1305,3 @@
+         }
+-        panel_title = c.label[0] ? c.label : "Stream";
++        panel_title = c.label[0] ? c.label : evo_tr("Stream");
+         params.panel_eyebrow = "STREAM DETAILS";
+@@ -1327,5 +1328,5 @@
+     params.hints[0].glyph_path = "../icons/btn_cross.png";
+-    params.hints[0].label = "PLAY";
++    params.hints[0].label = evo_tr("PLAY");
+     params.hints[1].glyph_path = "../icons/btn_circle.png";
+-    params.hints[1].label = "BACK";
++    params.hints[1].label = evo_tr("BACK");
+ 
+@@ -1423,3 +1424,3 @@
+                         evo_feedback(EVO_FB_CONFIRM);
+-                        toast(p->name, isPlaylist ? "Playlist removed" : "Server removed");
++                        toast(p->name, isPlaylist ? evo_tr("Playlist removed") : evo_tr("Server removed"));
+                         int keep = m_pickIndex;
+@@ -1643,3 +1644,3 @@
+     if (!p || !(p->caps & EVO_PROVIDER_CAP_SEARCH)) {
+-        toast("SEARCH", "This provider does not support search");
++        toast(evo_tr("SEARCH"), evo_tr("This provider does not support search"));
+         return;
+@@ -1649,3 +1650,3 @@
+     const bool live = m_providerId == "iptv" || m_providerId == "xtream";
+-    evo_keyboard_open(live ? "Search channels..." : "Search...", m_searchQuery.c_str(), 64,
++    evo_keyboard_open(live ? evo_tr("Search channels...") : evo_tr("Search..."), m_searchQuery.c_str(), 64,
+                       &ProviderHostScreen::OnSearchSubmitted, this);
+@@ -1706,3 +1707,3 @@
+         evo_feedback(EVO_FB_CONFIRM);
+-        toast(p->name, "Addon added");
++        toast(p->name, evo_tr("Addon added"));
+         self->m_picking = false;
+@@ -1715,3 +1716,3 @@
+         /* The same address again: setting it would drop the session. */
+-        toast(p->name, "Server unchanged");
++        toast(p->name, evo_tr("Server unchanged"));
+         return;
+@@ -1720,3 +1721,3 @@
+         toast(p->name, web ? "Use http(s)://<host>:<port>"
+-                           : "That does not look like an M3U URL");
++                           : evo_tr("That does not look like an M3U URL"));
+         return;
+@@ -1730,3 +1731,3 @@
+          * media server browsed natively signs in first (openProvider). */
+-        toast(p->name, "Server saved");
++        toast(p->name, evo_tr("Server saved"));
+         if (isNativeWeb(p))
+@@ -1744,5 +1745,5 @@
+     if (p->ui_embedded)
+-        toast(p->name, value.empty() ? "Addons cleared" : "Addon added");
++        toast(p->name, value.empty() ? evo_tr("Addons cleared") : evo_tr("Addon added"));
+     else
+-        toast("PROVIDERS", value.empty() ? "Playlist cleared" : "Playlist updated");
++        toast(evo_tr("PROVIDERS"), value.empty() ? evo_tr("Playlist cleared") : evo_tr("Playlist updated"));
+ 
+@@ -1771,3 +1772,3 @@
+     if (!ok) {
+-        toast("IPTV", "Guide must start with http(s):// or /");
++        toast("IPTV", evo_tr("Guide must start with http(s):// or /"));
+         return;
+@@ -1775,6 +1776,6 @@
+     if (provider_iptv_pin_guide(value.c_str()) != 0) {
+-        toast("IPTV", "Open a playlist first");
+-        return;
+-    }
+-    toast("LIVE TV", value.empty() ? "Guide: automatic" : "Guide saved for this playlist");
++        toast("IPTV", evo_tr("Open a playlist first"));
++        return;
++    }
++    toast(evo_tr("LIVE TV"), value.empty() ? evo_tr("Guide: automatic") : evo_tr("Guide saved for this playlist"));
+     evo_rmlui_provider_hide_panel();
+@@ -1843,4 +1844,4 @@
+ 
+-    r.id = "menu:playlist"; r.title = "Playlist"; r.icon = "/assets/icons/icon_tv.png";
+-    r.detail = pl.empty() ? std::string("None yet")
++    r.id = "menu:playlist"; r.title = evo_tr("Playlist"); r.icon = "/assets/icons/icon_tv.png";
++    r.detail = pl.empty() ? std::string(evo_tr("None yet"))
+                           : pl + " · " + std::to_string(n) + " channels";
+@@ -1850,6 +1851,6 @@
+     r = PanelBuild::Row();
+-    r.id = "menu:guide"; r.title = "Channel guide"; r.icon = "/assets/icons/icon_recent_files.png";
++    r.id = "menu:guide"; r.title = evo_tr("Channel guide"); r.icon = "/assets/icons/icon_recent_files.png";
+     r.chevron = 1;
+     if (pin == "none") {
+-        r.detail = "Turned off for this playlist";
++        r.detail = evo_tr("Turned off for this playlist");
+     } else if (!inUse.empty()) {
+@@ -1858,3 +1859,3 @@
+     } else {
+-        r.detail = "None yet - choose one";
++        r.detail = evo_tr("None yet - choose one");
+         r.warn = 1;
+@@ -1864,5 +1865,5 @@
+     r = PanelBuild::Row();
+-    r.id = "menu:refresh"; r.title = "Refresh guide"; r.icon = "/assets/icons/icon_activity.png";
++    r.id = "menu:refresh"; r.title = evo_tr("Refresh guide"); r.icon = "/assets/icons/icon_activity.png";
+     long long age = provider_iptv_guide_age();
+-    r.detail = inUse.empty() ? std::string("No guide loaded")
++    r.detail = inUse.empty() ? std::string(evo_tr("No guide loaded"))
+              : inUse[0] == '/' ? std::string("Reads the USB file again")
+@@ -1885,3 +1886,3 @@
+     if (!value.empty() && value.rfind("http://", 0) != 0 && value.rfind("https://", 0) != 0) {
+-        toast("XTREAM", "Guide must start with http:// or https://");
++        toast("XTREAM", evo_tr("Guide must start with http:// or https://"));
+         return;
+@@ -1889,3 +1890,3 @@
+     xtream_set_xmltv(value.c_str());
+-    toast("XTREAM", value.empty() ? "Guide: the panel's own" : "Loading your guide...");
++    toast("XTREAM", value.empty() ? evo_tr("Guide: the panel's own") : evo_tr("Loading your guide..."));
+     evo_rmlui_provider_hide_panel();
+@@ -1901,5 +1902,5 @@
+     PanelBuild::Row r;
+-    r.id = "xt:account"; r.title = "Account"; r.icon = "/assets/icons/icon_tv.png";
++    r.id = "xt:account"; r.title = evo_tr("Account"); r.icon = "/assets/icons/icon_tv.png";
+     r.detail = xtream_get_config()->host[0] ? std::string(xtream_get_config()->host)
+-                                            : std::string("None yet");
++                                            : std::string(evo_tr("None yet"));
+     r.chevron = 1;
+@@ -1908,3 +1909,3 @@
+     r = PanelBuild::Row();
+-    r.id = "xt:guide"; r.title = "XMLTV guide"; r.icon = "/assets/icons/icon_recent_files.png";
++    r.id = "xt:guide"; r.title = evo_tr("XMLTV guide"); r.icon = "/assets/icons/icon_recent_files.png";
+     r.chevron = 1;
+@@ -1912,3 +1913,3 @@
+     const std::string st = xtream_epg_status();
+-    r.detail = (own.empty() ? std::string("The panel's own guide") : "Your own: " + guideLabel(own)) +
++    r.detail = (own.empty() ? std::string(evo_tr("The panel's own guide")) : evo_tr("Your own: ") + guideLabel(own)) +
+                (st.empty() ? std::string() : " · " + st);
+@@ -1934,5 +1935,5 @@
+     PanelBuild::Row a;
+-    a.id = "guide:auto"; a.title = "Automatic"; a.radio = 1; a.on = pin.empty();
+-    a.detail = (pin.empty() && !inUse.empty()) ? "Picked " + guideLabel(inUse)
+-                                               : std::string("EVO picks a guide that fits");
++    a.id = "guide:auto"; a.title = evo_tr("Automatic"); a.radio = 1; a.on = pin.empty();
++    a.detail = (pin.empty() && !inUse.empty()) ? evo_tr("Picked ") + guideLabel(inUse)
++                                               : std::string(evo_tr("EVO picks a guide that fits"));
+     pb.rows.push_back(a);
+@@ -1962,3 +1963,3 @@
+                                       std::to_string(n) + " channels";
+-        if (u == inUse) { r.badge = "IN USE"; r.live = 1; }
++        if (u == inUse) { r.badge = evo_tr("IN USE"); r.live = 1; }
+         if (r.on) focus = (int)pb.rows.size();
+@@ -1968,4 +1969,4 @@
+     PanelBuild::Row none;
+-    none.id = "guide:none"; none.title = "None"; none.radio = 1; none.on = (pin == "none");
+-    none.detail = "Show no guide for this playlist";
++    none.id = "guide:none"; none.title = evo_tr("None"); none.radio = 1; none.on = (pin == "none");
++    none.detail = evo_tr("Show no guide for this playlist");
+     if (none.on) focus = (int)pb.rows.size();
+@@ -1974,4 +1975,4 @@
+     PanelBuild::Row url;
+-    url.id = "guide:url"; url.title = "Enter guide address…";
+-    url.detail = "Web address of an XMLTV guide";
++    url.id = "guide:url"; url.title = evo_tr("Enter guide address…");
++    url.detail = evo_tr("Web address of an XMLTV guide");
+     url.icon = "/assets/icons/icon_keyboard.png"; url.chevron = 1;
+@@ -2013,3 +2014,3 @@
+                 favorites_save();
+-                toast("FAVORITES", "Removed from favorites");
++                toast(evo_tr("FAVORITES"), evo_tr("Removed from favorites"));
+                 evo_feedback(EVO_FB_CANCEL);
+@@ -2018,3 +2019,3 @@
+                 favorites_save();
+-                toast("FAVORITES", "Added to favorites");
++                toast(evo_tr("FAVORITES"), evo_tr("Added to favorites"));
+                 evo_feedback(EVO_FB_CONFIRM);
+@@ -2054,3 +2055,3 @@
+         if (!ok || count <= 0) {
+-            toast("OPTIONS", "Nothing to show");
++            toast(evo_tr("OPTIONS"), evo_tr("Nothing to show"));
+             delete c;
+@@ -2085,7 +2086,7 @@
+         const bool info = c->kind == "details";
+-        pb.show("OPTIONS  ›  ", info ? "DETAILS" : "BROWSE", c->title, "", "", "",
+-                info ? "" : "SELECT", "BACK", 0);
++        pb.show("OPTIONS  ›  ", info ? evo_tr("DETAILS") : evo_tr("BROWSE"), c->title, "", "", "",
++                info ? "" : evo_tr("SELECT"), "BACK", 0);
+         delete c;
+     }, ctx);
+-    if (rc != 0) { toast("OPTIONS", "Could not reach the server"); delete ctx; }
++    if (rc != 0) { toast(evo_tr("OPTIONS"), evo_tr("Could not reach the server")); delete ctx; }
+ }
+@@ -2109,3 +2110,3 @@
+         r.id = "item:played";
+-        r.title = m_itemPlayed ? "Mark as unwatched" : "Mark as watched";
++        r.title = m_itemPlayed ? evo_tr("Mark as unwatched") : evo_tr("Mark as watched");
+         r.detail = std::string("On ") + p->name;
+@@ -2116,3 +2117,3 @@
+         r.id = "item:fav";
+-        r.title = m_itemFav ? "Remove from favourites" : "Add to favourites";
++        r.title = m_itemFav ? evo_tr("Remove from favourites") : evo_tr("Add to favourites");
+         r.detail = std::string("On ") + p->name;
+@@ -2125,4 +2126,4 @@
+         r.id = "item:details";
+-        r.title = "Details & cast";
+-        r.detail = "Rating, genres, director, actors";
++        r.title = evo_tr("Details & cast");
++        r.detail = evo_tr("Rating, genres, director, actors");
+         r.icon = "/assets/icons/icon_activity.png";
+@@ -2133,4 +2134,4 @@
+             r.id = "item:similar";
+-            r.title = "Similar titles";
+-            r.detail = "More like this";
++            r.title = evo_tr("Similar titles");
++            r.detail = evo_tr("More like this");
+             r.icon = "/assets/icons/icon_folder.png";
+@@ -2141,4 +2142,4 @@
+             r.id = "item:browse";
+-            r.title = "Sort, filter & genre";
+-            r.detail = "For this library";
++            r.title = evo_tr("Sort, filter & genre");
++            r.detail = evo_tr("For this library");
+             r.icon = "/assets/icons/icon_activity.png";
+@@ -2152,4 +2153,4 @@
+         r.id = "item:transcode";
+-        r.title = "Server transcoding";
+-        r.detail = "Flip between only-when-needed and always";
++        r.title = evo_tr("Server transcoding");
++        r.detail = evo_tr("Flip between only-when-needed and always");
+         r.icon = "/assets/icons/icon_activity.png";
+@@ -2161,4 +2162,4 @@
+         r.id = "item:evofav";
+-        r.title = "EVO favourites";
+-        r.detail = "Keep it on this console";
++        r.title = evo_tr("EVO favourites");
++        r.detail = evo_tr("Keep it on this console");
+         r.icon = "/assets/icons/icon_favorites.png";
+@@ -2183,3 +2184,3 @@
+         ip->item_action(m_rowsItem.c_str(), rid.c_str(), [](int ok, const char* msg, void*) {
+-            if (msg) toast("BROWSE", msg);
++            if (msg) toast(evo_tr("BROWSE"), msg);
+             if (ok) evo_rmlui_provider_reload();
+@@ -2209,7 +2210,7 @@
+                                     : (m_itemFav ? "unfav" : "fav");
+-        auto* ctx = new ActionCtx{played ? (m_itemPlayed ? "Marked as unwatched" : "Marked as watched")
+-                                         : (m_itemFav ? "Removed from favourites" : "Added to favourites")};
++        auto* ctx = new ActionCtx{played ? (m_itemPlayed ? evo_tr("Marked as unwatched") : evo_tr("Marked as watched"))
++                                         : (m_itemFav ? evo_tr("Removed from favourites") : evo_tr("Added to favourites"))};
+         int rc = ip->item_action(m_itemId.c_str(), action, [](int ok, const char* msg, void* ud) {
+             auto* c = static_cast<ActionCtx*>(ud);
+-            toast("OPTIONS", ok ? (msg ? msg : c->done.c_str()) : "The server did not accept that");
++            toast(evo_tr("OPTIONS"), ok ? (msg ? msg : c->done.c_str()) : evo_tr("The server did not accept that"));
+             evo_feedback(ok ? EVO_FB_CONFIRM : EVO_FB_CANCEL);
+@@ -2218,3 +2219,3 @@
+         }, ctx);
+-        if (rc != 0) { toast("OPTIONS", "Could not reach the server"); delete ctx; }
++        if (rc != 0) { toast(evo_tr("OPTIONS"), evo_tr("Could not reach the server")); delete ctx; }
+         return;
+@@ -2244,3 +2245,3 @@
+         evo_rmlui_provider_hide_panel();
+-        toast("LIVE TV", "Refreshing the guide...");
++        toast(evo_tr("LIVE TV"), evo_tr("Refreshing the guide..."));
+     } else if (id == "guide:url") {
+@@ -2254,3 +2255,3 @@
+         if (provider_iptv_pin_guide(pinv.c_str()) != 0) {
+-            toast("LIVE TV", "Open a playlist first");
++            toast(evo_tr("LIVE TV"), evo_tr("Open a playlist first"));
+             return;
+@@ -2258,3 +2259,3 @@
+         evo_rmlui_provider_hide_panel();
+-        toast("LIVE TV", choice == "auto" ? "Guide: automatic"
++        toast(evo_tr("LIVE TV"), choice == "auto" ? "Guide: automatic"
+                        : choice == "none" ? "Guide turned off for this playlist"
+@@ -2269,3 +2270,3 @@
+     if (!p || !(p->caps & EVO_PROVIDER_CAP_CONFIG) || !p->get_source) {
+-        toast("PROVIDERS", "This provider has no playlist to set");
++        toast(evo_tr("PROVIDERS"), evo_tr("This provider has no playlist to set"));
+         return;
+@@ -2302,3 +2303,3 @@
+     if (addNuvioAddon)
+-        std::snprintf(title, sizeof title, "Add a Nuvio addon");
++        std::snprintf(title, sizeof title, evo_tr("Add a Nuvio addon"));
+     else if (p->caps & EVO_PROVIDER_CAP_WEBUI)
+@@ -2306,3 +2307,3 @@
+     else if (p->ui_embedded)
+-        std::snprintf(title, sizeof title, "Add a Stremio addon");
++        std::snprintf(title, sizeof title, evo_tr("Add a Stremio addon"));
+     else
+@@ -2395,3 +2396,3 @@
+     if (!p || !(p->caps & EVO_PROVIDER_CAP_CONFIG) || !p->set_source) {
+-        toast("PROVIDERS", "This provider has no playlist to set");
++        toast(evo_tr("PROVIDERS"), evo_tr("This provider has no playlist to set"));
+         return;
+@@ -2403,3 +2404,3 @@
+     if (playlists.empty()) {
+-        toast("USB SCAN", "No M3U files found on USB");
++        toast(evo_tr("USB SCAN"), evo_tr("No M3U files found on USB"));
+         evo_rmlui_provider_set_status("No .m3u or .m3u8 files found on USB drive (/mnt/usb0, /mnt/usb1). Insert a USB drive with an M3U playlist.", 1);
+@@ -2411,3 +2412,3 @@
+         if (p->set_source(path.c_str()) != 0) {
+-            toast("PROVIDERS", "Failed to load playlist from USB");
++            toast(evo_tr("PROVIDERS"), evo_tr("Failed to load playlist from USB"));
+             return;
+@@ -2417,3 +2418,3 @@
+         std::string fname = (last_slash != std::string::npos) ? path.substr(last_slash + 1) : path;
+-        toast("IPTV USB", ("Loaded " + fname).c_str());
++        toast("IPTV USB", (evo_tr("Loaded ") + fname).c_str());
+ 
+@@ -2445,6 +2446,6 @@
+                 const bool have = evo_failure_reason(why, sizeof why) != 0;
+-                toast("STREAM", have ? why : "That item could not be played");
++                toast(evo_tr("STREAM"), have ? why : evo_tr("That item could not be played"));
+                 evo_rmlui_provider_set_tuning(0);
+                 evo_rmlui_provider_set_loading(0, "");
+-                evo_rmlui_provider_set_status(have ? why : "Failed to resolve stream for channel", 1);
++                evo_rmlui_provider_set_status(have ? why : evo_tr("Failed to resolve stream for channel"), 1);
+             }
+@@ -2484,4 +2485,4 @@
+     const bool live = tp && (tp->caps & EVO_PROVIDER_CAP_LIVE);
+-    std::snprintf(msg, sizeof(msg), live ? "Tuning %s..." : "Opening %s...", sel.title);
+-    toast(live ? "LIVE TV" : (tp ? tp->name : "PROVIDER"), msg);
++    std::snprintf(msg, sizeof(msg), live ? evo_tr("Tuning %s...") : evo_tr("Opening %s..."), sel.title);
++    toast(live ? evo_tr("LIVE TV") : (tp ? tp->name : evo_tr("PROVIDER")), msg);
+     evo_rmlui_provider_set_tuning(1);
+@@ -2504,3 +2505,3 @@
+                 evo_bt("prov_screen: discovery found %s for '%s'", addr, m_providerId.c_str());
+-                toast(p ? p->name : "PROVIDER", "Found a server - press Triangle to use it");
++                toast(p ? p->name : evo_tr("PROVIDER"), evo_tr("Found a server - press Triangle to use it"));
+                 openSourceKeyboard(addr);
+@@ -2508,3 +2509,3 @@
+                 evo_bt("prov_screen: discovery found nothing for '%s'", m_providerId.c_str());
+-                toast(p ? p->name : "PROVIDER", "No server found - type its address");
++                toast(p ? p->name : evo_tr("PROVIDER"), evo_tr("No server found - type its address"));
+                 openSourceKeyboard("http://");
+@@ -2527,3 +2528,3 @@
+             const evo_provider_t* p = evo_provider_find(m_providerId.c_str());
+-            toast(p ? p->name : "PROVIDER", err);
++            toast(p ? p->name : evo_tr("PROVIDER"), err);
+             enterPicker();
+@@ -2550,3 +2551,3 @@
+             evo_bt("prov_screen: '%s' session rejected - back to sign-in", m_providerId.c_str());
+-            toast(sp->name, "Please sign in again");
++            toast(sp->name, evo_tr("Please sign in again"));
+             evo_rmlui_provider_close();
+@@ -2575,3 +2576,3 @@
+         if (provider_iptv_take_guide_notice(note, sizeof note))
+-            toast("LIVE TV", (std::string(note) + " · change in Options").c_str());
++            toast(evo_tr("LIVE TV"), (std::string(note) + " · change in Options").c_str());
+     }
+@@ -2612,3 +2613,3 @@
+                     std::snprintf(msg, sizeof(msg), "%s did not open - pick another", bad.label);
+-                toast("STREAM", msg);
++                toast(evo_tr("STREAM"), msg);
+                 evo_bt("prov_screen: chosen stream %d failed (%s) - back to the list",
+@@ -2630,3 +2631,3 @@
+                               g_pending.choices[g_pending.active_choice].label);
+-                toast("STREAM", retry_msg);
++                toast(evo_tr("STREAM"), retry_msg);
+                 evo_rmlui_provider_set_status(retry_msg, 0);
+@@ -2639,3 +2640,3 @@
+             evo_rmlui_provider_set_status(have_why ? why
+-                                          : "Stream unavailable or connection timed out", 1);
++                                          : evo_tr("Stream unavailable or connection timed out"), 1);
+         }
+@@ -2740,3 +2741,3 @@
+             m_signIn = SignIn::None;
+-            toast(p->name, "Could not reach the server");
++            toast(p->name, evo_tr("Could not reach the server"));
+             return;
+@@ -2779,3 +2780,3 @@
+             self->m_qcDeadlineMs = qc_now_ms() + 60 * 60 * 1000;
+-            toast(provider->name, "Could not request pairing code");
++            toast(provider->name, evo_tr("Could not request pairing code"));
+             return;
+@@ -2808,3 +2809,3 @@
+            state > 0 ? "signed in" : "failed", msg ? msg : "");
+-    toast(p ? p->name : "PROVIDER", msg && msg[0] ? msg : (state > 0 ? "Signed in" : "Quick Connect failed"));
++    toast(p ? p->name : evo_tr("PROVIDER"), msg && msg[0] ? msg : (state > 0 ? evo_tr("Signed in") : evo_tr("Quick Connect failed")));
+     if (state > 0) {
+@@ -2843,5 +2844,5 @@
+     static char title[64], hint[160], code[16];
+-    std::snprintf(title, sizeof title, "SIGN IN TO %s", p ? p->name : "THE SERVER");
++    std::snprintf(title, sizeof title, evo_tr("SIGN IN TO %s"), p ? p->name : evo_tr("THE SERVER"));
+     params.title = title;
+-    params.subtitle = "Quick Connect - no password needed";
++    params.subtitle = evo_tr("Quick Connect - no password needed");
+     params.is_empty = 1;
+@@ -2854,3 +2855,3 @@
+     std::snprintf(hint, sizeof hint,
+-                  "On your phone or computer, visit plex.tv/link and enter this code.");
++                  evo_tr("On your phone or computer, visit plex.tv/link and enter this code."));
+     } else {
+@@ -2865,3 +2866,3 @@
+     params.hints[0].glyph_path = "../icons/btn_circle.png";
+-    params.hints[0].label = "CANCEL";
++    params.hints[0].label = evo_tr("CANCEL");
+ 	} else {
+@@ -2869,5 +2870,5 @@
+ 		params.hints[0].glyph_path = "../icons/btn_square.png";
+-		params.hints[0].label = "USE PASSWORD";
++		params.hints[0].label = evo_tr("USE PASSWORD");
+ 		params.hints[1].glyph_path = "../icons/btn_circle.png";
+-		params.hints[1].label = "CANCEL";
++		params.hints[1].label = evo_tr("CANCEL");
+ 	}
+@@ -2909,4 +2910,4 @@
+         char why[256];
+-        toast(p ? p->name : "PROVIDER",
+-              evo_failure_reason(why, sizeof why) ? why : "Could not reach the server");
++        toast(p ? p->name : evo_tr("PROVIDER"),
++              evo_failure_reason(why, sizeof why) ? why : evo_tr("Could not reach the server"));
+     }
+@@ -2925,3 +2926,3 @@
+     if (!shown && !ok && evo_failure_reason(why, sizeof why)) shown = why;
+-    toast(p ? p->name : "PROVIDER", shown ? shown : (ok ? "Signed in" : "Sign-in failed"));
++    toast(p ? p->name : evo_tr("PROVIDER"), shown ? shown : (ok ? evo_tr("Signed in") : evo_tr("Sign-in failed")));
+     if (ok)
+@@ -2942,3 +2943,3 @@
+     evo_bt("prov_screen: the channel address is a playlist - loaded as the IPTV source");
+-    toast("IPTV", "That link is a playlist - loading it as your channel list");
++    toast("IPTV", evo_tr("That link is a playlist - loading it as your channel list"));
+ 
+@@ -2962,3 +2963,3 @@
+     const evo_provider_t* p = evo_provider_find(m_providerId.c_str());
+-    const char* name = p ? p->name : "Server";
++    const char* name = p ? p->name : evo_tr("Server");
+     char title[96];
+@@ -2970,3 +2971,3 @@
+             m_qcCode.clear();
+-            toast(name, "The code expired - press X to get a new one");
++            toast(name, evo_tr("The code expired - press X to get a new one"));
+             break;
+--- projects\evoplayer\core\src\screens\RecentFilesScreen.cpp
++++ projects\evoplayer\core\src\screens\RecentFilesScreen.cpp
+@@ -12,2 +12,3 @@
+ #include <cstring>
++#include "evo_i18n.h"
+ 
+@@ -108,4 +109,4 @@
+ 
+-    params.title = "RECENT FILES";
+-    params.subtitle = "PICK UP WHERE YOU LEFT OFF";
++    params.title = evo_tr("RECENT FILES");
++    params.subtitle = evo_tr("PICK UP WHERE YOU LEFT OFF");
+     params.total_count = recent_file_count;
+@@ -126,3 +127,3 @@
+         params.rows[i].icon_path = "../icons/icon_recent_files.png";
+-        params.rows[i].badge = "RECENT";
++        params.rows[i].badge = evo_tr("RECENT");
+         if (r.duration > 1.0) {
+--- projects\evoplayer\core\src\screens\SettingsScreen.cpp
++++ projects\evoplayer\core\src\screens\SettingsScreen.cpp
+@@ -16,2 +16,3 @@
+ #include <cstring>
++#include "evo_i18n.h"
+ 
+@@ -206,13 +207,13 @@
+ const SectionSpec kSections[] = {
+-    makeSection("VIDEO & DISPLAY", "DECODER, UPSCALING, 120 HZ & HDR",
++    makeSection(evo_tr("VIDEO & DISPLAY"), evo_tr("DECODER, UPSCALING, 120 HZ & HDR"),
+                 "SettingsPlaybackScreen", ScreenId::SettingsPlayback, kVideoKeys),
+-    makeSection("AUDIO", "OUTPUT CHANNELS, SPEAKERS & SOUNDS",
++    makeSection(evo_tr("AUDIO"), evo_tr("OUTPUT CHANNELS, SPEAKERS & SOUNDS"),
+                 "SettingsAudioScreen", ScreenId::SettingsAudio, kAudioKeys),
+-    makeSection("SUBTITLES", "PREFERENCES & APPEARANCE",
++    makeSection(evo_tr("SUBTITLES"), evo_tr("PREFERENCES & APPEARANCE"),
+                 "SettingsSubtitlesScreen", ScreenId::SettingsSubtitles, kSubtitleKeys),
+-    makeSection("INTERFACE & STORAGE", "THEMES, CONTROLS & BROWSING",
++    makeSection(evo_tr("INTERFACE & STORAGE"), evo_tr("THEMES, CONTROLS & BROWSING"),
+                 "SettingsInterfaceScreen", ScreenId::SettingsInterface, kInterfaceKeys),
+-    makeSection("SYSTEM & DIAGNOSTICS", "DIAGNOSTICS & SYSTEM MANAGEMENT",
++    makeSection(evo_tr("SYSTEM & DIAGNOSTICS"), evo_tr("DIAGNOSTICS & SYSTEM MANAGEMENT"),
+                 "SettingsSystemScreen", ScreenId::SettingsSystem, kSystemKeys),
+-    makeSection("EXPERIMENTAL", "UNFINISHED WORK - EXPECT ARTEFACTS",
++    makeSection(evo_tr("EXPERIMENTAL"), evo_tr("UNFINISHED WORK - EXPECT ARTEFACTS"),
+                 "SettingsExperimentalScreen", ScreenId::SettingsExperimental,
+@@ -300,3 +301,3 @@
+             d.disabled = true;
+-            d.detail = "ONLY USED WHEN UPSCALING IS SET TO AI";
++            d.detail = evo_tr("ONLY USED WHEN UPSCALING IS SET TO AI");
+         }
+@@ -327,3 +328,3 @@
+             d.disabled = true;
+-            d.detail = "DISPLAY OR HDMI SINK DOES NOT SUPPORT 120 HZ";
++            d.detail = evo_tr("DISPLAY OR HDMI SINK DOES NOT SUPPORT 120 HZ");
+         }
+@@ -373,3 +374,3 @@
+         if (opt > 20) opt = 20;
+-        d = valueDef(key, "AUDIO DELAY", "SHIFTS SOUND AGAINST PICTURE TO FIX LIP-SYNC",
++        d = valueDef(key, evo_tr("AUDIO DELAY"), evo_tr("SHIFTS SOUND AGAINST PICTURE TO FIX LIP-SYNC"),
+                      "../icons/icon_volume.png", 21, opt);
+@@ -413,3 +414,3 @@
+         if (face < 0 || face >= 4) face = 0;
+-        d = valueDef(key, "DEFAULT FONT STYLE", "ON-SCREEN TEXT TYPEFACE",
++        d = valueDef(key, evo_tr("DEFAULT FONT STYLE"), evo_tr("ON-SCREEN TEXT TYPEFACE"),
+                      "../icons/icon_type.png", 4, face);
+@@ -425,3 +426,3 @@
+         if (secPos < 0 || secPos >= 2) secPos = 0;
+-        d = valueDef(key, "SECONDARY SUBTITLE POSITION", "WHERE THE SECOND LINE OF DIALOGUE GOES",
++        d = valueDef(key, evo_tr("SECONDARY SUBTITLE POSITION"), evo_tr("WHERE THE SECOND LINE OF DIALOGUE GOES"),
+                      "../icons/icon_subtitles.png", 2, secPos);
+@@ -435,3 +436,3 @@
+         if (secColor < 0 || secColor >= 3) secColor = 0;
+-        d = valueDef(key, "SECONDARY SUBTITLE COLOUR", "KEEPS THE TWO LINES APART",
++        d = valueDef(key, evo_tr("SECONDARY SUBTITLE COLOUR"), evo_tr("KEEPS THE TWO LINES APART"),
+                      "../icons/icon_palette.png", 3, secColor);
+@@ -444,3 +445,3 @@
+         if (themes > kMaxOptions) themes = kMaxOptions;
+-        d = valueDef(key, "THEME", "COLOR PALETTE & ACCENTS",
++        d = valueDef(key, evo_tr("THEME"), evo_tr("COLOR PALETTE & ACCENTS"),
+                      "../icons/icon_palette.png", themes, evo_theme_index());
+@@ -448,3 +449,3 @@
+             const char* nm = evo_theme_name(i);
+-            d.opt_label[i] = nm ? nm : "THEME";
++            d.opt_label[i] = nm ? nm : evo_tr("THEME");
+         }
+@@ -465,3 +466,3 @@
+         static const char* kKeyboards[] = {"VIRTUAL KEYBOARD", "NATIVE PS5 IME"};
+-        d = valueDef(key, "KEYBOARD INPUT", "TEXT ENTRY METHOD",
++        d = valueDef(key, evo_tr("KEYBOARD INPUT"), evo_tr("TEXT ENTRY METHOD"),
+                      "../icons/icon_keyboard.png", 2, settings->getKeyboardType() == 1 ? 1 : 0);
+@@ -511,9 +512,9 @@
+         if (pool > kProMemoryThresholdMb) {
+-            std::snprintf(s_mem_badge, sizeof s_mem_badge, "%.1f GIB - PRO MODE",
++            std::snprintf(s_mem_badge, sizeof s_mem_badge, evo_tr("%.1f GIB - PRO MODE"),
+                           static_cast<double>(pool) / 1024.0);
+         } else if (pool > 0) {
+-            std::snprintf(s_mem_badge, sizeof s_mem_badge, "%.1f GIB - STANDARD",
++            std::snprintf(s_mem_badge, sizeof s_mem_badge, evo_tr("%.1f GIB - STANDARD"),
+                           static_cast<double>(pool) / 1024.0);
+         } else {
+-            std::snprintf(s_mem_badge, sizeof s_mem_badge, "UNKNOWN");
++            std::snprintf(s_mem_badge, sizeof s_mem_badge, evo_tr("UNKNOWN"));
+         }
+@@ -527,6 +528,6 @@
+             std::snprintf(s_mem_sub, sizeof s_mem_sub,
+-                          "%s - PS5 PRO: GET THE PRO BUILD FOR +1.2 GIB", s_mem_badge);
++                          evo_tr("%s - PS5 PRO: GET THE PRO BUILD FOR +1.2 GIB"), s_mem_badge);
+         else
+             std::snprintf(s_mem_sub, sizeof s_mem_sub, "%s", s_mem_badge);
+-        d = actionDef(key, "MEMORY", s_mem_sub, "../icons/icon_activity.png",
++        d = actionDef(key, evo_tr("MEMORY"), s_mem_sub, "../icons/icon_activity.png",
+                       s_mem_badge);
+@@ -567,3 +568,3 @@
+         default:
+-            std::snprintf(s_upd_sub, sizeof s_upd_sub, "RUNNING %s - CROSS TO CHECK FOR UPDATES", ver);
++            std::snprintf(s_upd_sub, sizeof s_upd_sub, evo_tr("RUNNING %s - CROSS TO CHECK FOR UPDATES"), ver);
+             break;
+@@ -572,3 +573,3 @@
+             if (*c >= 'a' && *c <= 'z') *c = static_cast<char>(*c - 'a' + 'A');
+-        d = actionDef(key, "SOFTWARE UPDATE", s_upd_sub, "../icons/icon_activity.png", "UPDATE");
++        d = actionDef(key, evo_tr("SOFTWARE UPDATE"), s_upd_sub, "../icons/icon_activity.png", evo_tr("UPDATE"));
+         break;
+@@ -707,3 +708,3 @@
+     static char s_counter[32];
+-    std::snprintf(s_counter, sizeof s_counter, "%d SETTING%s", n, n == 1 ? "" : "S");
++    std::snprintf(s_counter, sizeof s_counter, evo_tr("%d SETTING%s"), n, n == 1 ? "" : "S");
+     p.counter = s_counter;
+@@ -815,3 +816,3 @@
+             if (evo_updater_apply()) {
+-                toast("EVO UPDATED", "Closing. Open EVO again from the Games row");
++                toast(evo_tr("EVO UPDATED"), evo_tr("Closing. Open EVO again from the Games row"));
+                 evo_boot_log("settings: update installed - closing");
+@@ -865,6 +866,6 @@
+             std::fclose(fp);
+-            toast("REPORT", "Report saved to USB0");
++            toast(evo_tr("REPORT"), evo_tr("Report saved to USB0"));
+             evo_feedback(EVO_FB_CONFIRM);
+         } else {
+-            toast("REPORT", "Save failed");
++            toast(evo_tr("REPORT"), evo_tr("Save failed"));
+             evo_feedback(EVO_FB_BOUNDARY);
+--- projects\evoplayer\core\src\screens\SubtitlePickerScreen.cpp
++++ projects\evoplayer\core\src\screens\SubtitlePickerScreen.cpp
+@@ -17,2 +17,3 @@
+ #include <algorithm>
++#include "evo_i18n.h"
+ 
+@@ -45,4 +46,4 @@
+     offTrack.trackId = -2;
+-    offTrack.label = "SUBTITLES OFF";
+-    offTrack.detail = "Disable subtitles";
++    offTrack.label = evo_tr("SUBTITLES OFF");
++    offTrack.detail = evo_tr("Disable subtitles");
+     m_tracks.push_back(std::move(offTrack));
+@@ -53,3 +54,3 @@
+         extTrack.trackId = -1;
+-        extTrack.label = "EXTERNAL SRT";
++        extTrack.label = evo_tr("EXTERNAL SRT");
+         char cueBuf[32];
+@@ -80,3 +81,3 @@
+             const char* native = (lang && lang->value) ? evo_language_native_name(lang->value) : nullptr;
+-            std::string label = native ? native : (lang && lang->value) ? lang->value : "Track";
++            std::string label = native ? native : (lang && lang->value) ? lang->value : evo_tr("Track");
+             if (title && title->value) {
+@@ -87,3 +88,3 @@
+             streamTrack.label = label;
+-            streamTrack.detail = "Embedded Stream";
++            streamTrack.detail = evo_tr("Embedded Stream");
+             streamTrack.isSecondary =
+@@ -106,3 +107,3 @@
+         syncRow.trackId = kAutoSyncTrack;
+-        syncRow.label = "AUTO-SYNC";
++        syncRow.label = evo_tr("AUTO-SYNC");
+         m_tracks.insert(m_tracks.begin() + 1, std::move(syncRow));
+@@ -170,3 +171,3 @@
+         prospero_subtitle_enabled = 0;
+-        toast("SUBTITLES", "OFF");
++        toast(evo_tr("SUBTITLES"), evo_tr("OFF"));
+     } else if (!prospero_subtitle_select_primary(trackId)) {
+@@ -175,3 +176,3 @@
+     } else if (trackId == -1) {
+-        toast("SUBTITLES", "EXTERNAL SRT");
++        toast(evo_tr("SUBTITLES"), evo_tr("EXTERNAL SRT"));
+     }
+@@ -235,3 +236,3 @@
+     const char* names[] = { "SMALL", "MEDIUM", "LARGE" };
+-    toast("SUBTITLE SIZE", names[prospero_subtitle_face - 1]);
++    toast(evo_tr("SUBTITLE SIZE"), names[prospero_subtitle_face - 1]);
+ }
+@@ -304,3 +305,3 @@
+     params.eyebrow = "SUBTITLE CONFIGURATION";
+-    params.title = "SUBTITLE TRACKS";
++    params.title = evo_tr("SUBTITLE TRACKS");
+     /* The picker's own preview classes are 0/1/2 (preview-small/medium/large)
+@@ -355,3 +356,3 @@
+         // [PRIMARY] / [SECONDARY]: which line of dialogue each track is (#110).
+-        params.tracks[i].tag = m_tracks[idx].isSecondary ? "SECONDARY"
++        params.tracks[i].tag = m_tracks[idx].isSecondary ? evo_tr("SECONDARY")
+                              : (idx == m_activeTrackIndex && idx != 0 &&
+--- projects\evoplayer\core\src\services\SettingsService.cpp
++++ projects\evoplayer\core\src\services\SettingsService.cpp
+@@ -12,2 +12,3 @@
+ #include <cstring>
++#include "evo_i18n.h"
+ 
+@@ -171,3 +172,3 @@
+     if (!file) {
+-        toast("SETTINGS", "SAVE FAILED");
++        toast(evo_tr("SETTINGS"), "SAVE FAILED");
+         return false;
+--- projects\evoplayer\ui_kit\src\evo_hui_browser.cpp
++++ projects\evoplayer\ui_kit\src\evo_hui_browser.cpp
+@@ -10,2 +10,3 @@
+ #include <cstdio>
++#include "evo_i18n.h"
+ 
+@@ -279,3 +280,3 @@
+         list.push_opacity(in);
+-        ui::text(list, fonts.display, fit(fonts.display, title_.empty() ? "Files" : title_, 48, 900), kLeft - 2,
++        ui::text(list, fonts.display, fit(fonts.display, title_.empty() ? evo_tr("Files") : title_, 48, 900), kLeft - 2,
+                  126, 48, kWhite);
+@@ -348,3 +349,3 @@
+             list.image(icon, {cx - 44, 360, 88, 88}, ::hui::gfx::kFullUv, kWhite.with_alpha(0.35f));
+-        ui::text(list, fonts.display, empty_title_.empty() ? "Folder is empty" : empty_title_, cx, 530, 36,
++        ui::text(list, fonts.display, empty_title_.empty() ? evo_tr("Folder is empty") : empty_title_, cx, 530, 36,
+                  kWhite, Align::center);
+@@ -430,3 +431,3 @@
+         list.bordered_rect(strip, 26, kClear, 1.0f, kWhite.with_alpha(0.08f));
+-        ui::text(list, fonts.semibold, ui::upper(ins_kind_.empty() ? "File" : ins_kind_), strip.x + 28,
++        ui::text(list, fonts.semibold, ui::upper(ins_kind_.empty() ? evo_tr("File") : ins_kind_), strip.x + 28,
+                  strip.y + 40, 15, p.accent, Align::left, 3.0f);
+@@ -487,3 +488,3 @@
+         list.bordered_rect(card, 32, kClear, 1.5f, kWhite.with_alpha(0.14f));
+-        ui::text(list, fonts.semibold, "FILE OPERATIONS", card.x + 32, card.y + 54, 15, p.accent, Align::left, 3.0f);
++        ui::text(list, fonts.semibold, evo_tr("FILE OPERATIONS"), card.x + 32, card.y + 54, 15, p.accent, Align::left, 3.0f);
+         ui::text(list, fonts.display, fit(fonts.display, act_target_, 30, card.w - 64), card.x + 32, card.y + 94,
+@@ -535,3 +536,3 @@
+                  p.text_faint, Align::right);
+-        ui::text(list, fonts.regular, "Circle to cancel", card.x + 40, card.y + 300, 18, p.text_faint);
++        ui::text(list, fonts.regular, evo_tr("Circle to cancel"), card.x + 40, card.y + 300, 18, p.text_faint);
+         list.pop_opacity();
+--- projects\evoplayer\ui_kit\src\evo_hui_extra.cpp
++++ projects\evoplayer\ui_kit\src\evo_hui_extra.cpp
+@@ -9,2 +9,3 @@
+ #include <cstdio>
++#include "evo_i18n.h"
+ 
+@@ -206,3 +207,3 @@
+         list.rounded_rect(card, 24, p.surface);
+-        ui::text(list, fonts.display, "Could not open this image", card.cx(), card.y + 80, 40, kWhite, Align::center);
++        ui::text(list, fonts.display, evo_tr("Could not open this image"), card.cx(), card.y + 80, 40, kWhite, Align::center);
+         ui::text(list, fonts.regular, title_, card.cx(), card.y + 130, 20, p.text_muted, Align::center);
+@@ -429,3 +430,3 @@
+         }
+-        ui::text(list, fonts.semibold, "SCAN TO TYPE", qcard.cx(), qcard.y + side + 30.0f, 14, p.text_muted, Align::center, 2.0f);
++        ui::text(list, fonts.semibold, evo_tr("SCAN TO TYPE"), qcard.cx(), qcard.y + side + 30.0f, 14, p.text_muted, Align::center, 2.0f);
+     }
+@@ -442,3 +443,3 @@
+         out->id = "clear";
+-        out->text = "Clear";
++        out->text = evo_tr("Clear");
+         out->rect = {kClearX - kClearR, kClearY - kClearR, kClearR * 2, kClearR * 2};
+--- projects\evoplayer\ui_kit\src\evo_hui_misc.cpp
++++ projects\evoplayer\ui_kit\src\evo_hui_misc.cpp
+@@ -11,2 +11,3 @@
+ #include <vector>
++#include "evo_i18n.h"
+ 
+@@ -370,3 +371,3 @@
+     }
+-    ui::text(list, fonts.semibold, "View Changelog", btn.cx(), btn.cy() + 8, 20, action_focused_ ? kInk : kWhite, Align::center);
++    ui::text(list, fonts.semibold, evo_tr("View Changelog"), btn.cx(), btn.cy() + 8, 20, action_focused_ ? kInk : kWhite, Align::center);
+ }
+@@ -379,3 +380,3 @@
+         out->id = "about-changelog";
+-        out->text = "View Changelog";
++        out->text = evo_tr("View Changelog");
+         out->index = out->total = 1;
+@@ -568,6 +569,6 @@
+     ui::text(list, fonts.display, "EVO Player", cx, 440, 56, kWhite, Align::center);
+-    ui::text(list, fonts.semibold, "Safe to close", cx, 490, 28, p.accent, Align::center);
++    ui::text(list, fonts.semibold, evo_tr("Safe to close"), cx, 490, 28, p.accent, Align::center);
+     
+-    ui::text(list, fonts.regular, "Press the PS button to open the control centre.", cx, 550, 20, p.text_muted, Align::center);
+-    ui::text(list, fonts.regular, "Highlight EVO Player and close it from the options menu.", cx, 580, 20, p.text_muted, Align::center);
++    ui::text(list, fonts.regular, evo_tr("Press the PS button to open the control centre."), cx, 550, 20, p.text_muted, Align::center);
++    ui::text(list, fonts.regular, evo_tr("Highlight EVO Player and close it from the options menu."), cx, 580, 20, p.text_muted, Align::center);
+ }
+--- projects\evoplayer\ui_kit\src\evo_hui_modals.cpp
++++ projects\evoplayer\ui_kit\src\evo_hui_modals.cpp
+@@ -11,2 +11,3 @@
+ #include <vector>
++#include "evo_i18n.h"
+ 
+@@ -130,5 +131,5 @@
+ 
+-    ui::text(list, fonts.semibold, ui::upper(eyebrow_.empty() ? "Subtitles" : eyebrow_), sheet.x + 36,
++    ui::text(list, fonts.semibold, ui::upper(eyebrow_.empty() ? evo_tr("Subtitles") : eyebrow_), sheet.x + 36,
+              sheet.y + 70, 16, p.accent, Align::left, 3.0f);
+-    ui::text(list, fonts.display, fit(fonts.display, title_.empty() ? "Subtitle track" : title_, 36, sheet.w - 72),
++    ui::text(list, fonts.display, fit(fonts.display, title_.empty() ? evo_tr("Subtitle track") : title_, 36, sheet.w - 72),
+              sheet.x + 34, sheet.y + 118, 36, kWhite);
+@@ -196,3 +197,3 @@
+         list.push_opacity(o);
+-        ui::text(list, fonts.semibold, "PREVIEW", cx, 700, 14, p.text_faint, Align::center, 3.0f);
++        ui::text(list, fonts.semibold, evo_tr("PREVIEW"), cx, 700, 14, p.text_faint, Align::center, 3.0f);
+         /* Wrapped like a real caption (two lines at most, balanced so one word
+@@ -295,3 +296,3 @@
+ 
+-    ui::text(list, fonts.semibold, "MEDIA INFO", card.x + 56, card.y + 76, 16, p.accent, Align::left, 3.0f);
++    ui::text(list, fonts.semibold, evo_tr("MEDIA INFO"), card.x + 56, card.y + 76, 16, p.accent, Align::left, 3.0f);
+     ui::text(list, fonts.display, fit(fonts.display, title_, 44, card.w - 112), card.x + 54, card.y + 132, 44, kWhite);
+--- projects\evoplayer\ui_kit\src\evo_hui_osd.cpp
++++ projects\evoplayer\ui_kit\src\evo_hui_osd.cpp
+@@ -10,2 +10,3 @@
+ #include <cstdio>
++#include "evo_i18n.h"
+ 
+@@ -292,3 +293,3 @@
+         list.circle(pill.x + 22, pill.cy(), 5, kWhite.with_alpha(0.6f + 0.4f * ui::breathe(time_, 1.6f)));
+-        ui::text(list, fonts.semibold, "LIVE", pill.x + 36, pill.y + 25, 18, kWhite, Align::left, 2.0f);
++        ui::text(list, fonts.semibold, evo_tr("LIVE"), pill.x + 36, pill.y + 25, 18, kWhite, Align::left, 2.0f);
+     }
+@@ -348,3 +349,3 @@
+     char aspect[32];
+-    std::snprintf(aspect, sizeof aspect, "Aspect: %s",
++    std::snprintf(aspect, sizeof aspect, evo_tr("Aspect: %s"),
+                   raw_.view_mode == 0 ? "Fit" : (raw_.view_mode == 1 ? "Fill" : "Stretch"));
+@@ -354,3 +355,3 @@
+     int n = 0;
+-    hints[n++] = {ui::Button::cross, raw_.paused ? "Play" : "Pause"};
++    hints[n++] = {ui::Button::cross, raw_.paused ? evo_tr("Play") : evo_tr("Pause")};
+     if (!raw_.is_live)
+@@ -376,3 +377,3 @@
+         char sync[40];
+-        std::snprintf(sync, sizeof sync, "Sync %+d ms", raw_.sub_delay_ms);
++        std::snprintf(sync, sizeof sync, evo_tr("Sync %+d ms"), raw_.sub_delay_ms);
+         ui::text(list, fonts.mono, sync, kMargin + 540, 1037, 18, p.accent);
+@@ -391,3 +392,3 @@
+         list.arc(960, 520, 44, 6, std::fmod(time_ * 5.5f, 6.2831853f), 1.6f, p.accent);
+-        ui::text(list, fonts.semibold, "LOADING", 960, 630, 18, kWhite.with_alpha(0.85f), Align::center, 3.0f);
++        ui::text(list, fonts.semibold, evo_tr("LOADING"), 960, 630, 18, kWhite.with_alpha(0.85f), Align::center, 3.0f);
+         list.pop_opacity();
+@@ -402,3 +403,3 @@
+         list.rounded_rect({960 + 8, 520 - 28, 14, 56}, 4, kWhite);
+-        ui::text(list, fonts.semibold, "PAUSED", 960, 636, 18, kWhite.with_alpha(0.85f), Align::center, 3.0f);
++        ui::text(list, fonts.semibold, evo_tr("PAUSED"), 960, 636, 18, kWhite.with_alpha(0.85f), Align::center, 3.0f);
+         list.pop_opacity();
+@@ -424,3 +425,3 @@
+         list.rounded_rect(cap, 28, kBlack.with_alpha(0.6f));
+-        ui::text(list, fonts.semibold, "SEEK TO", 960, cap.y + 38, 16, p.accent, Align::center, 3.0f);
++        ui::text(list, fonts.semibold, evo_tr("SEEK TO"), 960, cap.y + 38, 16, p.accent, Align::center, 3.0f);
+         ui::text(list, fonts.mono, clock_text(raw_.scrub_target), 960, cap.y + 86, 40, kWhite, Align::center);
+@@ -501,3 +502,3 @@
+     const float x = art.x + art.w + 50;
+-    ui::text(list, fonts.semibold, raw_.paused ? "PAUSED" : "NOW PLAYING", x, card.y + 92, 18, p.accent,
++    ui::text(list, fonts.semibold, raw_.paused ? evo_tr("PAUSED") : evo_tr("NOW PLAYING"), x, card.y + 92, 18, p.accent,
+              Align::left, 3.0f);
+@@ -505,3 +506,3 @@
+              kWhite);
+-    ui::text(list, fonts.regular, music_codec_.empty() ? "AUDIO" : music_codec_, x, card.y + 190, 22,
++    ui::text(list, fonts.regular, music_codec_.empty() ? evo_tr("AUDIO") : music_codec_, x, card.y + 190, 22,
+              p.text_muted);
+@@ -523,3 +524,3 @@
+     list.bordered_rect(panel, 24, kClear, 1.0f, kWhite.with_alpha(0.12f));
+-    ui::text(list, fonts.semibold, "PLAYBACK DIAGNOSTICS", panel.x + 28, panel.y + 44, 16, ctx.palette.accent,
++    ui::text(list, fonts.semibold, evo_tr("PLAYBACK DIAGNOSTICS"), panel.x + 28, panel.y + 44, 16, ctx.palette.accent,
+              Align::left, 3.0f);
+--- projects\evoplayer\ui_kit\src\evo_hui_provider.cpp
++++ projects\evoplayer\ui_kit\src\evo_hui_provider.cpp
+@@ -16,2 +16,3 @@
+ #include <cstdio>
++#include "evo_i18n.h"
+ 
+@@ -438,3 +439,3 @@
+             list.image(chev, {poster.cx() - 22, poster.cy() - 40, 44, 44}, ::hui::gfx::kFullUv, kWhite.with_alpha(0.85f));
+-        ui::text(list, fonts.semibold, "SEE ALL", poster.cx(), poster.cy() + 38, 18, kWhite, Align::center, 2.0f);
++        ui::text(list, fonts.semibold, evo_tr("SEE ALL"), poster.cx(), poster.cy() + 38, 18, kWhite, Align::center, 2.0f);
+         return;
+@@ -448,3 +449,3 @@
+         list.rounded_rect(pill, 11, kLive);
+-        ui::text(list, fonts.semibold, "LIVE", pill.cx(), pill.y + 16, 12, kWhite, Align::center, 1.2f);
++        ui::text(list, fonts.semibold, evo_tr("LIVE"), pill.cx(), pill.y + 16, 12, kWhite, Align::center, 1.2f);
+     }
+@@ -455,3 +456,3 @@
+         list.rounded_rect(pill, 11, kBlack.with_alpha(0.62f));
+-        ui::text(list, fonts.semibold, "WATCHED", pill.cx(), pill.y + 16, 12, kWhite, Align::center, 1.2f);
++        ui::text(list, fonts.semibold, evo_tr("WATCHED"), pill.cx(), pill.y + 16, 12, kWhite, Align::center, 1.2f);
+     }
+@@ -523,3 +524,3 @@
+         y += 10.0f;
+-        const float lw = ui::text(list, fonts.semibold, "STARRING", x, y, 14, pal.text_faint, Align::left, 2.0f);
++        const float lw = ui::text(list, fonts.semibold, evo_tr("STARRING"), x, y, 14, pal.text_faint, Align::left, 2.0f);
+         ui::text(list, fonts.regular, fonts.regular.font->fit(sel_cast_, 20, w - lw - 20.0f), x + lw + 16.0f, y + 1.0f,
+@@ -574,7 +575,7 @@
+ 
+-    ui::text(list, fonts.display, xt ? "SETUP XTREAM CODES ACCOUNT" : "SELECT PLAYLIST SOURCE", cx, 270, 38, kWhite,
++    ui::text(list, fonts.display, xt ? evo_tr("SETUP XTREAM CODES ACCOUNT") : evo_tr("SELECT PLAYLIST SOURCE"), cx, 270, 38, kWhite,
+              Align::center);
+     ui::text(list, fonts.regular,
+-             xt ? "Connect to your Xtream Codes subscription for Live TV, Movies & Series"
+-                : "Choose how you would like to load your television channels",
++             xt ? evo_tr("Connect to your Xtream Codes subscription for Live TV, Movies & Series")
++                : evo_tr("Choose how you would like to load your television channels"),
+              cx, 312, 20, pal.text_muted, Align::center);
+@@ -833,3 +834,3 @@
+             list.image(badge, box.inset(brand ? 8 : 12), ::hui::gfx::kFullUv, kWhite);
+-        const std::string title = live ? "LIVE TV" : (xt ? "XTREAM CODES" : ui::upper(name_));
++        const std::string title = live ? evo_tr("LIVE TV") : (xt ? "XTREAM CODES" : ui::upper(name_));
+         const float tw = ui::text(list, fonts.display, title, kGridX + 76, 134, 40, kWhite);
+@@ -884,4 +885,4 @@
+         {
+-            title = live ? "NO CHANNELS FOUND" : (xt ? "NO ITEMS FOUND" : "NO RESULTS");
+-            hint = (live ? "No channels match '" : (xt ? "No items match '" : "Nothing matches '")) + query_ + "'";
++            title = live ? evo_tr("NO CHANNELS FOUND") : (xt ? evo_tr("NO ITEMS FOUND") : evo_tr("NO RESULTS"));
++            hint = (live ? evo_tr("No channels match '") : (xt ? evo_tr("No items match '") : evo_tr("Nothing matches '"))) + query_ + "'";
+             sub = "Press Square to search again, or Circle to clear";
+@@ -890,4 +891,4 @@
+         {
+-            title = "NO CHANNELS HERE";
+-            hint = "This group is empty";
++            title = evo_tr("NO CHANNELS HERE");
++            hint = evo_tr("This group is empty");
+             sub = "Press Circle to go back";
+@@ -896,4 +897,4 @@
+         {
+-            title = "NOTHING HERE YET";
+-            hint = "This list is empty";
++            title = evo_tr("NOTHING HERE YET");
++            hint = evo_tr("This list is empty");
+             sub = "Press Circle to go back";
+@@ -936,6 +937,6 @@
+         }
+-        ui::text(list, fonts.display, live ? "TUNING CHANNEL" : (xt ? "OPENING STREAM" : "STARTING"), card.cx(),
++        ui::text(list, fonts.display, live ? evo_tr("TUNING CHANNEL") : (xt ? evo_tr("OPENING STREAM") : evo_tr("STARTING")), card.cx(),
+                  card.y + 136, 26, kWhite, Align::center);
+         ui::text(list, fonts.regular,
+-                 live ? "Connecting to live stream..." : (xt ? "Connecting to Xtream server..." : "Opening the stream..."),
++                 live ? evo_tr("Connecting to live stream...") : (xt ? evo_tr("Connecting to Xtream server...") : evo_tr("Opening the stream...")),
+                  card.cx(), card.y + 168, 17, pal.text_muted, Align::center);
+@@ -951,5 +952,5 @@
+             if (live)
+-                counter = std::to_string(count_) + (folder_level_ ? " GROUPS" : " CHANNELS");
++                counter = std::to_string(count_) + (folder_level_ ? evo_tr(" GROUPS") : evo_tr(" CHANNELS"));
+             else if (xt)
+-                counter = std::to_string(count_) + (folder_level_ ? " CATEGORIES" : " ITEMS");
++                counter = std::to_string(count_) + (folder_level_ ? evo_tr(" CATEGORIES") : evo_tr(" ITEMS"));
+             else
+@@ -961,3 +962,3 @@
+         if (loading_ || tuning_)
+-            ui::text(list, fonts.semibold, tuning_ ? (live || xt ? "TUNING..." : "STARTING...") : "LOADING...", x, 1030, 14,
++            ui::text(list, fonts.semibold, tuning_ ? (live || xt ? evo_tr("TUNING...") : evo_tr("STARTING...")) : evo_tr("LOADING..."), x, 1030, 14,
+                      pal.accent, Align::left, 1.6f);
+@@ -967,3 +968,3 @@
+         {
+-            const char *go = (empty_ && !loading_) ? "Select" : (folder_level_ ? "Open" : "Watch");
++            const char *go = (empty_ && !loading_) ? evo_tr("Select") : (folder_level_ ? evo_tr("Open") : evo_tr("Watch"));
+             hints.push_back({ui::Button::cross, go});
+@@ -978,3 +979,3 @@
+             if (!empty_)
+-                hints.push_back({ui::Button::options, xt ? "Account" : "Playlist & guide"});
++                hints.push_back({ui::Button::options, xt ? evo_tr("Account") : evo_tr("Playlist & guide")});
+         }
+@@ -982,3 +983,3 @@
+         {
+-            hints.push_back({ui::Button::cross, (has_selected_ ? sel_folder_ : folder_level_) ? "Open" : "Play"});
++            hints.push_back({ui::Button::cross, (has_selected_ ? sel_folder_ : folder_level_) ? evo_tr("Open") : evo_tr("Play")});
+             hints.push_back({ui::Button::circle, "Back"});
+@@ -991,3 +992,3 @@
+                 hints.push_back({ui::Button::l1, "Page", ui::Button::r1});
+-            hints.push_back({ui::Button::options, options_hint_.empty() ? "Edit server" : options_hint_.c_str()});
++            hints.push_back({ui::Button::options, options_hint_.empty() ? evo_tr("Edit server") : options_hint_.c_str()});
+         }
+--- projects\evoplayer\ui_kit\src\evo_hui_screens.cpp
++++ projects\evoplayer\ui_kit\src\evo_hui_screens.cpp
+@@ -27,2 +27,3 @@
+ #include "../../stb_image.h"
++#include "evo_i18n.h"
+ #pragma clang diagnostic pop
+@@ -648,3 +649,3 @@
+         const float dy = 40.0f * (1.0f - in);
+-        ui::text(list, fonts.semibold, "JUMP BACK IN", kLeft, kRecentY - 30 + dy, 20,
++        ui::text(list, fonts.semibold, evo_tr("JUMP BACK IN"), kLeft, kRecentY - 30 + dy, 20,
+                  recent_cursor_ >= 0 ? kWhite : p.text_muted, Align::left, 3.0f);
+@@ -707,3 +708,3 @@
+             any_focus = any_focus || t.focused;
+-        ui::text(list, fonts.semibold, "LIBRARY", kLeft, kLibraryY - 26 + dy, 20,
++        ui::text(list, fonts.semibold, evo_tr("LIBRARY"), kLeft, kLibraryY - 26 + dy, 20,
+                  any_focus ? kWhite : p.text_muted, Align::left, 3.0f);
+@@ -1136,3 +1137,3 @@
+         }
+-        ui::text(list, fonts.semibold, loading_text_.empty() ? std::string("Working") : loading_text_,
++        ui::text(list, fonts.semibold, loading_text_.empty() ? std::string(evo_tr("Working")) : loading_text_,
+                  card.cx(), card.y + 138.0f, 28, kWhite, Align::center);
+--- projects\evoplayer\ui_kit\src\evo_hui_settings.cpp
++++ projects\evoplayer\ui_kit\src\evo_hui_settings.cpp
+@@ -9,2 +9,3 @@
+ #include <algorithm>
++#include "evo_i18n.h"
+ 
+@@ -25,3 +26,3 @@
+ constexpr float kPreviewW = 560.0f; /* preview card, right of the rows */
+-constexpr float kBadgeMax = 170.0f;  /* a long value ("AUTO (MATCH CONTENT)") is cut short */
++constexpr float kBadgeMax = 170.0f;  /* a long value (evo_tr("AUTO (MATCH CONTENT)")) is cut short */
+ const Color kWhite = Color::rgb(0xffffff);
+@@ -305,4 +306,4 @@
+     list.push_opacity(tween::stagger(age_, 0, 0.05f, 0.5f));
+-    ui::text(list, fonts.semibold, "PREFERENCES", kLeft, 84, 18, p.accent, Align::left, 3.0f);
+-    ui::text(list, fonts.display, "Settings", kLeft - 3, 150, 52, kWhite);
++    ui::text(list, fonts.semibold, evo_tr("PREFERENCES"), kLeft, 84, 18, p.accent, Align::left, 3.0f);
++    ui::text(list, fonts.display, evo_tr("Settings"), kLeft - 3, 150, 52, kWhite);
+     list.pop_opacity();
+--- projects\evoplayer\ui_kit\src\evo_hui_settings_preview.cpp
++++ projects\evoplayer\ui_kit\src\evo_hui_settings_preview.cpp
+@@ -15,2 +15,3 @@
+ #include <cstdio>
++#include "evo_i18n.h"
+ 
+@@ -46,3 +47,3 @@
+     Area a{box, box.x + 24.0f, box.w - 48.0f, box.y + 112.0f};
+-    ui::text(list, fonts.semibold, "PREVIEW", a.x, box.y + 40, 16, p.text_muted, Align::left, 2.0f);
++    ui::text(list, fonts.semibold, evo_tr("PREVIEW"), a.x, box.y + 40, 16, p.text_muted, Align::left, 2.0f);
+     ui::text(list, fonts.display, fonts.display.font->fit(pv.title, 32, a.w), a.x, box.y + 84, 32, kWhite);
+@@ -74,3 +75,3 @@
+ {
+-    ui::text(list, ctx.fonts.regular, "Photos: NASA (public domain)", a.x, box.y + box.h - 146.0f, 12, ctx.palette.text_faint);
++    ui::text(list, ctx.fonts.regular, evo_tr("Photos: NASA (public domain)"), a.x, box.y + box.h - 146.0f, 12, ctx.palette.text_faint);
+ }
+@@ -300,3 +301,3 @@
+ 
+-    ui::text(list, fonts.semibold, "DETAIL", a.x, a.top + 16.0f, 16, p.text_muted, Align::left, 2.0f);
++    ui::text(list, fonts.semibold, evo_tr("DETAIL"), a.x, a.top + 16.0f, 16, p.text_muted, Align::left, 2.0f);
+     const float base1 = a.top + 105.0f;
+@@ -305,3 +306,3 @@
+ 
+-    ui::text(list, fonts.semibold, "GPU COST", a.x, a.top + 135.0f, 16, p.text_muted, Align::left, 2.0f);
++    ui::text(list, fonts.semibold, evo_tr("GPU COST"), a.x, a.top + 135.0f, 16, p.text_muted, Align::left, 2.0f);
+     const float base2 = a.top + 215.0f;
+@@ -356,5 +357,5 @@
+     const float l1_y = img_rect.y + img_rect.h + 34.0f;
+-    ui::text(list, ctx.fonts.regular, "Bright areas keep their detail", a.x, l1_y, 16, kWhite);
++    ui::text(list, ctx.fonts.regular, evo_tr("Bright areas keep their detail"), a.x, l1_y, 16, kWhite);
+     const float l2_y = l1_y + 22.0f;
+-    ui::text(list, ctx.fonts.regular, "Needs an HDR10 TV", a.x, l2_y, 15, ctx.palette.text_faint);
++    ui::text(list, ctx.fonts.regular, evo_tr("Needs an HDR10 TV"), a.x, l2_y, 15, ctx.palette.text_faint);
+ 
+@@ -396,3 +397,3 @@
+ 
+-    tag(list, ctx, screen, on ? "SMOOTHING ON" : "SMOOTHING OFF", on);
++    tag(list, ctx, screen, on ? evo_tr("SMOOTHING ON") : evo_tr("SMOOTHING OFF"), on);
+ 
+@@ -482,3 +483,3 @@
+     {
+-        ui::text(list, fonts.semibold, "Normal film motion", a.x, cap_y, 16, kWhite, Align::left);
++        ui::text(list, fonts.semibold, evo_tr("Normal film motion"), a.x, cap_y, 16, kWhite, Align::left);
+     }
+@@ -486,4 +487,4 @@
+     {
+-        ui::text(list, fonts.semibold, "Extra smooth, like a video call or sports", a.x, cap_y, 16, p.accent, Align::left);
+-        ui::text(list, fonts.regular, "Films can look too smooth", a.x, cap_y + 22.0f, 14, p.text_muted, Align::left);
++        ui::text(list, fonts.semibold, evo_tr("Extra smooth, like a video call or sports"), a.x, cap_y, 16, p.accent, Align::left);
++        ui::text(list, fonts.regular, evo_tr("Films can look too smooth"), a.x, cap_y + 22.0f, 14, p.text_muted, Align::left);
+     }
+@@ -659,3 +660,3 @@
+                 on ? (in_switched_state ? p.accent : Color::rgb(0xffa500)) : p.text_muted);
+-    ui::text(list, fonts.semibold, on ? "HDMI 1 (24P FILM)" : "HDMI 1",
++    ui::text(list, fonts.semibold, on ? evo_tr("HDMI 1 (24P FILM)") : "HDMI 1",
+              screen.x + 26.0f, screen.y + 24.0f, 11, p.text_muted, Align::left, 1.5f);
+@@ -769,8 +770,8 @@
+     if (!on)
+-        ui::text(list, fonts.semibold, "Films can judder slightly", a.x, note_y, 16, kWhite, Align::left);
++        ui::text(list, fonts.semibold, evo_tr("Films can judder slightly"), a.x, note_y, 16, kWhite, Align::left);
+     else
+-        ui::text(list, fonts.semibold, "Perfectly even motion", a.x, note_y, 16, p.accent, Align::left);
++        ui::text(list, fonts.semibold, evo_tr("Perfectly even motion"), a.x, note_y, 16, p.accent, Align::left);
+ 
+     /* Plain note */
+-    ui::text(list, fonts.regular, "The screen blinks briefly when it switches", a.x, note_y + 22.0f, 14,
++    ui::text(list, fonts.regular, evo_tr("The screen blinks briefly when it switches"), a.x, note_y + 22.0f, 14,
+              p.text_muted, Align::left);
+@@ -841,3 +842,3 @@
+     const auto labels = chip_labels(pv);
+-    const std::string tag_lbl = (pv.index < static_cast<int>(labels.size())) ? labels[pv.index] : "FIT";
++    const std::string tag_lbl = (pv.index < static_cast<int>(labels.size())) ? labels[pv.index] : evo_tr("FIT");
+     tag(list, ctx, screen, tag_lbl, true);
+@@ -859,3 +860,3 @@
+     frame_border(list, ctx, frame, on);
+-    tag(list, ctx, frame, on ? "ON" : "OFF", on);
++    tag(list, ctx, frame, on ? evo_tr("ON") : evo_tr("OFF"), on);
+ 
+@@ -871,3 +872,3 @@
+     {
+-        ui::text(list, fonts.semibold, "NO SUBTITLES", frame.cx(), frame.y + frame.h - 24.0f, 16, p.text_muted, Align::center);
++        ui::text(list, fonts.semibold, evo_tr("NO SUBTITLES"), frame.cx(), frame.y + frame.h - 24.0f, 16, p.text_muted, Align::center);
+     }
+@@ -890,3 +891,3 @@
+     const auto labels = chip_labels(pv);
+-    const std::string tag_lbl = (pv.index < static_cast<int>(labels.size())) ? labels[pv.index] : "STANDARD";
++    const std::string tag_lbl = (pv.index < static_cast<int>(labels.size())) ? labels[pv.index] : evo_tr("STANDARD");
+     tag(list, ctx, frame, tag_lbl, true);
+@@ -942,3 +943,3 @@
+     const auto labels = chip_labels(pv);
+-    const std::string tag_lbl = (pv.index < static_cast<int>(labels.size())) ? labels[pv.index] : "POSITION";
++    const std::string tag_lbl = (pv.index < static_cast<int>(labels.size())) ? labels[pv.index] : evo_tr("POSITION");
+     tag(list, ctx, frame, tag_lbl, true);
+@@ -972,3 +973,3 @@
+     const auto labels = chip_labels(pv);
+-    const std::string tag_lbl = (pv.index < static_cast<int>(labels.size())) ? labels[pv.index] : "COLOUR";
++    const std::string tag_lbl = (pv.index < static_cast<int>(labels.size())) ? labels[pv.index] : evo_tr("COLOUR");
+     tag(list, ctx, frame, tag_lbl, true);
+@@ -1117,3 +1118,3 @@
+ 
+-    tag(list, ctx, c_rect, on ? "ON" : "OFF", on);
++    tag(list, ctx, c_rect, on ? evo_tr("ON") : evo_tr("OFF"), on);
+ 
+@@ -1142,3 +1143,3 @@
+     list.bordered_rect(tv_rect, 5.0f, Color::rgb(0, 0), 1.0f, Color::rgb(0x4a5772));
+-    ui::text(list, fonts.semibold, "TV", cx, tv_rect.cy() + 5.0f, 13, kWhite.with_alpha(0.9f), Align::center);
++    ui::text(list, fonts.semibold, evo_tr("TV"), cx, tv_rect.cy() + 5.0f, 13, kWhite.with_alpha(0.9f), Align::center);
+ 
+@@ -1288,3 +1289,3 @@
+     list.triangle({a1_end - 6.0f, row1.cy() - 6.0f, 8.0f, 12.0f}, col1, 0.0f, 1.5708f);
+-    ui::text(list, fonts.semibold, "DECODES", (a1_start + a1_end) * 0.5f, row1.cy() - 8.0f, 12, col1, Align::center);
++    ui::text(list, fonts.semibold, evo_tr("DECODES"), (a1_start + a1_end) * 0.5f, row1.cy() - 8.0f, 12, col1, Align::center);
+ 
+@@ -1303,3 +1304,3 @@
+     list.bordered_rect(b3, 8, Color::rgb(0,0), 1.0f, col1);
+-    ui::text(list, fonts.semibold, "RECEIVER", b3.cx(), b3.cy() + 6.0f, 16, ink1, Align::center);
++    ui::text(list, fonts.semibold, evo_tr("RECEIVER"), b3.cx(), b3.cy() + 6.0f, 16, ink1, Align::center);
+ 
+@@ -1320,3 +1321,3 @@
+     list.triangle({r2_a_end - 6.0f, row2.cy() - 6.0f, 8.0f, 12.0f}, col2, 0.0f, 1.5708f);
+-    ui::text(list, fonts.semibold, "BITSTREAM", (r2_a_start + r2_a_end) * 0.5f, row2.cy() - 8.0f, 12, col2, Align::center);
++    ui::text(list, fonts.semibold, evo_tr("BITSTREAM"), (r2_a_start + r2_a_end) * 0.5f, row2.cy() - 8.0f, 12, col2, Align::center);
+ 
+@@ -1343,3 +1344,3 @@
+     const float line_y = room_bottom + 16.0f;
+-    ui::text(list, fonts.semibold, "Press X to play the test tones.", a.x + a.w * 0.5f, line_y, 18, p.text_muted, Align::center);
++    ui::text(list, fonts.semibold, evo_tr("Press X to play the test tones."), a.x + a.w * 0.5f, line_y, 18, p.text_muted, Align::center);
+     benefit(list, ctx, a, line_y + 36.0f, pv.benefit);
+@@ -1361,3 +1362,3 @@
+     frame_border(list, ctx, frame, on);
+-    tag(list, ctx, frame, on ? "RESUME ON" : "FROM START", on);
++    tag(list, ctx, frame, on ? evo_tr("RESUME ON") : evo_tr("FROM START"), on);
+ 
+@@ -1390,3 +1391,3 @@
+     const float cap_y = bar_y + bar_h + 20.0f;
+-    ui::text(list, ctx.fonts.semibold, on ? "Continues from 42:10" : "Starts from 0:00", fx, cap_y, 18, on ? p.accent : kWhite);
++    ui::text(list, ctx.fonts.semibold, on ? evo_tr("Continues from 42:10") : evo_tr("Starts from 0:00"), fx, cap_y, 18, on ? p.accent : kWhite);
+ 
+@@ -1423,3 +1424,3 @@
+     const float r1_y = panel.y + 16.0f;
+-    ui::text(list, ctx.fonts.semibold, "TYPICAL CPU USE", panel.x + 16.0f, r1_y + 12.0f, 14, p.text_muted, Align::left, 1.5f);
++    ui::text(list, ctx.fonts.semibold, evo_tr("TYPICAL CPU USE"), panel.x + 16.0f, r1_y + 12.0f, 14, p.text_muted, Align::left, 1.5f);
+     char cpu_str[16];
+@@ -1435,4 +1436,4 @@
+     const float r2_y = r1_y + 44.0f;
+-    ui::text(list, ctx.fonts.semibold, "TYPICAL HEAT", panel.x + 16.0f, r2_y + 12.0f, 14, p.text_muted, Align::left, 1.5f);
+-    ui::text(list, ctx.fonts.semibold, is_sw ? "HIGH" : "LOW", panel.x + panel.w - 16.0f, r2_y + 12.0f, 15, bar_col, Align::right);
++    ui::text(list, ctx.fonts.semibold, evo_tr("TYPICAL HEAT"), panel.x + 16.0f, r2_y + 12.0f, 14, p.text_muted, Align::left, 1.5f);
++    ui::text(list, ctx.fonts.semibold, is_sw ? evo_tr("HIGH") : evo_tr("LOW"), panel.x + panel.w - 16.0f, r2_y + 12.0f, 15, bar_col, Align::right);
+ 
+@@ -1447,3 +1448,3 @@
+     list.bordered_rect(v_pill, 10.0f, Color::rgb(0, 0), 1.0f, bar_col);
+-    const char *verdict = is_sw ? "Uses the CPU. Only for files hardware can't play"
++    const char *verdict = is_sw ? evo_tr("Uses the CPU. Only for files hardware can't play")
+                           : (sel == 0) ? "Hardware when it can, software when it must"
+@@ -1452,3 +1453,3 @@
+              v_pill.cy() + 6.0f, 16, bar_col, Align::center);
+-    ui::text(list, ctx.fonts.regular, "Meters show typical values, not live ones", a.x, v_pill.y + v_pill.h + 18.0f, 13,
++    ui::text(list, ctx.fonts.regular, evo_tr("Meters show typical values, not live ones"), a.x, v_pill.y + v_pill.h + 18.0f, 13,
+              p.text_faint);
+@@ -1543,3 +1544,3 @@
+     const float cap_y = panel.y + panel.h + 18.0f;
+-    ui::text(list, ctx.fonts.semibold, on ? "Click when you move" : "Silent", a.x, cap_y, 18, on ? p.accent : p.text_muted);
++    ui::text(list, ctx.fonts.semibold, on ? evo_tr("Click when you move") : evo_tr("Silent"), a.x, cap_y, 18, on ? p.accent : p.text_muted);
+ 
+@@ -1636,3 +1637,3 @@
+ 
+-    ui::text(list, ctx.fonts.semibold, "EVO KEYBOARD", p_left.cx(), p_left.y + 24.0f, 14,
++    ui::text(list, ctx.fonts.semibold, evo_tr("EVO KEYBOARD"), p_left.cx(), p_left.y + 24.0f, 14,
+              sel_l ? p.accent : p.text_faint, Align::center);
+@@ -1668,3 +1669,3 @@
+ 
+-    ui::text(list, ctx.fonts.semibold, "PS5 KEYBOARD", p_right.cx(), p_right.y + 24.0f, 14,
++    ui::text(list, ctx.fonts.semibold, evo_tr("PS5 KEYBOARD"), p_right.cx(), p_right.y + 24.0f, 14,
+              sel_r ? p.accent : p.text_faint, Align::center);
+@@ -1675,3 +1676,3 @@
+     list.bordered_rect(tf, 4.0f, Color::rgb(0, 0), 1.0f, sel_r ? p.accent.with_alpha(0.6f) : p.border);
+-    ui::text(list, ctx.fonts.regular, "Search...", tf.x + 8.0f, tf.y + 16.0f, 12, sel_r ? p.text_muted : p.text_faint);
++    ui::text(list, ctx.fonts.regular, evo_tr("Search..."), tf.x + 8.0f, tf.y + 16.0f, 12, sel_r ? p.text_muted : p.text_faint);
+ 
+@@ -1720,3 +1721,3 @@
+     list.rounded_rect(live_pill, 4.0f, Color::rgb(0xef4444));
+-    ui::text(list, ctx.fonts.semibold, "LIVE", live_pill.cx(), live_pill.cy() + 4.5f, 10, kWhite, Align::center);
++    ui::text(list, ctx.fonts.semibold, evo_tr("LIVE"), live_pill.cx(), live_pill.cy() + 4.5f, 10, kWhite, Align::center);
+ 
+@@ -1726,3 +1727,3 @@
+     list.triangle({tcx - 8.0f, tcy - 8.0f, 20.0f, 16.0f}, p.accent, 0.0f, 1.5708f);
+-    ui::text(list, ctx.fonts.semibold, "Sports 1", tcx, tile.y + tile_h - 14.0f, 12, p.text_muted, Align::center);
++    ui::text(list, ctx.fonts.semibold, evo_tr("Sports 1"), tcx, tile.y + tile_h - 14.0f, 12, p.text_muted, Align::center);
+ 
+@@ -1745,3 +1746,3 @@
+ 
+-        ui::text(list, ctx.fonts.semibold, "Choose quality", dialog.x + 14.0f, dialog.y + 22.0f, 15, kWhite);
++        ui::text(list, ctx.fonts.semibold, evo_tr("Choose quality"), dialog.x + 14.0f, dialog.y + 22.0f, 15, kWhite);
+ 
+@@ -1769,3 +1770,3 @@
+         list.triangle({player.cx() - 6.0f, player.cy() - 18.0f, 16.0f, 16.0f}, kWhite, 0.0f, 1.5708f);
+-        ui::text(list, ctx.fonts.semibold, "Plays right away", player.cx(), player.y + player.h - 16.0f, 15,
++        ui::text(list, ctx.fonts.semibold, evo_tr("Plays right away"), player.cx(), player.y + player.h - 16.0f, 15,
+                  p.accent, Align::center);
+@@ -1790,3 +1791,3 @@
+     frame_border(list, ctx, frame, on);
+-    tag_right(list, ctx, frame, on ? "HUD ON" : "HUD OFF", on);
++    tag_right(list, ctx, frame, on ? evo_tr("HUD ON") : evo_tr("HUD OFF"), on);
+ 
+@@ -1809,3 +1810,3 @@
+         ui::text(list, ctx.fonts.semibold, buf_fps, stats.x + 10.0f, sy, 13, p.accent);
+-        ui::text(list, ctx.fonts.regular, "DECODE HW", stats.x + 10.0f, sy + 20.0f, 13, kWhite);
++        ui::text(list, ctx.fonts.regular, evo_tr("DECODE HW"), stats.x + 10.0f, sy + 20.0f, 13, kWhite);
+         ui::text(list, ctx.fonts.regular, buf_buf, stats.x + 10.0f, sy + 40.0f, 13, kWhite);
+@@ -1908,3 +1909,3 @@
+         list.rounded_rect({x, y - 30.0f, w, 1.0f}, 0, p.border);
+-        ui::text(list, ctx.fonts.semibold, "DETAILS", x, y, 14, p.text_muted, Align::left, 2.0f);
++        ui::text(list, ctx.fonts.semibold, evo_tr("DETAILS"), x, y, 14, p.text_muted, Align::left, 2.0f);
+         ui::paragraph(list, ctx.fonts.regular, pv.detail, x, y + 28.0f, 18, w, 25, p.text_faint, 3);
+--- projects\evoplayer\ui_kit\src\evo_hui_surround.cpp
++++ projects\evoplayer\ui_kit\src\evo_hui_surround.cpp
+@@ -14,2 +14,3 @@
+ #include <cstdio>
++#include "evo_i18n.h"
+ 
+@@ -130,6 +131,6 @@
+     list.rounded_rect({kOx, 46, 5, 62}, 2, is_120hz_ ? kCyan : ctx.palette.accent);
+-    label(list, fonts.display, "SURROUND SOUND STUDIO", kOx + 24, 86, 34, kWhite, Align::left, 0.5f);
++    label(list, fonts.display, evo_tr("SURROUND SOUND STUDIO"), kOx + 24, 86, 34, kWhite, Align::left, 0.5f);
+     label(list, fonts.semibold,
+-          fmt("%s \xC2\xB7 %s \xC2\xB7 48 kHz \xC2\xB7 %s", is51 ? "5.1 SYSTEM" : "7.1 SYSTEM",
+-              is51 ? "6 CHANNELS" : "8 CHANNELS", is_120hz_ ? "120 HZ OUTPUT" : "60 HZ OUTPUT"),
++          fmt("%s \xC2\xB7 %s \xC2\xB7 48 kHz \xC2\xB7 %s", is51 ? evo_tr("5.1 SYSTEM") : evo_tr("7.1 SYSTEM"),
++              is51 ? evo_tr("6 CHANNELS") : evo_tr("8 CHANNELS"), is_120hz_ ? evo_tr("120 HZ OUTPUT") : evo_tr("60 HZ OUTPUT")),
+           kOx + 24, 110, 15, is_120hz_ ? kCyan : ctx.palette.text_muted, Align::left, 1.2f);
+@@ -157,3 +158,3 @@
+     {
+-        add(ui::Button::cross, p_.tone_follow ? (p_.field_playing ? "Pause music" : "Play music") : "Test tone");
++        add(ui::Button::cross, p_.tone_follow ? (p_.field_playing ? evo_tr("Pause music") : evo_tr("Play music")) : evo_tr("Test tone"));
+         add(ui::Button::left_stick, "Move source");
+@@ -166,3 +167,3 @@
+     {
+-        add(ui::Button::cross, p_.selected_item >= EVO_RMLUI_SURROUND_ACTIONS ? "Test tone" : "Select");
++        add(ui::Button::cross, p_.selected_item >= EVO_RMLUI_SURROUND_ACTIONS ? evo_tr("Test tone") : evo_tr("Select"));
+         add(ui::Button::dpad, "2D navigate");
+@@ -192,3 +193,3 @@
+ 
+-    label(list, fonts.semibold, "TESTS", kOx, kTop - 8, 13, pal.text_faint, Align::left, 1.6f);
++    label(list, fonts.semibold, evo_tr("TESTS"), kOx, kTop - 8, 13, pal.text_faint, Align::left, 1.6f);
+     for (int i = 0; i < EVO_RMLUI_SURROUND_ACTIONS; ++i)
+@@ -213,3 +214,3 @@
+     {
+-        title = "AUTO CALIBRATION";
++        title = evo_tr("AUTO CALIBRATION");
+         l1 = "RECEIVER: DUALSENSE MIC @ SWEET SPOT";
+@@ -224,3 +225,3 @@
+         static const char *kFlight[3] = {"MANUAL", "ORBIT", "FLYBY"};
+-        title = p_.tone_follow ? "3D SOUND FIELD" : "SPATIAL ORB - FREE ROAM";
++        title = p_.tone_follow ? evo_tr("3D SOUND FIELD") : evo_tr("SPATIAL ORB - FREE ROAM");
+         l1 = fmt("FLIGHT MODE: %s", kFlight[std::max(0, std::min(2, p_.flight_mode))]);
+@@ -229,3 +230,3 @@
+                        lab(p_.nearest_channel).c_str(), (int)(p_.proximity[p_.nearest_channel] * 100.0f + 0.5f))
+-                 : "NO SPEAKERS IN THIS LAYOUT";
++                 : evo_tr("NO SPEAKERS IN THIS LAYOUT");
+         if (p_.tone_follow)
+@@ -260,3 +261,3 @@
+         const int now = p_.sweep_rotation ? p_.nearest_channel : p_.active_channel;
+-        status = live ? fmt("STATUS: [ %s \xC2\xB7 %s ]", p_.sweep_rotation ? "SWEEPING" : "RUNNING", lab(now).c_str())
++        status = live ? fmt("STATUS: [ %s \xC2\xB7 %s ]", p_.sweep_rotation ? evo_tr("SWEEPING") : evo_tr("RUNNING"), lab(now).c_str())
+                       : "STATUS: [ IDLE ]";
+@@ -313,3 +314,3 @@
+     list.rounded_rect({kStage.x + 238, kStage.y + 14, 360, 10}, 5, kCyan);
+-    label(list, fonts.semibold, "FRONT DISPLAY", kStage.x + 418, kStage.y + 46, 11, Color::rgb(0x54708f),
++    label(list, fonts.semibold, evo_tr("FRONT DISPLAY"), kStage.x + 418, kStage.y + 46, 11, Color::rgb(0x54708f),
+           Align::center, 1.4f);
+@@ -318,3 +319,3 @@
+     list.rounded_rect({kCx - 18, kCy + 8, 36, 20}, 8, v_cal ? kCyan : Color::rgb(0xe6f1ff));
+-    label(list, fonts.regular, "0-DEG REFERENCE", kCx, kCy + 66, 11, pal.text_faint, Align::center, 1.0f);
++    label(list, fonts.regular, evo_tr("0-DEG REFERENCE"), kCx, kCy + 66, 11, pal.text_faint, Align::center, 1.0f);
+ 
+@@ -461,5 +462,5 @@
+     panel(312, 150, "CONTROLS");
+-    label(list, fonts.regular, v_orb ? "LEFT STICK  MOVE SOURCE" : "D-PAD  NAVIGATE STAGE", x + 18, kTop + 312 + 56, 14, pal.text_muted);
+-    label(list, fonts.regular, v_orb ? "L1 / R1  HEIGHT" : "CROSS  SELECT / TEST", x + 18, kTop + 312 + 84, 14, pal.text_muted);
+-    label(list, fonts.regular, v_orb ? "TRIANGLE  FLIGHT MODE" : "SQUARE  5.1 / 7.1", x + 18, kTop + 312 + 112, 14, pal.text_muted);
++    label(list, fonts.regular, v_orb ? evo_tr("LEFT STICK  MOVE SOURCE") : evo_tr("D-PAD  NAVIGATE STAGE"), x + 18, kTop + 312 + 56, 14, pal.text_muted);
++    label(list, fonts.regular, v_orb ? evo_tr("L1 / R1  HEIGHT") : evo_tr("CROSS  SELECT / TEST"), x + 18, kTop + 312 + 84, 14, pal.text_muted);
++    label(list, fonts.regular, v_orb ? evo_tr("TRIANGLE  FLIGHT MODE") : evo_tr("SQUARE  5.1 / 7.1"), x + 18, kTop + 312 + 112, 14, pal.text_muted);
+ 
+@@ -483,3 +484,3 @@
+           x + 18, kTop + 636 + 84, 14, pal.text_muted);
+-    label(list, fonts.regular, p_.cal_profile_active ? "CALIBRATION  ACTIVE ON PLAYBACK" : "CALIBRATION  NOT SET",
++    label(list, fonts.regular, p_.cal_profile_active ? evo_tr("CALIBRATION  ACTIVE ON PLAYBACK") : evo_tr("CALIBRATION  NOT SET"),
+           x + 18, kTop + 636 + 112, 14, p_.cal_profile_active ? kCyan : pal.text_faint);
+@@ -493,3 +494,3 @@
+     list.bordered_rect({x, kTop, w, 784}, 14, kPanel, 1.0f, kEdge);
+-    label(list, fonts.semibold, "AUTO CALIBRATION", x + 18, kTop + 26, 12, pal.text_faint, Align::left, 1.6f);
++    label(list, fonts.semibold, evo_tr("AUTO CALIBRATION"), x + 18, kTop + 26, 12, pal.text_faint, Align::left, 1.6f);
+ 
+@@ -531,3 +532,3 @@
+     /* mic level */
+-    label(list, fonts.semibold, "MIC", x + 18, kTop + 296, 12, pal.text_faint, Align::left, 1.4f);
++    label(list, fonts.semibold, evo_tr("MIC"), x + 18, kTop + 296, 12, pal.text_faint, Align::left, 1.4f);
+     list.rounded_rect({x + 60, kTop + 286, 220, 10}, 5, Color::rgb(0x18263a));
+@@ -535,3 +536,3 @@
+     if (p_.cal_noise_db > -119.0f)
+-        label(list, fonts.regular, fmt("NOISE %.0f dBFS", p_.cal_noise_db), x + w - 18, kTop + 296, 12, pal.text_muted,
++        label(list, fonts.regular, fmt(evo_tr("NOISE %.0f dBFS"), p_.cal_noise_db), x + w - 18, kTop + 296, 12, pal.text_muted,
+               Align::right);

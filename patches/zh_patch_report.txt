@@ -1,0 +1,31 @@
+EVO Player 中文化补丁报告（dry-run，未写入）
+仓库: D:\document\Trae-CN\temp_20261030_01\src
+词表: D:\document\Trae-CN\temp_20261030_01\EVO-PLAYER-zhCN\zh-CN.tsv（1075 条）
+
+包裹 575 处，涉及 24 个文件；因上下文不符跳过 565 处，因比较/日志跳过 138 处。
+
+每文件包裹数：
+    197  projects\evoplayer\core\src\screens\ProviderHostScreen.cpp
+     76  projects\evoplayer\core\src\screens\BrowserScreen.cpp
+     52  projects\evoplayer\ui_kit\src\evo_hui_settings_preview.cpp
+     42  projects\evoplayer\core\src\screens\SettingsScreen.cpp
+     40  projects\evoplayer\ui_kit\src\evo_hui_provider.cpp
+     33  projects\evoplayer\core\src\screens\PlayerScreen.cpp
+     32  projects\evoplayer\ui_kit\src\evo_hui_surround.cpp
+     13  projects\evoplayer\core\src\screens\AudioTrackPickerScreen.cpp
+     13  projects\evoplayer\core\src\screens\MediaInfoScreen.cpp
+     13  projects\evoplayer\core\src\screens\SubtitlePickerScreen.cpp
+     12  projects\evoplayer\ui_kit\src\evo_hui_osd.cpp
+      7  projects\evoplayer\core\src\screens\ModalDialogScreen.cpp
+      5  projects\evoplayer\core\src\Application.cpp
+      5  projects\evoplayer\core\src\screens\FavoritesScreen.cpp
+      5  projects\evoplayer\ui_kit\src\evo_hui_browser.cpp
+      5  projects\evoplayer\ui_kit\src\evo_hui_misc.cpp
+      4  projects\evoplayer\core\src\screens\ChapterPickerScreen.cpp
+      4  projects\evoplayer\core\src\screens\LaunchScreen.cpp
+      4  projects\evoplayer\ui_kit\src\evo_hui_modals.cpp
+      3  projects\evoplayer\core\src\screens\RecentFilesScreen.cpp
+      3  projects\evoplayer\ui_kit\src\evo_hui_extra.cpp
+      3  projects\evoplayer\ui_kit\src\evo_hui_screens.cpp
+      3  projects\evoplayer\ui_kit\src\evo_hui_settings.cpp
+      1  projects\evoplayer\core\src\services\SettingsService.cpp
