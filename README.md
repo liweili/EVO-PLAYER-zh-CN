@@ -12,8 +12,9 @@
 | --- | --- |
 | `EVOPlayer-v0.13.0-PPSA99039-zhCN.zip`（31 MB） | 完整文件夹，解压出 `PPSA99039`，覆盖到主机 `/data/homebrew/` |
 | `eboot.bin`（45 MB） | 已经有这个文件夹的人，只替换同名文件，`assets` / `sce_module` / `sce_sys` 不用动 |
+| `NotoSansSC-Regular-otf.zip`（6 MB） | 中文字体，**不放这个界面全是 `?`**，见下面「中文字体」 |
 
-替换前先退出正在运行的 EVO。界面中文需要主机 `/data/evoplayer/fonts/` 里有 CJK 字体（见下面「中文字体」）。原版 `eboot.bin` 自己留一份，要还原就换回去。
+替换前先退出正在运行的 EVO。原版 `eboot.bin` 自己留一份，要还原就换回去。
 
 ## 文件夹模式集成
 
@@ -130,9 +131,21 @@ copy /y eboot.bin.bak eboot.bin
 
 补齐手段：按 `miss_report.txt` 手工包 `evo_tr()`；或者不改代码，直接把补充译文写进主机 `/data/evoplayer/lang/zh-CN.tsv`，改完重启 EVO 即生效。
 
-## 中文字体
+## 中文字体（不做就是满屏 `?`）
 
-界面与字幕显示中文需要 CJK 字形：把中文字体（建议 Noto Sans SC，OFL 许可）放到主机 `/data/evoplayer/fonts/` 后重启。EVO 自带的 `noto-fallback.huifont` 会与它一起做字形回退，缺字体时会显示方块。
+EVO 自带的界面字体只带拉丁字形，掉到一个没有字形的汉字时不是画方块，而是**画一个 `?`**——所以看到 `??` 就是缺字体，不是编码坏了。
+
+中文走一条单独的渲染通道：程序每秒探测一次 `/data/evoplayer/fonts/`，只有找到**这个文件名**才启用 FreeType + HarfBuzz 的 CJK 合成与 SDF 图集：
+
+```
+/data/evoplayer/fonts/NotoSansSC-Regular.otf
+```
+
+文件名硬编码在 `evo_hui_complex.cpp` 的 `kFaces` 表里，**不能改名、不能带别的后缀**（`NotoSansSC-Regular.ttf`、`SourceHanSans.otf` 都不认）。字体内容本身随意：`NotoSansSC-Regular.otf` 这个名字配一个 TTF 文件也能加载，FreeType 按文件内容识别格式。
+
+做法：下载 [Releases](https://github.com/liweili/EVO-PLAYER-zh-CN/releases/tag/v0.13.0-zhCN) 里的 `NotoSansSC-Regular-otf.zip`，解压出 `NotoSansSC-Regular.otf`，FTP 传到主机 `/data/evoplayer/fonts/`（目录不存在就自己建），重启 EVO。探测是每秒重试一次的，理论上放进去几秒就生效，但重启最稳。
+
+这套文件名同样有日文 `NotoSansJP-Regular.otf` 与韩文 `NotoSansKR-Regular.otf`，放哪个启用哪个。字体按 OFL 许可分发，许可全文见 zip 里的 `OFL.txt`。
 
 ## 许可与致谢
 
