@@ -4,6 +4,17 @@
 
 > 官方的 `PPSA99039.ffpfsc` 是编译好的只读镜像，文本常量已经固化在二进制里，**没法对安装包打补丁**。中文界面必须带着本补丁重新编译一次——本仓库提供的就是这次编译所需的全部材料。
 
+## 直接下载（Releases）
+
+不想自己跑脚本？[Releases](https://github.com/liweili/EVO-PLAYER-zh-CN/releases/tag/v0.13.0-zhCN) 里有打好补丁的文件夹版：
+
+| 资产 | 用途 |
+| --- | --- |
+| `EVOPlayer-v0.13.0-PPSA99039-zhCN.zip`（31 MB） | 完整文件夹，解压出 `PPSA99039`，覆盖到主机 `/data/homebrew/` |
+| `eboot.bin`（45 MB） | 已经有这个文件夹的人，只替换同名文件，`assets` / `sce_module` / `sce_sys` 不用动 |
+
+替换前先退出正在运行的 EVO。界面中文需要主机 `/data/evoplayer/fonts/` 里有 CJK 字体（见下面「中文字体」）。原版 `eboot.bin` 自己留一份，要还原就换回去。
+
 ## 文件夹模式集成
 
 ### 一条命令（推荐）
