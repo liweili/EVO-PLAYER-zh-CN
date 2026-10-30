@@ -52,6 +52,35 @@ python <这个仓库>/tools/install.py --root . --apply
 
 > 不要直接 `make`。EVO 的 Makefile 只产出 ELF，`.ffpfsc` 要由仓库根目录的 `scripts/package-app.sh --ffpfsc` 生成。
 
+## 已经装了发布版？直接改 eboot.bin
+
+如果主机上跑的是编译好的文件夹版（`eboot.bin` + `assets` + `sce_module` + `sce_sys`），**不用重编译**——`eboot.bin` 里的界面文案是明文字符串，可以原地等长替换：
+
+```bash
+python tools/patch_eboot.py --eboot <发布版目录或 eboot.bin> --tsv i18n-zh/lang/zh-CN.tsv --apply
+```
+
+脚本只替换“整段可打印字节恰好等于词表某条英文”的位置（所以 `AUTO` 不会误伤到 `AUTOMATIC`），中文后面用空格补齐，**文件长度与所有偏移都不变**，并自动备份成 `eboot.bin.bak`。
+
+在 v0.13.0 发布版上实测：
+
+| 项 | 结果 |
+| --- | --- |
+| 词表 1171 条，在 `eboot.bin` 里能找到 | 1166 条 |
+| 实际替换 | **547 处 / 520 条** |
+| 放不下（中文占 3 字节/字，短词与长句超长） | 524 条，保留英文 |
+| 占位符不一致（会被拒绝替换） | 0 条 |
+| 改动范围 | 10249 字节 / 75 个数据页，文件头未动，长度不变 |
+
+还原：
+
+```bash
+copy /y eboot.bin.bak eboot.bin
+```
+
+限制：短标签（`PLAY`、`BACK`）和整句设置说明基本放不下，仍是英文——要全覆盖只能重新编译。中文能否显示还取决于主机字形，见下面的字体一节。
+
+
 ## 目录
 
 | 路径 | 内容 |
@@ -65,8 +94,10 @@ python <这个仓库>/tools/install.py --root . --apply
 | `tools/install.py` | 一条命令完成拷文件夹 + 改 Makefile + 包裹 |
 | `tools/apply_zh_patch.py` | 把界面字面量包成 `evo_tr("…")`，默认 dry-run |
 | `tools/gen_table.py` | TSV → `evo_i18n_table.inc` |
+| `tools/patch_eboot.py` | 直接改发布版 `eboot.bin`：明文字符串等长替换，不用重编译 |
 | `patches/zh_patch.diff` | 在 v0.13.0 的 34 文件源码镜像上生成的统一 diff（575 处 / 24 文件） |
 | `patches/zh_patch_report.txt` | 每个文件的包裹数量 |
+| `patches/eboot_patch_report.txt` | 发布版二进制替换的明细（含仍保留英文的 524 条清单） |
 | `patches/miss_report.txt` | 命中词表但没自动包裹的位置（`文件:行号: 文案`），供人工复核 |
 | `docs/集成说明.md` | 编译侧的完整说明：接入、再生成词表、运行时覆盖、回滚、自检清单 |
 | `docs/中文使用手册.md` | 装好中文版之后怎么看：安装、导航、按键速查、六大设置分组、CJK 字体、FAQ |

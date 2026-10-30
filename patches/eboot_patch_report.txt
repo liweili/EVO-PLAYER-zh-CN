@@ -1,0 +1,561 @@
+# eboot.bin 中文替换（已写入）
+替换 547 处，涉及 520 条英文
+
+[放不下，保留英文] 524 条
+  How far ahead network streams load. A bigger buffer rides out Wi-Fi drops but uses more memory, and very high bitrate files get less than you pick. Applies from the next file. 网络流预加载的提前量。缓冲区越大越能扛住 Wi-Fi 掉线，但占用更多内存，且码率很高的文件实际可用量会低于你的设定。从下一个文件起生效。
+  No .m3u or .m3u8 files found on USB drive (/mnt/usb0, /mnt/usb1). Insert a USB drive with an M3U playlist. USB 驱动器（/mnt/usb0、/mnt/usb1）中未找到 .m3u 或 .m3u8 文件。请插入含 M3U 播放列表的 USB 驱动器。
+  Pans and sports look fluid. Films can look too smooth, and fast motion can show haloes. 摇镜头和体育画面显得流畅。电影可能看起来过于平滑，快速运动会显现光晕。
+  Soft video below your screen's resolution looks crisper. Higher modes cost more GPU. 低于屏幕分辨率的柔和视频会显得更清晰。更高档位会占用更多 GPU。
+  A short sweep plays from each speaker in turn. Stay still and keep the room quiet. 依次从每个扬声器播放一段短扫频。请保持静止，并保持房间安静。
+  Connect to your Xtream Codes subscription for Live TV, Movies & Series 连接你的 Xtream Codes 订阅，观看直播电视、电影和剧集
+  Hardware decoding is smoother and cooler. Software is for odd formats. 硬件解码更流畅、发热更低。软件解码适用于少见格式。
+  Outputs the video's own rate (24p or 50 Hz) so motion has no judder. 输出视频自身的帧率（24p 或 50 Hz），让动态画面不出现抖动。
+  Scan connected USB storage (/mnt/usb0, /mnt/usb1) for M3U playlists 扫描已连接的 USB 存储（/mnt/usb0、/mnt/usb1）以查找 M3U 播放列表
+  24P / 50 HZ OUTPUT DURING PLAYBACK - FALLS BACK TO 120 HZ OR 60 HZ 播放时采用 24P / 50 Hz 输出 - 无法支持时回退到 120 Hz 或 60 Hz
+  Plays a tone through each speaker so you can check your layout. 依次通过每个扬声器播放测试音，以便你检查布局。
+  HDR10 FOR HDR VIDEO - THE TV GOES BLACK BRIEFLY AT START & END HDR10 用于 HDR 视频 - 电视在开始与结束时短暂黑屏
+  Picks a film up where you stopped instead of from the start. 从你上次停止处继续播放影片，而不是从头开始。
+  Stereo mixes 5.1 and 7.1 down to two speakers or headphones. 立体声将 5.1 和 7.1 下混到两个扬声器或耳机。
+  AI UPSCALING IS ON - THE TWO STACK, EXPECT HEAVY ARTEFACTS AI 超分已开启 - 两者叠加，可能出现明显伪影
+  That link is a playlist - loading it as your channel list 该链接是播放列表 - 正将其作为频道列表加载
+  Type an addon's manifest URL (https://.../manifest.json) 输入插件的清单链接（https://.../manifest.json）
+  HOW FAR AHEAD STREAMS LOAD. HIGH BITRATE FILES GET LESS 流预加载的提前量。高码率文件可用量更少
+  BIGGER IS SHARPER BUT HEAVIER - MAXIMUM IS FOR PS5 PRO 越大越清晰但更吃性能 - 最高档仅适用于 PS5 Pro
+  RAISE QUIET FILES. LOUD PASSAGES CLIP, NEVER WRAP 提升安静文件的音量。过响段落会被削波，绝不溢出
+  Uses the CPU. Only for files hardware can't play 使用 CPU。仅用于硬件无法播放的文件
+  Lists folders above files in the USB browser. 在 USB 浏览器中将文件夹列在文件之前。
+  RUNNING %s - UP TO DATE. CROSS TO CHECK AGAIN 正在运行 %s，已是最新版本。按 × 键再次检查
+  %s VERIFIED - CROSS TO INSTALL AND CLOSE EVO %s 校验通过 - 按 × 键安装并关闭 EVO
+  SHIFTS SOUND AGAINST PICTURE TO FIX LIP-SYNC 调整声音与画面的相对位置以修正口型不同步。
+  SWEEPS: %d SPEAKERS + FRONT LEFT DRIFT CHECK 扫描：%d 个扬声器 + 左前漂移检查
+  %s - PS5 PRO: GET THE PRO BUILD FOR +1.2 GIB %s - PS5 Pro：获取 Pro 版安装包，多占 1.2 GIB
+  Can't get data from the server - retrying... 无法从服务器获取数据 - 正在重试...
+  BITSTREAM DOLBY & DTS TO RECEIVER OVER HDMI 通过 HDMI 将 Dolby 与 DTS 比特流输出到接收机
+  The code expired - press X to get a new one 验证码已过期 - 按 × 键获取新验证码
+  STOPPED AT %02d:%02d:%02d OF %02d:%02d:%02d 已停止于 %02d:%02d:%02d / 共 %02d:%02d:%02d
+  Hardware when it can, software when it must 能用硬件时用硬件，必须用软件时用软件
+  Closing. Open EVO again from the Games row 即将关闭。请从游戏行重新打开 EVO
+  D-PAD RIGHT: SELECT A SPEAKER ON THE STAGE 方向键右键：在舞台上选择扬声器
+  CLOCKS  video %.2f  audio %.2f  delta %.3f 时钟  视频 %.2f  音频 %.2f  差值 %.3f
+  Meters show typical values, not live ones 仪表显示的是典型值，而非实时值
+  Guide must start with http:// or https:// 节目指南必须以 http:// 或 https:// 开头
+  Open the server's own site in the browser 在浏览器中打开服务器自身的站点
+  Extra smooth, like a video call or sports 格外平滑，适合视频通话或体育赛事
+  PULLS ELEVATED SHADOWS TO TRUE OLED BLACK 将抬高的暗部拉至真正的 OLED 黑
+  Flip between only-when-needed and always 在按需启用与始终启用之间切换
+  Forget this server and its saved sign-in 忘记此服务器及其已保存的登录
+  QUEUES  video %d/96  audio %d/96  pcm %d 队列  视频 %d/96  音频 %d/96  PCM %d
+  Enter FTP Host (e.g. 192.168.0.10:21)... 输入 FTP 主机（例如 192.168.0.10:21）...
+  RUNNING %s - CROSS TO CHECK FOR UPDATES  正在运行 %s，按 × 键检查更新
+  Not set up - press X to add a playlist   尚未设置，按 × 键添加播放列表
+  DOWNLOADING %s: %d%% - CROSS TO CANCEL   正在下载 %s：%d%% - 按 × 键取消
+  Move item to clipboard for relocation    将项目移到剪贴板以便重新定位
+  Guide must start with http(s):// or /    节目指南必须以 http(s):// 或 / 开头
+  Paste clipboard item into this folder    将剪贴板项目粘贴到此文件夹
+  Guide address (XMLTV, http(s)://...)     节目指南地址（XMLTV，http(s)://...）
+  This provider has no playlist to set     此影视源没有可设置的播放列表
+  VERIFYING: %s (CLOCK DRIFT CHECK)...     正在校验：%s（时钟漂移检查）...
+  The server refused the approved code     服务器拒绝了已确认的验证码
+  CHECKING MICROPHONE + ROOM NOISE...      正在检测麦克风 + 房间噪声...
+  Type a URL or pick an .m3u from USB      输入网址或从 USB 选择 .m3u 文件
+  Guides are not part of a playlist.       节目指南不属于播放列表。
+  UNFINISHED WORK - EXPECT ARTEFACTS       未完成的工作 - 可能出现画面瑕疵
+  No server found - type its address       未找到服务器，请输入其地址
+  Guide turned off for this playlist       已为此播放列表关闭节目指南
+  VIDEO  %s  %dx%d  %.3f fps  %s  %s       视频  %s  %dx%d  %.3f fps  %s  %s
+  Videos and folders on USB storage        USB 存储中的视频和文件夹
+  STOPPED AT %02d:%02d OF %02d:%02d        已停止于 %02d:%02d / 共 %02d:%02d
+  STEREO DOWNMIXES 5.1 & 7.1 TO 2.0        立体声将 5.1 与 7.1 下混为 2.0
+  DECODER, UPSCALING, 120 HZ & HDR         解码器、超分辨率、120 Hz 与 HDR
+  Rating, genres, director, actors         分级、类型、导演、演员
+  Reconnected - the stream is back         已重新连接，媒体流已恢复
+  UPSCALER %s  /  SMOOTH %s  /  %s         超分器 %s  /  平滑 %s  /  %s
+  Files you play will appear here          播放过的文件会显示在这里
+  Password for %s (empty if none)          用于 %s 的密码（没有则留空）
+  Nothing viewable in this source          此影视源中没有可查看的内容
+  Nothing playable in this source          此影视源中没有可播放的内容
+  Show no guide for this playlist          此播放列表不显示节目指南
+  Media you play will appear here          播放过的媒体会显示在这里
+  AUDIO  %s  %s  %dch  %d Hz  %s           音频  %s  %s  %dch  %d Hz  %s
+  Server transcode (1080p H.264)           服务器转码（1080p H.264）
+  No guide covers these channels           没有节目指南覆盖这些频道
+  Connecting to Xtream server...           正在连接 Xtream 服务器...
+  No guide data for this channel           此频道没有节目指南数据
+  No guide for this playlist yet           此播放列表暂无节目指南
+  Saved provider is unavailable            已保存的影视源不可用
+  Switch account on this server            切换此服务器上的账户
+  Guide saved for this playlist            已为此播放列表保存节目指南
+  Connecting to backup (%s)...             正在连接备用源（%s）...
+  Photos: NASA (public domain)             照片：NASA（公有领域）
+  Invalid saved provider item              已保存的影视源条目无效
+  EVO picks a guide that fits              EVO 会自动选择合适的节目指南
+  Playlist did not load - %s               播放列表未能加载 - %s
+  Change file or folder name               更改文件或文件夹名称
+  Off (scratch alloc failed)               关闭（暂存分配失败）
+  NO SPEAKERS IN THIS LAYOUT               此布局中没有扬声器
+  Films can look too smooth                影片可能显得过于平滑
+  BT.2020 / ST 2084 (HDR10)                BT.2020 / ST 2084（HDR10）
+  No M3U files found on USB                USB 上未找到 M3U 文件
+  Photos (not playable yet)                照片（暂不可播放）
+  Cannot create folder here                无法在此创建文件夹
+  Films can judder slightly                影片可能出现轻微抖动
+  Type http(s)://host:port                 输入 http(s)://host:port
+  LAYOUT: 5.1 (6 CHANNELS)                 布局：5.1（6 声道）
+  MEASURING: %s (%d/%d)...                 正在测量：%s（%d/%d）...
+  LAYOUT: 7.1 (8 CHANNELS)                 布局：7.1（8 声道）
+  Address and port - now                   地址和端口 - 当前 
+  Opening recent media...                  正在打开最近媒体…
+  Hardware (sceVideodec2)                  硬件（sceVideodec2）
+  SPATIAL ORB - FREE ROAM                  空间环绕 - 自由漫游
+  LEFT STICK  MOVE SOURCE                  左摇杆  移动信号源
+  Sign in as another user                  以其他用户身份登录
+  Guide: %s - %d channels                  节目指南：%s - %d 个频道
+  DETECTED HARDWARE MODEL                  检测到的硬件型号
+  Refreshing the guide...                  正在刷新节目指南…
+  Copy item to clipboard                   将项目复制到剪贴板
+  Scanning filesystem...                   正在扫描文件系统…
+  AUTO CALIBRATION (MIC)                   自动校准（麦克风）
+  Guide: the panel's own                   节目指南：面板自带的
+  Find server on network                   在网络上查找服务器
+  DELETING FROM STORAGE                    正在从存储中删除
+  D-PAD  NAVIGATE STAGE                    方向键  在舞台上移动
+  Off (GPU over budget)                    关闭（GPU 超出预算）
+  CURRENT: 5.1 SURROUND                    当前：5.1 环绕声
+  Software (CPU raster)                    软件（CPU 光栅化）
+  CURRENT: 7.1 SURROUND                    当前：7.1 环绕声
+  None yet - choose one                    暂无，请选择一个
+  STOP ALL AUDIO OUTPUT                    停止全部音频输出
+  Open a playlist first                    请先打开一个播放列表
+  Opening the stream...                    正在打开媒体流…
+  ASK WHICH LIVE STREAM                    询问选择哪个直播流
+  The panel's own guide                    面板自带的节目指南
+  Welcome to EVO Player                    欢迎使用 EVO Player
+  Loading your guide...                    正在加载你的节目指南...
+  Cannot paste at root                     无法粘贴到根目录
+  Report saved to USB0                     报告已保存到 USB0
+  BT.2020 / ARIB (HLG)                     BT.2020 / ARIB（HLG）
+  Sort, filter & genre                     排序、筛选与类型
+  CROSS  SELECT / TEST                     × 键  选择 / 测试
+  Loading the guide...                     正在加载节目指南...
+  AUTO (MATCH CONTENT)                     自动（匹配内容）
+  Switching quality...                     正在切换画质...
+  STOPPED AT %02d:%02d                     已停止于 %02d:%02d
+  Marked as unwatched                      已标记为未观看
+  BT.709 (10-bit SDR)                      BT.709（10 位 SDR）
+  Add & manage addons                      添加和管理插件
+  No channels match '                      没有匹配的频道 '
+  %.1f GIB - PRO MODE                      %.1f GIB - 专业模式
+  TV matches the film                      电视跟随影片帧率
+  Add a Stremio addon                      添加 Stremio 插件
+  Switching audio...                       正在切换音频...
+  CHECKING GITHUB...                       正在检查 GitHub...
+  CLIPBOARD: %s (%s)                       剪贴板：%s（%s）
+  Set server address                       设置服务器地址
+  COPYING TO STORAGE                       正在复制到存储
+  360 ROTATION SWEEP                       360 度旋转扫频
+  New folder name...                       新文件夹名称…
+  Opening the web UI                       正在打开 Web 界面
+  TEXT ENTRY METHOD                        文本输入方式
+  Marked as watched                        已标记为已观看
+  HDMI 1 (24P FILM)                        HDMI 1（24P 影片）
+  No item to rename                        没有可重命名的项目
+  SUBS  %s  /  %s%s                        字幕  %s  /  %s%s
+  Source %d of %d%s                        第 %d 个来源，共 %d 个%s
+  Nothing matches '                        没有匹配的内容 '
+  Items you starred                        你加星标的项目
+  Off (unavailable)                        关闭（不可用）
+  Software (FFmpeg)                        软件（FFmpeg）
+  SQUARE  5.1 / 7.1                        □ 键  5.1 / 7.1
+  Add a Nuvio addon                        添加 Nuvio 插件
+  No item to delete                        没有可删除的项目
+  Needs an HDR10 TV                        需要 HDR10 电视
+  TV stays at 60 Hz                        电视保持 60 Hz
+  Mark as unwatched                        标记为未观看
+  + Add FTP Server                         + 添加 FTP 服务器
+  Playlist removed                         播放列表已移除
+  For this library                         适用于此媒体库
+  Playlist cleared                         播放列表已清空
+  Circle to cancel                         按 ○ 键取消
+  Off (10-bit/HDR)                         关闭（10-bit/HDR）
+  Server unchanged                         服务器未更改
+  Off (HDR source)                         关闭（HDR 源）
+  Playlist & guide                         播放列表与节目指南
+  Playlist updated                         播放列表已更新
+  Guide: automatic                         节目指南：自动
+  NOTHING HERE YET                         此处暂无内容
+  BT.2020 (10-bit)                         BT.2020（10 位）
+  The code expired                         验证码已过期
+  No items match '                         没有匹配的项目 '
+  NO MATCHES FOUND                         未找到匹配项
+  FLIGHT MODE: %s                          飞行模式：%s
+  Available (Off)                          可用（已关闭）
+  NOISE %.0f dBFS                          噪声 %.0f dBFS
+  Mark as watched                          标记为已观看
+  REMOVE PLAYLIST                          移除播放列表
+  Nothing to show                          无可显示内容
+  TYPICAL CPU USE                          典型 CPU 占用
+  Remove playlist                          移除播放列表
+  CHOOSE A STREAM                          选择一个播放源
+  Reading file...                          正在读取文件…
+  MPEG-TS (Live)                           MPEG-TS（直播）
+  NO MUSIC FOUND                           未找到音乐
+  FOLDER CREATED                           文件夹已创建
+  TUNING CHANNEL                           正在调谐频道
+  Details & cast                           详情与演员
+  Provider media                           影视源媒体
+  More like this                           更多类似内容
+  Stop playback?                           停止播放？
+  NO ITEMS FOUND                           未找到项目
+  View Changelog                           查看更新日志
+    +  2ND TRACK                             +  第二音轨
+  Server removed                           服务器已移除
+  NATIVE PS5 IME                           PS5 原生输入法
+  SILENCE / STOP                           静音 / 停止
+  Addons cleared                           插件已清空
+  USE THIS GUIDE                           使用此节目指南
+  SPEAKER LAYOUT                           扬声器布局
+  HLS (Adaptive)                           HLS（自适应）
+  OPENING STREAM                           正在打开媒体流
+  Rename item...                           重命名项目…
+  Item %u of %u                            第 %u 项，共 %u 项
+  FOLDERS FIRST                            文件夹优先
+  Network (FTP)                            网络（FTP）
+  Refresh guide                            刷新节目指南
+  Cancelling...                            正在取消...
+  VIDEO DECODER                            视频解码器
+  Addon removed                            插件已移除
+  Edit playlist                            编辑播放列表
+  ETA %dm %02ds                            预计 %dm %02ds
+  Skipped intro                            已跳过片头
+  Remove server                            移除服务器
+  LOAD FROM USB                            从 USB 加载
+  AUTO TEST 7.1                            自动测试 7.1
+  AI (Standard)                            AI（标准）
+  DUALSENSE MIC                            DualSense 麦克风
+  FRONT DISPLAY                            前面板显示
+  Opening %s...                            正在打开 %s…
+  BUFFER %.1f s                            缓冲 %.1f 秒
+  Safe to close                            可安全关闭
+  Processing...                            正在处理…
+  AUTO TEST 5.1                            自动测试 5.1
+  Rename failed                            重命名失败
+  REMOVE SERVER                            移除服务器
+  Add playlist                             添加播放列表
+  7.1 Surround                             7.1 环绕声
+  5.1 Surround                             5.1 环绕声
+  SYNC: %+d ms                             同步：%+d ms
+  %d SETTING%s                             %d 项设置%s
+  Tuning %s...                             正在调谐 %s...
+  Sorted by %s                             按 %s 排序
+  SCAN TO TYPE                             扫描即可输入
+  BT.709 (SDR)                             BT.709（SDR）
+    -  PLAYING                               -  播放中
+  AI (Maximum)                             AI（最高）
+  Server saved                             服务器已保存
+  Edit server                              编辑服务器
+  DEEP BLACKS                              深黑增强
+  Playing now                              正在播放
+  2ND: %+d ms                              第二轨: %+d ms
+  EVO UPDATED                              EVO 已更新
+  AUDIO DELAY                              音频延迟
+  QUICK MODES                              快捷模式
+  XMLTV guide                              XMLTV 节目指南
+  Change mode                              切换模式
+  NOW PLAYING                              正在播放
+  No chapters                              没有章节
+  UPSCALE OFF                              超分关闭
+  Save failed                              保存失败
+  Track title                              轨道标题
+  Pause music                              暂停音乐
+  MOVING FILE                              正在移动文件
+  Sync %+d ms                              同步 %+d ms
+  Emby Server                              Emby 服务器
+  Recent File                              最近文件
+  Move source                              移动信号源
+  Addon added                              插件已添加
+  STARTING...                              正在启动...
+  Skip intro                               跳过片头
+  in OPTIONS                               在选项中
+  AI (Large)                               AI（大）
+  Play music                               播放音乐
+  MEDIA INFO                               媒体信息
+  START OVER                               从头开始
+  Opening...                               正在打开…
+  Media File                               媒体文件
+  SMOOTH OFF                               平滑关闭
+  SYNC: 0 ms                               同步：0 ms
+  LOCAL FILE                               本地文件
+  Date added                               添加日期
+  FROM START                               从头开始
+  MEDIA CORE                               媒体核心
+  Your own:                                自定义： 
+  Signed out                               已退出登录
+  New Folder                               新建文件夹
+  Portuguese                               葡萄牙语
+  Showing %s                               正在显示 %s
+  LOADING...                               正在加载...
+  Cut (Move)                               剪切（移动）
+  2ND: 0 ms                                第二轨: 0 ms
+     Next:                                    接下来： 
+  AUTO-SYNC                                自动同步
+  Genre: %s                                类型：%s
+  Searching                                正在搜索
+  Scrubbing                                拖动进度
+  Web UI -                                 网页界面 - 
+  RESUME ON                                继续播放已开启
+  Container                                封装格式
+  VIEW MODE                                视图模式
+  Any genre                                任意类型
+  Add addon                                添加插件
+  Season %d                                第 %d 季
+  TUNING...                                正在调谐...
+  MIC CHECK                                麦克风检测
+  DECODE HW                                硬件解码
+  File size                                文件大小
+  USB Drive                                USB 驱动器
+  MEASURING                                正在测量
+  FTP ADDED                                FTP 已添加
+  IMPROVED                                 已改进
+  Romanian                                 罗马尼亚语
+  SIGN OUT                                 退出登录
+  Renderer                                 渲染器
+  Playlist                                 播放列表
+  PROVIDER                                 影视源
+  Sign out                                 退出登录
+  QUIT EVO                                 退出 EVO
+  TV Shows                                 电视剧
+  GPU COST                                 GPU 开销
+  READ USB                                 读取 USB
+  Cartoons                                 动画片
+  +PLAYING                                 +播放中
+  Inactive                                 未启用
+  Upscaler                                 超分器
+  Quit EVO                                 退出 EVO
+  RECEIVER                                 接收器
+  USB SCAN                                 USB 扫描
+  Copied:                                  已复制: 
+  STARTING                                 正在启动
+  Updated                                  已更新 
+  Username                                 用户名
+  Specials                                 特别篇
+  SWEEPING                                 扫描中
+  Seek 10s                                 快跳 10 秒
+  Loaded                                   已加载 
+  Studios                                  工作室
+  Working                                  工作中
+  Picked                                   已选择 
+  Sort by                                  排序依据
+  Spanish                                  西班牙语
+  HUD OFF                                  HUD 关闭
+  RENAMED                                  已重命名
+  WATCHED                                  已观看
+  Live TV                                  直播电视
+  NO TRIM                                  不裁剪
+  Removed                                  已移除
+  PLAYING                                  正在播放
+  Audio:                                   音频: 
+  Library                                  媒体库
+  %d CUES                                  %d 个提示点
+  AZIMUTH                                  方位角
+  Swedish                                  瑞典语
+  DECODES                                  解码次数
+  SEE ALL                                  查看全部
+  Watched                                  已观看
+  Decoder                                  解码器
+  Finnish                                  芬兰语
+  LIVE TV                                  直播电视
+  LOADING                                  正在加载
+  SEEK TO                                  跳转至
+  ETA %ds                                  预计 %ds
+  Guide:                                   节目指南： 
+  UP NEXT                                  接下来
+  Artists                                  艺术家
+  Italian                                  意大利语
+  Turkish                                  土耳其语
+  Next Up                                  接下来
+  LIBRARY                                  媒体库
+  RESUMED                                  已继续
+  REMOVED                                  已移除
+  Maximum                                  最大值
+  Cleared                                  已清空
+  RUNNING                                  运行中
+  Server                                   服务器
+  Rename                                   重命名
+  LISTED                                   已列出
+  SERVER                                   服务器
+  Arabic                                   阿拉伯语
+  PAUSED                                   已暂停
+  Folder                                   文件夹
+  Danish                                   丹麦语
+  STEREO                                   立体声
+  IN USE                                   使用中
+  Studio                                   工作室
+  Active                                   已启用
+  SYNC:                                    同步： 
+  People                                   演职人员
+   ITEMS                                    项目
+  Polish                                   波兰语
+  Stereo                                   立体声
+  HUD ON                                   HUD 开启
+  Subs:                                    字幕： 
+  SYNC 2                                   同步 2
+  Recap                                    前情提要
+  ERROR                                    错误
+  ABOUT                                    关于
+   ITEM                                     项目
+  Movie                                    电影
+  Ready                                    就绪
+  Width                                    宽度
+  THEME                                    主题
+  About                                    关于
+  FLYBY                                    飞掠
+  2ND:                                     第二轨: 
+  PASTE                                    粘贴
+  Sharp                                    锐利
+  Outro                                    片尾
+  Greek                                    希腊语
+  Track                                    轨道
+  Apply                                    应用
+  LEVEL                                    电平
+  MATCH                                    匹配
+   AUTO                                     自动
+  AUDIO                                    音频
+  Dutch                                    荷兰语
+  Watch                                    观看
+  Items                                    项目
+  Paste                                    粘贴
+  ITEMS                                    项目
+  Like                                     类似 
+  Cut:                                     已剪切: 
+  FIXED                                    固定
+  Pause                                    暂停
+  VIDEO                                    视频
+  READY                                    就绪
+  Hindi                                    印地语
+  Shift                                    偏移
+  Space                                    空间
+  Music                                    音乐
+  Thumb                                    缩略图
+  Addon                                    插件
+  Actor                                    演员
+  Start                                    开始
+  SETUP                                    初始设置
+  Files                                    文件
+  DELAY                                    延迟
+  Clear                                    清空
+  Index                                    索引
+  SHARP                                    锐利
+  Audio                                    音频
+  Genre                                    类型
+  Photo                                    照片
+  PLACE                                    放置
+  TESTS                                    测试
+  GUESS                                    推测
+  Codec                                    编解码器
+  STATS                                    统计
+  CLOSE                                    关闭
+  Now:                                     当前： 
+  Close                                    关闭
+  Video                                    视频
+  WHITE                                    白色
+  Logo                                     标志
+  SYNC                                     同步
+  Name                                     名称
+  Mode                                     模式
+  BOLD                                     粗体
+  JUMP                                     跳转
+  ITEM                                     项目
+  Size                                     大小
+  Sync                                     同步
+  Live                                     直播
+  Play                                     播放
+  User                                     用户
+  STOP                                     停止
+  Done                                     完成
+  Auto                                     自动
+  Mono                                     单声道
+  MONO                                     单声道
+  DONE                                     完成
+  QUIT                                     退出
+  Tags                                     标签
+  Cast                                     演职员
+  FILE                                     文件
+  Book                                     书籍
+  More                                     更多
+  FILL                                     填充
+  CYAN                                     青色
+  Show                                     显示
+  OPEN                                     打开
+  PATH                                     路径
+  BACK                                     返回
+  Page                                     页面
+  Type                                     类型
+  SIZE                                     大小
+  Next                                     下一个
+  Role                                     角色
+  File                                     文件
+  Fill                                     填充
+  AUTO                                     自动
+  Info                                     信息
+  Back                                     返回
+  Code                                     代码
+  LIVE                                     直播
+  PLAY                                     播放
+  Copy                                     复制
+  Open                                     打开
+  For                                      适用于 
+  Move                                     移动
+  Home                                     主页
+  IN:                                      输入：
+  Fit                                      适应
+  All                                      全部
+  RUN                                      运行
+  SUB                                      字幕
+  Any                                      任意
+  Web                                      网页
+  FIT                                      适应
+  Off                                      关闭
+  WEB                                      网页
+  MIC                                      麦克风
+  OFF                                      关闭
+  DIR                                      目录
+  RR                                       后右
+  ON                                       开启
+  RL                                       后左
+  TV                                       电视
+  NO                                       否
+  CH                                       声道
+  On                                       开启
+
+[未在文件中出现] 31 条
+  (TorBox, Real-Debrid) in the stream addon
+  (Torrentio, AIOStreams...) %s
+  -500..+500 (step 50)
+  AI UPSCALE · LARGE
+  AI UPSCALE · MAX
+  Auto (Hardware first)
+  Big
+  CATEGORY
+  Download it again
+  Enter guide address…
+  Episode %d · %.10s
+  GROUP
+  Hardware (Videodec)
+  No addon gives the episode list for this title. Add one that 
+  No guide loaded
+  None of your addons gives streams. Add a stream addon 
+  Normal
+  Only torrent links were found. Set up a debrid service 
+  Pick one once and EVO remembers it for this playlist. Put .xml guides on your 
+  Place your DualSense controller on your seat at ear level, facing the screen. Unmute its 
+  SMOOTH OFF · 10-BIT
+  SMOOTH OFF · 4K
+  SMOOTH OFF · CAPPED
+  SMOOTH OFF · HIGH FPS
+  SMOOTHING · HIGH
+  SMOOTHING · LOW
+  Small
+  Start the jailbreak payload (Lapy JB or etaHEN), 
+  UPSCALE OFF · 10-BIT
+  UPSCALE OFF · NATIVE
+  USB stick and they show up here.
