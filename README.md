@@ -6,12 +6,12 @@
 
 ## 直接下载（Releases）
 
-不想自己跑脚本？[Releases](https://github.com/liweili/EVO-PLAYER-zh-CN/releases/tag/v0.13.0-zhCN) 里有打好补丁的文件夹版：
+不想自己跑脚本？[Releases](https://github.com/liweili/EVO-PLAYER-zh-CN/releases/tag/v0.13.5-zhCN) 里有打好补丁的文件夹版（基于上游 **v0.13.5**）：
 
 | 资产 | 用途 |
 | --- | --- |
-| `EVOPlayer-v0.13.0-PPSA99039-zhCN.zip`（31 MB） | 完整文件夹，解压出 `PPSA99039`，覆盖到主机 `/data/homebrew/` |
-| `eboot.bin`（45 MB） | 已经有这个文件夹的人，只替换同名文件，`assets` / `sce_module` / `sce_sys` 不用动 |
+| `EVOPlayer-v0.13.5-PPSA99039-zhCN.zip`（27 MB） | 完整文件夹，解压出 `PPSA99039`，覆盖到主机 `/data/homebrew/` |
+| `eboot.bin`（48 MB） | 已经有这个文件夹的人，只替换同名文件，`assets` / `sce_module` / `sce_sys` 不用动 |
 | `NotoSansSC-Regular-otf.zip`（6 MB） | 中文字体，**不放这个界面全是 `?`**，见下面「中文字体」 |
 
 替换前先退出正在运行的 EVO。原版 `eboot.bin` 自己留一份，要还原就换回去。
@@ -74,15 +74,18 @@ python tools/patch_eboot.py --eboot <发布版目录或 eboot.bin> --tsv i18n-zh
 
 脚本只替换“整段可打印字节恰好等于词表某条英文”的位置（所以 `AUTO` 不会误伤到 `AUTOMATIC`），中文后面用空格补齐，**文件长度与所有偏移都不变**，并自动备份成 `eboot.bin.bak`。
 
-在 v0.13.0 发布版上实测：
+在 v0.13.5 发布版上实测：
 
 | 项 | 结果 |
 | --- | --- |
-| 词表 1171 条，在 `eboot.bin` 里能找到 | 1166 条 |
-| 实际替换 | **547 处 / 520 条** |
-| 放不下（中文占 3 字节/字，短词与长句超长） | 524 条，保留英文 |
+| 词表 | 1075 条（去重后有效条目） |
+| 实际替换 | **529 处 / 499 条** |
+| 放不下（中文占 3 字节/字，短词与长句超长） | 512 条，保留英文 |
 | 占位符不一致（会被拒绝替换） | 0 条 |
-| 改动范围 | 10249 字节 / 75 个数据页，文件头未动，长度不变 |
+| 词表中未在新版出现（上游改写过文案） | 64 条 |
+| 改动范围 | 9859 字节，文件头未动，长度 49847268 字节不变 |
+
+（v0.13.0 上为 547 处 / 520 条；v0.13.5 新增的 SMB、Add Server、Skip intro 等文案多为短英文，中文放不下，保持英文。）
 
 还原：
 
@@ -109,7 +112,7 @@ copy /y eboot.bin.bak eboot.bin
 | `tools/patch_eboot.py` | 直接改发布版 `eboot.bin`：明文字符串等长替换，不用重编译 |
 | `patches/zh_patch.diff` | 在 v0.13.0 的 34 文件源码镜像上生成的统一 diff（575 处 / 24 文件） |
 | `patches/zh_patch_report.txt` | 每个文件的包裹数量 |
-| `patches/eboot_patch_report.txt` | 发布版二进制替换的明细（含仍保留英文的 524 条清单） |
+| `patches/eboot_patch_report.txt` | 发布版二进制替换的明细（v0.13.5：含仍保留英文的 512 条清单） |
 | `patches/miss_report.txt` | 命中词表但没自动包裹的位置（`文件:行号: 文案`），供人工复核 |
 | `docs/集成说明.md` | 编译侧的完整说明：接入、再生成词表、运行时覆盖、回滚、自检清单 |
 | `docs/中文使用手册.md` | 装好中文版之后怎么看：安装、导航、按键速查、六大设置分组、CJK 字体、FAQ |
@@ -143,7 +146,7 @@ EVO 自带的界面字体只带拉丁字形，掉到一个没有字形的汉字�
 
 文件名硬编码在 `evo_hui_complex.cpp` 的 `kFaces` 表里，**不能改名、不能带别的后缀**（`NotoSansSC-Regular.ttf`、`SourceHanSans.otf` 都不认）。字体内容本身随意：`NotoSansSC-Regular.otf` 这个名字配一个 TTF 文件也能加载，FreeType 按文件内容识别格式。
 
-做法：下载 [Releases](https://github.com/liweili/EVO-PLAYER-zh-CN/releases/tag/v0.13.0-zhCN) 里的 `NotoSansSC-Regular-otf.zip`，解压出 `NotoSansSC-Regular.otf`，FTP 传到主机 `/data/evoplayer/fonts/`（目录不存在就自己建），重启 EVO。探测是每秒重试一次的，理论上放进去几秒就生效，但重启最稳。
+做法：下载 [Releases](https://github.com/liweili/EVO-PLAYER-zh-CN/releases/tag/v0.13.5-zhCN) 里的 `NotoSansSC-Regular-otf.zip`，解压出 `NotoSansSC-Regular.otf`，FTP 传到主机 `/data/evoplayer/fonts/`（目录不存在就自己建），重启 EVO。探测是每秒重试一次的，理论上放进去几秒就生效，但重启最稳。
 
 这套文件名同样有日文 `NotoSansJP-Regular.otf` 与韩文 `NotoSansKR-Regular.otf`，放哪个启用哪个。字体按 OFL 许可分发，许可全文见 zip 里的 `OFL.txt`。
 
