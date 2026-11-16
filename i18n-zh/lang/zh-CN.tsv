@@ -1,95 +1,7 @@
-# EVO Player 简体中文词表：英文<TAB>中文。
-# 运行时可放到 /data/evoplayer/lang/zh-CN.tsv 覆盖内置表。
-   Next: 	   接下来： 
-  +  2ND TRACK	  +  第二音轨
-  -  HLS	  -  HLS
-  -  PLAYING	  -  播放中
- AUTO	 自动
- CATEGORIES	 分类
- CHANNELS	 频道
- GB	 GB
- GROUPS	 分组
- ITEM	 项目
- ITEMS	 项目
- MB	 MB
-%.0f MB	%.0f MB
-%.1f dBFS	%.1f dBFS
-%.1f GB	%.1f GB
-%.1f GIB - PRO MODE	%.1f GIB - 专业模式
-%.1f GIB - STANDARD	%.1f GIB - 标准
-%.1f MB / %.1f MB	%.1f MB / %.1f MB
-%.1f/10 IMDb	%.1f/10 IMDb
-%.2f GB / %.2f GB	%.2f GB / %.2f GB
-%d CUES	%d 个提示点
-%d FPS	%d FPS
-%d ITEMS	%d 项
-%d SETTING%s	%d 项设置%s
-%s - CROSS TO TRY AGAIN	%s - 按 × 键重试
-%s - PS5 PRO: GET THE PRO BUILD FOR +1.2 GIB	%s - PS5 Pro：获取 Pro 版安装包，多占 1.2 GIB
-%s AVAILABLE (%llu MB) - CROSS TO DOWNLOAD	%s 可用（%llu MB）- 按 × 键下载
-%s VERIFIED - CROSS TO INSTALL AND CLOSE EVO	%s 校验通过 - 按 × 键安装并关闭 EVO
-%s/10 IMDb	%s/10 IMDb
-(TorBox, Real-Debrid) in the stream addon	（TorBox、Real-Debrid）位于串流插件中
-(Torrentio, AIOStreams...) %s	（Torrentio、AIOStreams...）%s
-+ Add FTP Server	+ 添加 FTP 服务器
-+100 ms	+100 ms
-+150 ms	+150 ms
-+200 ms	+200 ms
-+250 ms	+250 ms
-+300 ms	+300 ms
-+350 ms	+350 ms
-+400 ms	+400 ms
-+450 ms	+450 ms
-+50 ms	+50 ms
-+500 ms	+500 ms
-+PLAYING	+播放中
--100 ms	-100 ms
--150 ms	-150 ms
--200 ms	-200 ms
--250 ms	-250 ms
--300 ms	-300 ms
--350 ms	-350 ms
--400 ms	-400 ms
--450 ms	-450 ms
--50 ms	-50 ms
--500 ms	-500 ms
--500..+500 (step 50)	-500..+500（步进 50）
-0 ms	0 ms
-0-DEG REFERENCE	0 度基准
-0.0 MB/s	0.0 MB/s
-1080p (%dx%d)	1080p (%dx%d)
-1080p FHD	1080p FHD
-120 HZ	120 HZ
-120 HZ OUTPUT	120 Hz 输出
-1440p QHD	1440p QHD
-24 fps film plays more evenly on a 120 Hz output. The TV goes black briefly on each switch.	24 fps 影片在 120 Hz 输出下播放更平滑。每次切换时电视会短暂黑屏。
-24/7 Series Marathon	24/7 剧集马拉松
-24P / 50 HZ OUTPUT DURING PLAYBACK - FALLS BACK TO 120 HZ OR 60 HZ	播放时采用 24P / 50 Hz 输出 - 无法支持时回退到 120 Hz 或 60 Hz
-2D navigate	2D 导航
-2ND: 	第二轨: 
-2ND: %+d ms	第二轨: %+d ms
-2ND: 0 ms	第二轨: 0 ms
-360 ROTATION SWEEP	360 度旋转扫频
-3D SOUND FIELD	3D 声场
-48 kHz	48 kHz
-4K UHD	4K UHD
-4K UHD (%dx%d)	4K UHD (%dx%d)
-5.1 & 7.1 SPEAKER CHANNEL VERIFICATION	5.1 与 7.1 扬声器声道校验
-5.1 Surround	5.1 环绕声
-5.1 SYSTEM	5.1 系统
-6 CHANNELS	6 声道
-6-CHANNEL SEQUENCE	6 声道序列
-60 FPS	60 FPS
-60 HZ	60 HZ
-60 HZ OUTPUT	60 Hz 输出
-7.1 Surround	7.1 环绕声
-7.1 SYSTEM	7.1 系统
-720p (%dx%d)	720p (%dx%d)
-720p HD	720p HD
-8 CHANNELS	8 声道
-8-CHANNEL SEQUENCE	8 声道序列
+﻿# zh-CN.tsv (v0.13.7 合并后 1190 条)
 A bigger network gives a sharper picture but is heavier. Maximum is for PS5 Pro.	更大的网络更清晰，但更吃性能。最高档仅适用于 PS5 Pro。
 A different colour keeps the two lines apart.	用不同颜色可区分两条字幕。
+A film starts with this track	以此音轨开场的影片
 A short sweep plays from each speaker in turn. Stay still and keep the room quiet.	依次从每个扬声器播放一段短扫频。请保持静止，并保持房间安静。
 A soft click when you move and press buttons.	移动和按键时发出轻微点击声。
 ABOUT	关于
@@ -153,6 +65,7 @@ AUTO SUBTITLES	自动字幕
 AUTO TEST 5.1	自动测试 5.1
 AUTO TEST 7.1	自动测试 7.1
 AUTO-SYNC	自动同步
+Auto: jumps over intros without asking	自动跳过片头
 Automatic	自动
 AUTOMATICALLY LOAD SUBTITLES ON PLAYBACK	播放时自动加载字幕
 AV1	AV1
@@ -164,6 +77,7 @@ AVC 10-BIT	AVC 10 位
 AZIMUTH	方位角
 BACK	返回
 Back	返回
+Back to Start Page	回到起始页
 Backspace	退格
 Bare-Metal AGC	裸金属 AGC
 Behaviour	行为
@@ -175,6 +89,9 @@ BITSTREAM	比特流
 BITSTREAM DOLBY & DTS TO RECEIVER OVER HDMI	通过 HDMI 将 Dolby 与 DTS 比特流输出到接收机
 BOLD	粗体
 Book	书籍
+Bookmark removed	已取消收藏
+Bookmark this page	收藏此网页
+Bookmarks	书签
 Bright areas keep their detail	亮部保留细节
 BROWSE	浏览
 Browse	浏览
@@ -189,6 +106,8 @@ BT.2020 / ST 2084 (HDR10)	BT.2020 / ST 2084（HDR10）
 BT.709 (10-bit SDR)	BT.709（10 位 SDR）
 BT.709 (SDR)	BT.709（SDR）
 BUFFER %.1f s	缓冲 %.1f 秒
+Buffer rides out the drop	缓冲顶住卡顿
+Buffer runs out: playback stalls	缓冲耗尽，播放卡住
 BUFFERING...	缓冲中...
 CALCULATING LEVELS, DISTANCES AND DELAYS...	正在计算电平、距离和延迟...
 CALIBRATION  ACTIVE ON PLAYBACK	校准  播放时生效
@@ -237,6 +156,7 @@ Codec	编解码器
 COLOR PALETTE & ACCENTS	调色板与强调色
 COLOUR	颜色
 Colour / HDR	颜色 / HDR
+Community	社区
 COMPATIBILITY REPORT	兼容性报告
 COMPLETE	完成
 COMPLETED	已完成
@@ -249,6 +169,7 @@ Connecting to live stream...	正在连接直播流...
 Connecting to Xtream server...	正在连接 Xtream 服务器...
 CONNECTION	连接
 CONNECTION LOST	连接已断开
+Connection Status: Failed	连接状态：失败
 CONSOLE	主机
 Container	封装格式
 Continue from previous position?	从上次位置继续播放？
@@ -256,6 +177,7 @@ CONTINUE WATCHING	继续观看
 Continue Watching	继续观看
 Continues from 42:10	从 42:10 继续
 CONTROLLER LIGHTBAR	手柄灯条
+Controller Shortcuts Guide	控制器快捷键指南
 CONTROLS	控制
 Copied: 	已复制: 
 Copy	复制
@@ -326,9 +248,13 @@ DOLBY VISION	DOLBY VISION
 Dolby Vision	Dolby Vision
 DONE	完成
 Done	完成
+Download	下载
 Download it again	重新下载
 DOWNLOADING %s: %d%% - CROSS TO CANCEL	正在下载 %s：%d%% - 按 × 键取消
+Downloads	下载
 DTS	DTS
+DualSense Controller Guide	DualSense 手柄指南
+DualSense Controller Shortcuts	DualSense 手柄快捷键
 DUALSENSE LIGHT FOLLOWS THE THEME ACCENT	DualSense 灯效跟随主题强调色
 DUALSENSE MIC	DualSense 麦克风
 DUALSENSE MICROPHONE CALIBRATION	DualSense 麦克风校准
@@ -341,6 +267,7 @@ ELEVATION	提权
 EMBEDDED	内嵌
 Embedded Stream	内嵌流
 Emby Server	Emby 服务器
+Engine: PlayStation 5 system WebKit	引擎：PS5 系统 WebKit
 English	英语
 ENTER ADDRESS	输入地址
 Enter FTP Host (e.g. 192.168.0.10:21)...	输入 FTP 主机（例如 192.168.0.10:21）...
@@ -465,6 +392,7 @@ High	高
 Highlight EVO Player and close it from the options menu.	高亮 EVO Player，然后从选项菜单中关闭它。
 Highlights like the sun and lamps get brighter without clipping. Needs an HDR10 TV.	太阳、灯光等高光更亮且不过曝。需要支持 HDR10 的电视。
 Hindi	印地语
+History	历史
 HLG	HLG
 HLS	HLS
 HLS (Adaptive)	HLS（自适应）
@@ -478,7 +406,6 @@ HUD OFF	HUD 关闭
 HUD ON	HUD 开启
 IMDb 	IMDb 
 IMPROVED	已改进
-in OPTIONS	在选项中
 In progress...	进行中...
 IN USE	使用中
 IN:	输入：
@@ -872,6 +799,7 @@ Searching	正在搜索
 Season	季
 Season %d	第 %d 季
 SECONDARY	次要
+Secondary	副字幕
 SECONDARY SUBTITLE COLOUR	次要字幕颜色
 SECONDARY SUBTITLE POSITION	次要字幕位置
 SEE ALL	查看全部
@@ -1171,3 +1099,93 @@ YELLOW	黄色
 Your current position will be saved automatically.	当前位置会自动保存。
 Your own: 	自定义： 
 Your sign-in on this console is forgotten too.	此主机上的登录信息也会被清除。
+   Next: 	   接下来： 
+  +  2ND TRACK	  +  第二音轨
+  -  HLS	  -  HLS
+  -  PLAYING	  -  播放中
+ AUTO	 自动
+ CATEGORIES	 分类
+ CHANNELS	 频道
+ GB	 GB
+ GROUPS	 分组
+ ITEM	 项目
+ ITEMS	 项目
+ MB	 MB
+%.0f MB	%.0f MB
+%.1f dBFS	%.1f dBFS
+%.1f GB	%.1f GB
+%.1f GIB - PRO MODE	%.1f GIB - 专业模式
+%.1f GIB - STANDARD	%.1f GIB - 标准
+%.1f MB / %.1f MB	%.1f MB / %.1f MB
+%.1f/10 IMDb	%.1f/10 IMDb
+%.2f GB / %.2f GB	%.2f GB / %.2f GB
+%d CUES	%d 个提示点
+%d FPS	%d FPS
+%d ITEMS	%d 项
+%d SETTING%s	%d 项设置%s
+%s - CROSS TO TRY AGAIN	%s - 按 × 键重试
+%s - PS5 PRO: GET THE PRO BUILD FOR +1.2 GIB	%s - PS5 Pro：获取 Pro 版安装包，多占 1.2 GIB
+%s AVAILABLE (%llu MB) - CROSS TO DOWNLOAD	%s 可用（%llu MB）- 按 × 键下载
+%s VERIFIED - CROSS TO INSTALL AND CLOSE EVO	%s 校验通过 - 按 × 键安装并关闭 EVO
+%s/10 IMDb	%s/10 IMDb
+(TorBox, Real-Debrid) in the stream addon	（TorBox、Real-Debrid）位于串流插件中
+(Torrentio, AIOStreams...) %s	（Torrentio、AIOStreams...）%s
++ Add FTP Server	+ 添加 FTP 服务器
++100 ms	+100 ms
++150 ms	+150 ms
++200 ms	+200 ms
++250 ms	+250 ms
++300 ms	+300 ms
++350 ms	+350 ms
++400 ms	+400 ms
++450 ms	+450 ms
++50 ms	+50 ms
++500 ms	+500 ms
++PLAYING	+播放中
+-100 ms	-100 ms
+-150 ms	-150 ms
+-200 ms	-200 ms
+-250 ms	-250 ms
+-300 ms	-300 ms
+-350 ms	-350 ms
+-400 ms	-400 ms
+-450 ms	-450 ms
+-50 ms	-50 ms
+-500 ms	-500 ms
+-500..+500 (step 50)	-500..+500（步进 50）
+0 ms	0 ms
+0-DEG REFERENCE	0 度基准
+0.0 MB/s	0.0 MB/s
+1080p (%dx%d)	1080p (%dx%d)
+1080p FHD	1080p FHD
+120 HZ	120 HZ
+120 HZ OUTPUT	120 Hz 输出
+1440p QHD	1440p QHD
+24 fps film plays more evenly on a 120 Hz output. The TV goes black briefly on each switch.	24 fps 影片在 120 Hz 输出下播放更平滑。每次切换时电视会短暂黑屏。
+24/7 Series Marathon	24/7 剧集马拉松
+24P / 50 HZ OUTPUT DURING PLAYBACK - FALLS BACK TO 120 HZ OR 60 HZ	播放时采用 24P / 50 Hz 输出 - 无法支持时回退到 120 Hz 或 60 Hz
+2D navigate	2D 导航
+2ND: 	第二轨: 
+2ND: %+d ms	第二轨: %+d ms
+2ND: 0 ms	第二轨: 0 ms
+360 ROTATION SWEEP	360 度旋转扫频
+3D SOUND FIELD	3D 声场
+48 kHz	48 kHz
+4K UHD	4K UHD
+4K UHD (%dx%d)	4K UHD (%dx%d)
+5.1 & 7.1 SPEAKER CHANNEL VERIFICATION	5.1 与 7.1 扬声器声道校验
+5.1 Surround	5.1 环绕声
+5.1 SYSTEM	5.1 系统
+6 CHANNELS	6 声道
+6-CHANNEL SEQUENCE	6 声道序列
+60 FPS	60 FPS
+60 HZ	60 HZ
+60 HZ OUTPUT	60 Hz 输出
+7.1 Surround	7.1 环绕声
+7.1 SYSTEM	7.1 系统
+720p (%dx%d)	720p (%dx%d)
+720p HD	720p HD
+8 CHANNELS	8 声道
+8-CHANNEL SEQUENCE	8 声道序列
+address	地址
+in OPTIONS	在选项中
